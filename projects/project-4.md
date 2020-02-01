@@ -7,7 +7,8 @@ permalink: projects/database
 # All dates must be YYYY-MM-DD format!
 date: 2019-08-01
 labels:
-  - C/C++
+  - C
+  - C++
   - Unix
   - Terminal Commands
   - Pointers
