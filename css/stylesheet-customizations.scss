@@ -26,9 +26,10 @@ body {
 }
 
 // Customize the menubar color
-.ui.menu {
-   background: lighten(silver, 10%);
-   color: white !important;
+.ui.inverted.menu {
+  border: 0 solid transparent;
+  background: #1B1C1D;
+  box-shadow: none;
 }
 
 .ui.basic.button {
