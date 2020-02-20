@@ -121,6 +121,17 @@
       ]
     }
   ],
+  "work": [
+    {
+      "organization": "System Support Assistant",
+      "website": "https://ssri.manoa.hawaii.edu/tasi-phidc/",
+      "startDate": "2020-02-20",
+      "endDate": "Present",
+      "summary": "",
+      "highlights": ["Conduct software testing in sandbox environments", "Troubleshoot system problems across both hardware and software", "Scripting"
+      ]
+    }
+  ],
   "volunteer": [
     {
       "organization": "UHM Grey Hats",
