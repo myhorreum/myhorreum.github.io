@@ -135,12 +135,12 @@
   ],
   "volunteer": [
     {
-      "organization": "UHM Grey Hats",
+      "organization": "Grey Hats",
       "website": "http://acmanoa.github.io/greyhats/",
       "position": "Member",
       "startDate": "2019-09-01",
       "endDate": "Present",
-      "summary": "Participate in cyber defense education and exercises in club setting.",
+      "summary": "Cybersecurity Club at the University of Hawaii at Manoa. Club activites include group learning over cybersecurity concepts, competing in CTFs, and networking with the local cyber community.",
       "highlights": [
       ]
     },
