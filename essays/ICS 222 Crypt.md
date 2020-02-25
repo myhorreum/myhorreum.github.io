@@ -1,7 +1,7 @@
 ---
 layout: essay
 type: essay
-title: ICS 222 Final Report
+title: ICS 222 + 355 Final Reports
 # All dates must be YYYY-MM-DD format!
 date: 2019-12-08
 labels:
@@ -21,4 +21,8 @@ Here is my [abstract]({{ site.baseurl }}/essays/Nicolai_Roman_ICS222_Project1Abs
 Here is my [full report]({{ site.baseurl }}/essays/Nicolai_ICS222_Project2.pdf).
 
 I was satisfied with my report and it helped increase my interest in cryptography. Also I want to mention that ICS 222 was actually one of the hardest ICS courses I have ever taken, despite the somewhat misleading name of "Basic Concepts of Comp. Sci". The course was effectively a heavy math course.
+
+*! UPDATE !*
+
+In ICS 355 : Security and Trust I: Resource Protections, we were also tasked to create a similar report in the area of Computer Security.
 
