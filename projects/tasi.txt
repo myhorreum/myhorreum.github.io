@@ -9,6 +9,16 @@ the project should be done within a month. I was tasked with performing research
 and Hosting Controller, as well as open source options such as Ajenti, VestaCP, and Webmin. I created a spreadsheet comparing and contrasting
 various attributes the panels had with each other.
 
+We ultimately chose to try out Webmin first. I also was interested in Hosting Controller, but had trouble finding info on how many domains were
+allowed on its service as well as the cost of the service. I emailed them inquiring about it as well as planned to potentially test a demo of 
+their service later on down the line (after working with Webmin).
+
 03/11/20 (day 2) :
+
+The night before day 2 I did further research on Webmin and found that Virtualmin is actually the web hosting panel service of Webmin. I reported
+this info to Thomas and we decided to work with Virtualmin. Interestingly, the Virtualmin download also includes Webmin functionality (you can
+toggle between Webmin and Virtualmin). 
+
+Before any downloads, Thomas introduced me to TASI's VMWare.
 
 03/12/20 (day 3) :
