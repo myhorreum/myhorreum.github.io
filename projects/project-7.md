@@ -16,7 +16,7 @@ summary: My experience working for and performing research for the Telecommunica
                *Note this is a GIF*
 
 ## INTRODUCTION:
-I chose to [document]({{ site.baseurl }}/projects/tasi.txt) my experience.
+I chose to keep a day-to-day [journal]({{ site.baseurl }}/projects/tasi.txt) to document my experience.
 
 ## HOW DOES IT WORK?
 The main coding framework behind this is known as the *finite state machine*. A finite state machine is a very simple, yet very effective coding techinque that is applicable in Computer Science as well as Engineering. Here, I designated the various "states" of my slot machine as the different logical steps one would take in interacting with the machine in real life. For example: starting the machine, spinning the rolls, obtaining coins, etc. Between the start and end states, nothing is static, and can be interchanged indefinitely until a user runs out of coins to play.
