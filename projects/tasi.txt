@@ -4,7 +4,8 @@ I came in 15 minutes early and met with Thomas, my supervisor and one of the peo
 office I would be doing my work in and introduced to the laptop (Dell) which I would be doing all work on. I was guided through the process of
 setting up my uhtasi email specific and viber messaging accounts.
 
-I was also introduced to my primary task which was to move many TASI web domains under the control of a web hosting panel. I was tasked with performing
+I was also introduced to my primary task which was to move many TASI web domains under the control of a web hosting panel. Thomas told me that the
+project should be done within a month. I was tasked with performing
 research on potential panels. I looked through paid panels such as cPanel and Hosting Controller, as well as open source options such as Ajenti, 
 VestaCP, and Webmin. I created a spreadsheet comparing and contrasting various attributes the panels had with each other.
 
