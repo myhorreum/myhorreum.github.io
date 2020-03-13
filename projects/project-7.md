@@ -12,9 +12,6 @@ labels:
 summary: My experience working for and performing research for the Telecommunications and Social Research Program at the University of Hawaii.
 ---
 
-<img class="ui image" src="../images/slot.gif">
-               *Note this is a GIF*
-
 ## INTRODUCTION:
 I chose to keep a day-to-day [journal]({{ site.baseurl }}/projects/tasi.txt) to document my experience.
 
