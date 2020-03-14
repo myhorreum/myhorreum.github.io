@@ -5,7 +5,7 @@ image: images/tasi.png
 title: Working at TASI
 permalink: projects/tasi
 # All dates must be YYYY-MM-DD format!
-date: 2018-11-01
+date: 2020-03-10
 labels:
   - Java
   - Games
