@@ -19,6 +19,12 @@ The night before day 2 I did further research on Webmin and found that Virtualmi
 this info to Thomas and we decided to work with Virtualmin. Interestingly, the Virtualmin download also includes Webmin functionality (you can
 toggle between Webmin and Virtualmin). 
 
-Before any downloads, Thomas introduced me to TASI's VMWare.
+Before any downloads, Thomas introduced me to TASI's VMWare. VMWare is used to create template Virual Boxes for use. TASI uses Virtual Boxes to test
+software they have interest in before deciding to use it. In this case we created a Linux CentOS template. The template generates an IP address
+that can be accessed from other computers. I used this IP address to work in the box from my workspace laptop. 
+
+Back on my laptop, I went to VMWare (had to disable the block on Flash in Chrome, also what will happen to VMWare once Chrome abandones Flash??) in
+order to work with the Virtual Box environment. Note to log into VMWare I used a uhtasi account to gain access. My immediate goal was to get the
+networking going. Due to my inexperience, I had some trouble with this.
 
 03/12/20 (day 3) :
