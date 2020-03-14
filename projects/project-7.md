@@ -7,8 +7,9 @@ permalink: projects/tasi
 # All dates must be YYYY-MM-DD format!
 date: 2020-03-10
 labels:
-  - Java
-  - Games
+  - Networking
+  - Webmin
+  - Research
 summary: My experience working for and performing research for the Telecommunications and Social Research Program at the University of Hawaii.
 ---
 
