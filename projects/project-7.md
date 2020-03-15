@@ -8,6 +8,7 @@ permalink: projects/tasi
 date: 2020-03-10
 labels:
   - Research & Development
+  - Linux
   - Networking
   - Web Hosting Control Pannel
 summary: My experience working for and performing research for the Telecommunications and Social Research Program at the University of Hawaii.
