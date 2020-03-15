@@ -20,8 +20,8 @@ this info to Thomas and we decided to work with Virtualmin. Interestingly, the V
 toggle between Webmin and Virtualmin). 
 
 Before any downloads, Thomas introduced me to TASI's vCenter. vCenter Server is the centralized management utility for VMware, and is used to manage
-virtual machines, multiple ESXi hosts, and all dependent components from a single centralized location.VMWare is used to create template Virual Boxes
-for use. TASI uses Virtual Boxes to test software they have interest in before deciding to use it. In this case we created a Linux CentOS template. 
+virtual machines, multiple ESXi hosts, and all dependent components from a single centralized location. The VMWare is used to create template Virual
+Boxes for use. TASI uses Virtual Boxes to test software they have interest in before deciding to use it. In this case we created a Linux CentOS template. 
 The template generates an IP address that can be accessed from other computers. I used this IP address to work in the box from my workspace laptop. 
 
 Back on my laptop, I went to VMWare (had to disable the block on Flash in Chrome, also what will happen to VMWare once Chrome abandones Flash??) in
