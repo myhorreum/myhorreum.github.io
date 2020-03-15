@@ -15,4 +15,4 @@ summary: My experience working for and performing research for the Telecommunica
 ---
 
 ## INTRODUCTION:
-I chose to keep a day-to-day [journal]({{ site.baseurl }}/projects/tasi1.txt) to document my experience.
+I chose to keep a day-to-day [journal]({{ site.baseurl }}/projects/nothere.txt) to document my experience.
