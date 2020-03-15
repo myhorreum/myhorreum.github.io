@@ -54,4 +54,5 @@ Virtualmin was finally installed and we got to test it with a web address genera
 Webmin, my manager and I were not making too much progress. We were confused on exactly Virtualmin was trying to do. All we wanted was a place
 to centrally manage existing web servers, while Virtualmin seemed to simplify new deployments of domains by auto creating a lot of stuff, 
 overcomplicating a lot of what we were wanting to do. It seemed we might be getting more than we bargained for. However, at the end of the day,
-before deciding to move on from Virtual/Webmin, we opted to do further research on them to see if we can still do when we wanted to do initially.
+before deciding to move on from Virtual/Webmin, we opted to do further research on them to see if it was still possible to do we wanted to do 
+initially.
