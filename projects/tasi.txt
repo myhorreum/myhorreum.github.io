@@ -34,7 +34,6 @@ Since I was working on CentOS, I used the terminal command nmtui to set the IP a
 Once the network was set up I used the IP address of the box to log in through PuTTY. I then changed the hostname and the root password to one of my choice 
 using hostnamectl set-hostname your-new-hostname and sudo passwd root.
 
-
 03/12/20 (day 3) :
 
 My primary task for the day was to install Virtualmin/Webmin and test it out. Through PuTTY I tried to use wget to get the download script, however
@@ -47,11 +46,11 @@ install script. Another problem did arise during the installation process. I was
 I did research on FQDN (Fully Qualified Domain Name) and learned that I needed to update the /etc/hosts file. I had to put in the hostname and IP
 of the server we had set up for Virtualmin use (the one we were currently logged in to PuTTY with). I updated the file with vi. I want to mention
 that I exited vi without properly saving before editing how I wanted to; this auto-created a /etc/hosts.swp file. When using vi on the /etc/hosts
-file, it gives the option of loading the /etc/hosts.swp file. To rid of this, simply use rm to delete the file. Also be sure your hostname matches
-the hostname in the file that you do vi on, or else it will not work.
+file, it gives the option of loading the /etc/hosts.swp file. To rid of this, simply use rm to delete the swap file. Also be sure your hostname 
+matches the hostname in the file that you do vi on, or else it will not work.
 
 Virtualmin was finally installed and we got to test it with a web address generated from our IP address. After experimenting with Virtualmin and 
-Webmin, my manager and I were not making too much progress. We were confused on exactly Virtualmin was trying to do. All we wanted was a place
+Webmin, my manager and I were not making too much progress. We were confused on exactly what Virtualmin was trying to do. All we wanted was a place
 to centrally manage existing web servers, while Virtualmin seemed to simplify new deployments of domains by auto creating a lot of stuff, 
 overcomplicating a lot of what we were wanting to do. It seemed we might be getting more than we bargained for. However, at the end of the day,
 before deciding to move on from Virtual/Webmin, we opted to do further research on them to see if it was still possible to do we wanted to do 
