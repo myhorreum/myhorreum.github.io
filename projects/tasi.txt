@@ -29,6 +29,8 @@ order to work with the Virtual Box environment. Note to log into VMWare I used a
 console which essentially connected my monitor to the server. My immediate goal was to get the networking going. Due to my inexperience, I had some 
 trouble with this.
 
-I used the terminal command nmtui to set the IP address of our Virtual Box to 10.100.10.236 and the netmask as 255.255.255.0.
+Since I was working on CentOS, I used the terminal command nmtui to set the IP address of our Virtual Box to 10.100.10.236 and the netmask as 255.255.255.0.
+Before doing this I changed the hostname and the root password to one of my choice using hostnamectl set-hostname your-new-hostname and sudo passwd root.
+To test the if the box had internet I pinged 8.8.8.8 (Google).
 
 03/12/20 (day 3) :
