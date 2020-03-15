@@ -1,7 +1,7 @@
 ---
 layout: project
 type: project
-image: images/tasi.png
+image: images/tasiedit.png
 title: Working at TASI
 permalink: projects/tasi
 # All dates must be YYYY-MM-DD format!
