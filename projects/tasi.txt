@@ -29,7 +29,8 @@ order to work with the Virtual Box environment. Note to log into VMWare I used a
 console which essentially connected my monitor to the server. My immediate goal was to get the networking going.
 
 Since I was working on CentOS, I used the terminal command nmtui to set the IP address of our Virtual Box to a specific value and the netmask as
-255.255.255.0. To test if the box had internet I pinged 8.8.8.8 (Google).
+255.255.255.0. After changing this info, you must reset the network using the command systemctl restart network.service. 
+To test if the box had internet I pinged 8.8.8.8 (Google).
 
 Once the network was set up I used the IP address of the box to log in through PuTTY. I then changed the hostname and the root password to one of my choice 
 using hostnamectl set-hostname your-new-hostname and sudo passwd root.
@@ -55,3 +56,14 @@ to centrally manage existing web servers, while Virtualmin seemed to simplify ne
 overcomplicating a lot of what we were wanting to do. It seemed we might be getting more than we bargained for. However, at the end of the day,
 before deciding to move on from Virtual/Webmin, we opted to do further research on them to see if it was still possible to do we wanted to do 
 initially.
+
+03/16/20 (day 4) :
+
+Since Webmin/Virtualmin seemed to be too bulky for our needs, I recommended using ISPConfig. The installation process for ISPConfig was a bit more
+lengthy, however I pushed through it much faster this time due to my experience installing Virtualmin. Towards the end of my work session, ISPConfig
+was up and running and I added a test server to the domain listing. Thomas wants to see if Apache server integration is possible.
+
+At home, I did further research on ISPConfig. I payed the $5 fee for the ISPConfig manual, and began studying it. It is apparent that 
+"admin, clients, and resellers" are a big aspect of ISPConfig. These are three customizable user levels offered by ISPConfig. As of right now, it
+does not seem like we will have use for client and reseller roles, though they do seem interesting. We should focus on admin because that gives full
+control over the system. Currently I am studying 4.5.4 Domains section of the manual.
