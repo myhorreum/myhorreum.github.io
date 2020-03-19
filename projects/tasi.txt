@@ -67,3 +67,22 @@ At home, I did further research on ISPConfig. I payed the $5 fee for the ISPConf
 "admin, clients, and resellers" are a big aspect of ISPConfig. These are three customizable user levels offered by ISPConfig. As of right now, it
 does not seem like we will have use for client and reseller roles, though they do seem interesting. We should focus on admin because that gives full
 control over the system. Currently I am studying 4.5.4 Domains section of the manual.
+
+03/17/20 (day 5) :
+
+I sent the ISPConfig manual to Thomas. He spent some time studying it before ultimately coming to the conclusion that it was very similar to Webmin.
+Therefore, we deemed it best to abandon ISPConfig. Thomas told me to research Ansible, since Miguel had used it in the past. Ansible is a IT 
+configuration and management tool used in organizing and even automating tasks.
+
+At home, I looked into Ansible more. I found it had a GUI version called Ansible Tower created in response to the community wanting one. 
+
+03/18/20 (day 6) :
+
+I told Thomas about Ansible Tower and he believed in came with a price to use, so he told me to look at "regular" Ansible to see if I could find a
+work-around, perhaps with plug-ins. I told him that Red Hat had taken over Ansible and that it does not seem to have a free option anymore. Finally
+Thomas went to Miguel to figure out exactly what he wants in regards to web hosting control. It seemed that not even Miguel knew totally what he
+wanted, he had no concrete idea in place. So, while Miguel figures that out, Thomas told me to move on to a new project: Windows Server Update Services.
+Windows Server Update Services (WSUS) enables administrators to manage the distribution of updates and hotfixes released for Microsoft products to 
+computers in a corporate environment.
+
+I did research on this while waiting on Jose to configure the environment for me to work in.
