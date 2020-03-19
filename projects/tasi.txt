@@ -74,7 +74,8 @@ I sent the ISPConfig manual to Thomas. He spent some time studying it before ult
 Therefore, we deemed it best to abandon ISPConfig. Thomas told me to research Ansible, since Miguel had used it in the past. Ansible is a IT 
 configuration and management tool used in organizing and even automating tasks.
 
-At home, I looked into Ansible more. I found it had a GUI version called Ansible Tower created in response to the community wanting one. 
+At home, I looked into Ansible more. I found it had a GUI version called Ansible Tower created in response to the community wanting one. I would
+present this info to Thomas tomorrow.
 
 03/18/20 (day 6) :
 
