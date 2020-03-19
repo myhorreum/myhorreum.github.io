@@ -79,7 +79,7 @@ present this info to Thomas tomorrow.
 
 03/18/20 (day 6) :
 
-I told Thomas about Ansible Tower and he believed in came with a price to use, so he told me to look at "regular" Ansible to see if I could find a
+I told Thomas about Ansible Tower and he believed it came with a price to use, so he told me to look at "regular" Ansible to see if I could find a
 work-around, perhaps with plug-ins. I told him that Red Hat had taken over Ansible and that it does not seem to have a free option anymore. Finally
 Thomas went to Miguel to figure out exactly what he wants in regards to web hosting control. It seemed that not even Miguel knew totally what he
 wanted, he had no concrete idea in place. So, while Miguel figures that out, Thomas told me to move on to a new project: Windows Server Update Services.
