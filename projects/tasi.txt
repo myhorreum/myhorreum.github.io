@@ -87,3 +87,20 @@ Windows Server Update Services (WSUS) enables administrators to manage the distr
 computers in a corporate environment.
 
 I did research on this while waiting on Jose to configure the environment for me to work in.
+
+03/19/20 (day 7) :
+
+Today I was to configure and test out WSUS. I would do testing on a virtual server created in vCenter. I connected to this server through Remote 
+Desktop Connection, which is like giving me access to another computer (in this case server). This server had WSUS installed by Jose. In WSUS, I 
+was able to see the created group WSUSTest which had several computers from the TASI offices. Following an online guide, I checked for updates for
+these computers and then updated them. I attempted to generate a report but could only generate the basic Computer one, not the detailed report option.
+It seemed that WSUS had issues with timing out. I used Event Viewer and found the log of the connection failure. I Googled the Error: Connection Error,
+Reset Server Node issue and found it to be a fairly common issue online. One solution would be to go into IIS (Internet Information Services) and
+give WSUS access to unlimited memory. For some reason, the server was blank. I think Thomas then tried to move me to an admin role, however it was
+still blank. I then searched IIS, right clicked it, and selected to access it as administrator, which then gave me the server. I finally gave WSUS
+more memory.
+
+However I still was getting the same issue with connection. Another guide told me to remove the WSUS Adminstration file under Sites in IIS. This did
+not work either and actually seemed to break WSUS completely (the connection error was now permanent). I tried to reset the file (it was unlikely
+deleted, so I would have to find and repoint it), but I had too much difficulty. I wanted to revert to a previous vCenter snapshot, but Thomas had
+not taken one. Jose ended up reconfiguring it back to the original state and took a snapshot. I was now to rework with this again tomorrow.
