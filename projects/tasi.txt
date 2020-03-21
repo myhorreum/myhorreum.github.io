@@ -104,3 +104,23 @@ However I still was getting the same issue with connection. Another guide told m
 not work either and actually seemed to break WSUS completely (the connection error was now permanent). I tried to reset the file (it was unlikely
 deleted, so I would have to find and repoint it), but I had too much difficulty. I wanted to revert to a previous vCenter snapshot, but Thomas had
 not taken one. Jose ended up reconfiguring it back to the original state and took a snapshot. I was now to rework with this again tomorrow.
+
+03/20/20 (day 8) :
+
+Along with giving WSUS unlimited memory in IIS, I also deleted the wsus file under %appdata%\Microsoft\MMC\. This seemed to work, however I was still
+experiencing intermittent Error Connection incidents. I fixed this by going back to IIS and setting the Status of WsusPool to Stopped, waiting a bit
+(you may get an error notification) and then setting it to Started again. This allowed me to view Updates and Approve them. Also when viewing Computers,
+I am able to click on an individual computer and view its Detailed Computer Status Report. This shows the history record of Updates passed to this computer,
+and shows the Approval, and the Status on whether it was Not Installed or Downloaded. This brought up the question as to when the Updates will be downloaded.
+Are they put in a queue and done based on time? 
+
+Also I want to mention that if you go to Updates and individually click an update, you can view its Detailed Update Status Report. I think what was causing
+the crash was that I was previously trying to view them in bulk, which was overwhelming the connection and causing a time-out. 
+
+Lastly, I looked into automating the update install process. I went to Options in the WSUS GUI and went into Automatic Approvals. I created a new rule
+called WSUS Test Custom-Auto. I also noticed that within that rule I could customize update download deadlines. I set this to download "the next 
+day after the approval at 3:00AM". I assume this will cause the download to be force installed at that time. Link with info :
+
+https://docs.microsoft.com/de-de/security-updates/windowsupdateservices/18127631
+
+However, unfortunately, when clicking the Run Rule, I get a Error Connection timeout after a bit of waiting. 
