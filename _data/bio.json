@@ -82,7 +82,6 @@
         "Visual Studio Code",
         "IntelliJ",
         "Git/GitHub",
-        "Unix",
         "vi/vim",
         "PowerShell",
         "Virtual Box",
@@ -96,6 +95,7 @@
       "keywords": [
         "Windows 10",
         "macOS Sierra",
+        "Unix",
         "Linux (CentOS)"
       ]
     }
