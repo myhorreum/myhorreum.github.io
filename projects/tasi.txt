@@ -124,3 +124,42 @@ day after the approval at 3:00AM". I assume this will cause the download to be f
 https://docs.microsoft.com/de-de/security-updates/windowsupdateservices/18127631
 
 However, unfortunately, when clicking the Run Rule, I get a Error Connection timeout after a bit of waiting. 
+
+03/23/20 (day 9) :
+
+I got in and tested the WSUS Automatic Approval that was not working yesterday. To my happiness, it worked without a problem. Thomas seemed happy with
+my progress. He now wanted me to research on whether WSUS was capable of automating the Automatic Approval and report generations. Do I have to click
+"Run Rule" each time, or is it possible to get it to do that on its own? Also can I create reports after each update cycle automatically, without me
+having to do it physically? And can these reports be sent (possibly via email) without me having to do it myself? Surely there must be a way.
+
+Also from now I was to be working remotely, from home, because of COVID-19. I am able to take my work laptop home. However Thomas had me install Dell
+SonicWALL NetExtender. This would allow me to connect to uhtasi's VPN server from home, which runs continuously. I was to use Remote Desktop Connection
+through this VPN connection.
+
+03/25/20 (day 10) :
+
+Working from home, I logged in via the methods described above. Now in WSUS, I could see in the WSUS Test computer group that the Last Status Report
+had been updated since I had worked last time (for some workstations). I clicked on these workstations to view the report. To my dismay the workstation
+was still stuck on where it last updated (Microsoft Silverlight). It is approved to Install but the status is that it is Not Installed.
+
+How can I get past this?
+
+I went back to the Automatic Approval Rule that I had set earlier. I noticed that it is only running for updates that fall in the Critical Updates and
+Security Updates categories. The Microsoft Silverlight was categorized as Feature Packs. I changed the Auto Rule I created to encompass All Classifications,
+not just the two specific categories I had prior. Maybe this will make a difference. I clicked Run Rule and I will check in a couple days.
+
+However I was getting the Error Connection timeout. I restarted the WSUS Pool multiple times, but still was getting the timeout. I will come back to this
+in the future, perhaps tomorrow or even back in Saunders itself.
+
+Now I will move on to automating the email reports (having them sent via email automatically). I found a model PowerShell script online that I could use
+for our use-case. 
+
+https://www.experts-exchange.com/articles/27419/How-to-send-automatically-an-e-mail-with-a-report-of-computers-status-inside-WSUS-server.html
+
+After modifying our needed credentials, I used Task Scheduler to run the script once a day to test it. However for troubleshooting purposes, I
+began just executing the script by hand through its icon on the Desktop. To check if the email was actually being generated and sent to me, I went
+to log in to my account back on the regular computer, however I was getting shut out from loggin. Thomas told me that this had to do with the VPN I
+was going through. He rewired something and I could now get into my email. However the PowerShell email was not there. I had to do some reconfiguring.
+
+Thomas sent me two scripts he had made himself in the past that had email functionality. Tomorrow I will look through them more indepth to see if I
+can use them to help my own script.

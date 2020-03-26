@@ -10,8 +10,6 @@ labels:
   - Research & Development
   - Linux
   - Networking
-  - Web Hosting Control Pannel
-  - Windows Server Update Services
 summary: My experience working for and performing research for the Telecommunications and Social Research Program at the University of Hawaii.
 ---
 
