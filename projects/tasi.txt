@@ -163,3 +163,20 @@ was going through. He rewired something and I could now get into my email. Howev
 
 Thomas sent me two scripts he had made himself in the past that had email functionality. Tomorrow I will look through them more indepth to see if I
 can use them to help my own script.
+
+03/27/20 (day 11) :
+
+I got into the server and checked the Computer Status report to see if the Microsoft Silverlight had possibly changed at all. It hadn't, as I expected.
+However the Status of the updates below Microsoft Silverlight (the ones that were previously Installed), have shifted to "Pending Reboot".
+
+I moved on to try to run the Automatic Approval rule I could not run yesterday. Today it ran on the first time and gave the message that 777 updates
+were approved. I will see if this gets the Microsoft Silverlight to finally change its Status to Installed.
+
+I moved on to working with the PS Script. I took out the top smtp variables and focused on the bottom of the script (the Send Mail portion) and had
+it match the one Thomas sent me. To my happiness, it worked and the email was in my mailbox. However, raw HTML was in the email which made it near
+unreadable. I worked on fixing it. I realized that I had deleted the BodyAsHTML tag without knowing what it did. I put it back and the HTML was now
+working as actual HTML and I could see the report in the table format as intended. I sent an email to Thomas as well and he was pleased.
+
+Looking forward I want to see if I can possibly add a list of updates to the report. I also want to look to see what else PowerShell is capable of.
+I could look into automation further, because I am still not certain if I need to click "Run Rule" manually every time. I also put the script into Task
+Scheduler and set it to run weekly (Mondays at 12:59 PM).
