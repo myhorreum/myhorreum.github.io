@@ -180,3 +180,26 @@ working as actual HTML and I could see the report in the table format as intende
 Looking forward I want to see if I can possibly add a list of updates to the report. I also want to look to see what else PowerShell is capable of.
 I could look into automation further, because I am still not certain if I need to click "Run Rule" manually every time. I also put the script into Task
 Scheduler and set it to run weekly (Mondays at 12:59 PM).
+
+03/30/20 (day 12) :
+
+The emailed report was different from the first report, which showed that some updates went through. However when I went to check the generated reports
+in WSUS, it was timing out and resetting the IIS pool did nothing. In the meantime I went to look at another way to use PowerShell scripting to 
+obtain updates. It seems that I am transitioning more and more away from WSUS itself and more to PowerShell, since WSUS seems to have issues. I found
+a whole slew of WSUS oriented cmdlets in Microsoft documentation:
+
+https://docs.microsoft.com/en-us/powershell/module/updateservices
+
+I looked more closely at Get-WsusUpdate. In PowerShell I ran the command quickly and all the updates on the system began printing onto the screen. I 
+terminated the program because it was running on and on due to the thousands of updates shared between the workstations. I looked deeper and learned you
+can use tags to only get updates based on attributes. Next work day I want to print updates that are Approved. Can I print updates that are both Approved
+to Install and Installed or Approved to Install and Not Downloaded?
+
+If I can get this going, I can eventually convert it into script form and put it into Task Scheduler to automate it. Then I would have two scripts running
+based on WSUS reporting.
+
+04/01/20 (day 13) :
+
+Instead of using two separate scripts (the table-based report I got online and the list-of-updates I hoped to build myself), I realized it was probably
+best to instead merge them into one. I wanted to figure out a way to possibly add the updates to the bottom of the report, underneath the table.
+
