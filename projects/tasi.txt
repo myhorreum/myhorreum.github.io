@@ -203,3 +203,45 @@ based on WSUS reporting.
 Instead of using two separate scripts (the table-based report I got online and the list-of-updates I hoped to build myself), I realized it was probably
 best to instead merge them into one. I wanted to figure out a way to possibly add the updates to the bottom of the report, underneath the table.
 
+I received assistance from this guide :
+
+https://devblogs.microsoft.com/scripting/get-windows-update-status-information-by-using-powershell/?irgwc=1&OCID=AID2000142_aff_7593_1375745&tduid=(ir__nkwgz0avcskfrkdtkk0sohziz22xnwu3rk6y206600)(7593)(1375745)()()&irclickid=_nkwgz0avcskfrkdtkk0sohziz22xnwu3rk6y206600
+
+But ultimately could not get the script to work.
+
+Also my NetExtender was not connecting. Thomas told me that NetExtender is notorious for this and told me how to remedy it. To resolve open Task Manager, 
+go into Details tab, right click the NEGui.exe process and click End Process Tree, then go into the Services tab and right click the SONICWALL_NetExtender
+service and click Start/Restart. If this does not work, try rebooting.
+
+04/06/20 (day 14) :
+
+I found another guide that had potential to be useful :
+
+https://4sysops.com/archives/wsus-reporting-with-powershell/
+
+I brought the script over and modified it to match my WSUS server. However, it would not run. Also, the errors in the PowerShell console were appearing
+only for a split second before the console would close, which made it impossible for me to read the errors. I learned online that you can add a tag
+at the end of the script for it to stay on the screen. I did this and could now read the errors. The error was coming from the wsus object that I had
+created which was supposed to allow connection to the server. However it was saying the the remote connection could not be resolved. All the errors
+afterwards were related to this, saying that the methods could not be called on a null-object (wsus). This was strange because the other script I had
+been using used pretty much the exact code and was working. I asked Thomas and he led me through several troubleshooting methods but none worked. Tomorrow
+I was to send him the script so he could try and figure it out himself.
+
+04/07/20 (day 15) :
+
+I showed Thomas the script and the methods he were going through were not solving the issue. He told me to also do all editing/troubleshooting in 
+PowerShell ISE. This would eliminate the console closing suddently upon running the script and trying to see errors. Also it is superior to Notepad
+because it highlights the syntax upon other things. 
+
+Finally Thomas managed to identify the error. At the bottom of the script, where it ran the function, it could not identify the tag "wsus" for some
+reason. I changed this to localhost as Thomas said and it now worked. However, after some time, the script timed-out. Specifically the GetUpdates
+function operation timed-out individually for each call it was used. None of it was working. This is especially unfortunate because I was using 
+PowerShell to get around the timing-out found with the WSUS software itself. So now we were back at square one.
+
+To solve this, perhaps instead of looping through computers I could just try and work with one computer. However, upon thinking about this, it seems
+the GetUpdates operation is actually being called individually upon each computer anyway, and is timing out (which is why the console has many timeout
+errors after a certain amount of time - one timeout per computer). I think another way to approach solving this would be to clean out the WSUS update
+database. There could be many updates that are outdated that are clogging up the database. Clearing this could solve the timeout issues. 
+
+Online there are many cleanup scripts available. I tried one but could not get it to work. I ended up just using the built-in WSUS cleanup functionality.
+However before the end of the day it did not finish its process, so I logged out without completing it. I will try again tomorrow.
