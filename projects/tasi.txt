@@ -245,3 +245,21 @@ database. There could be many updates that are outdated that are clogging up the
 
 Online there are many cleanup scripts available. I tried one but could not get it to work. I ended up just using the built-in WSUS cleanup functionality.
 However before the end of the day it did not finish its process, so I logged out without completing it. I will try again tomorrow.
+
+04/09/20 (day 16) : 
+
+I found another script online that looked promising. I downloaded it, but when I attempted to run it, it required a different execution policy. To
+change this you have to go to PowerShell and run as administrator. Once you do this, you can use a command to change the Execution Policy for your
+local computer. I changed this to Unrestricted which allows all scripts to run no matter what. You can also use a list command to view the policies
+for each machine on the system.
+
+However when I ran this script nothing was printing or happening, and I had no idea if it was working at all. I ended up going back to WSUS itself
+and ran the cleaner wizard there. I began just running individual sections of updates instead of all at once to see if it made a difference. I
+realized that it was freezing specifically on unneeded update files and unused update files. Looking at the stats on the other WSUS page, this makes
+sense because there are over 100,000 updates in the database. It seems like all these updates are clogging the database, and when the computer tries
+to clean/eliminate them, it just becomes overwhelmed.
+
+I need to find a way to fix this database overpopulation.
+
+
+
