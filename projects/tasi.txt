@@ -261,5 +261,19 @@ to clean/eliminate them, it just becomes overwhelmed.
 
 I need to find a way to fix this database overpopulation.
 
+04/14/20 (day 17) : 
+
+I got the Adam script that is supposedly the best WSUS script around. After downloading it, I read that the only variable configuring needed to be
+done were the email variables. I then went to run the script in Powershell admin ISE. I changed the Execution Policy to Bypass and ran the script
+with the First Run tag. The script ran quickly, but had errors linked to an SQL related cmdlet not being installed. I then read in the script that 
+you must have SQL Server Management Studio (SSMS) installed. I went online and downloaded it, but it would not install when double clicked because
+it said that no program on the PC can open it. Online, I saw that a tutorial where the user first downloads the main SQL server, and then the SSMS.
+I did this and then it seemed like I could now install the SSMS, but I was getting a lot of problems. I tried working with Task Manager to no success.
+I ended up reverting to my last snapshot of the server. Thomas told me to see if the SSMS was not running because it was blocked. I went right-clicked
+it, went into Properties, and saw that it did seem to be blocked. I un-blocked it and the installation was going through. However at the end, it said
+that there is not enough disk space. I'm not sure how to fix this because I don't know what to delete on the server to free up space. 
+
+
+
 
 
