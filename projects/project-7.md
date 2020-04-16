@@ -12,6 +12,7 @@ labels:
   - Networking
   - Scripting
   - Disk Partitioning
+  - Sandboxed Virtual Servers
 summary: My experience working for and performing research for the Telecommunications and Social Research Program at the University of Hawaii.
 ---
 
