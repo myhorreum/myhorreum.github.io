@@ -273,6 +273,38 @@ I ended up reverting to my last snapshot of the server. Thomas told me to see if
 it, went into Properties, and saw that it did seem to be blocked. I un-blocked it and the installation was going through. However at the end, it said
 that there is not enough disk space. I'm not sure how to fix this because I don't know what to delete on the server to free up space. 
 
+04/15/20 (day 18) : 
+
+To free some space I went to delete accumulated logs in C > Windows > Logs > CBS, as recommended by Thomas. You don't have to go through command line
+to do this, you can just go through File Explorer. After deleting the logs, I went to install SSMS again. The install went through. However when I 
+went to run the SSMS program, I was getting a weird obscure error that seemed to relate to missing configuration files. I did some research but was
+confused on how it was not working or how to solve it. I happened to look at my disk space and realized that I had 0 bytes available to work with.
+I was completely maxed out. This probably had something to do with the error. I realized that I would have to clear out more space in order to use
+SSMS.
+
+I downloaded and used WinDirStat. WinDirStat is a tool that shows disk-use storage by percentage. It is a useful tool to see what is taking up space
+and where. After it ran, I was shocked to see that one file was taking up half of the entire disk space. The file was SUSDB.mdf and it was occupying
+26/52 GB on the disk. I looked it up and learned that SUSDB.mdf was actually the WSUS database. It was incredibly bloated but I was glad to be able to
+see it.
+
+Thomas told me that he could extend the disk space, but then he asked if there were actually other drives on the system. I said yes, all the disks on
+the system are: Local Disk (C), Data (E), and Directory (Z). Everything was stored on C, including all WSUS related files. Thomas told me that the E 
+disk should actually be used to store WSUS updates. Thomas told me that it would be preferred for me to move WSUS to the E disk and have it update from
+there permanently.
+
+I did research and found a way to do this through Microsoft Documentation:
+https://docs.microsoft.com/de-de/security-updates/windowsupdateservices/18127395
+
+The command is wsusutil movecontent contentpath logfile, where contentpath and logfile are to be customized. I had trouble creating the path to the E
+disk, the syntax of it was tripping me up. I realized the best way to do this was wsusutil movecontent E:\WSUS E:\WSUS\log.txt. I created a WSUS folder
+within E. The command worked successfully and the command line told me that WSUS has been moved.
+
+I began looking for the SUSDB.mdf file out of curiosity, to see if it was now in E. It was not. Neither could I find it in a File Explorer search. I
+then used WinDirStat again and realized I had much more space now. But where was the SUSDB.mdf file? Tomorrow I will see if this impacts anything, and
+I will proceed with SSMS and the clean-up script.
+
+
+
 
 
 
