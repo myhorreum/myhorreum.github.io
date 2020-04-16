@@ -10,6 +10,8 @@ labels:
   - Research & Development
   - Linux
   - Networking
+  - Scripting
+  - Disk Partitioning
 summary: My experience working for and performing research for the Telecommunications and Social Research Program at the University of Hawaii.
 ---
 
