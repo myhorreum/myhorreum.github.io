@@ -6,6 +6,7 @@ title: ICS 222 + 355 Final Reports
 date: 2019-12-08
 labels:
   - Cryptography
+  - Captive Portal
 ---
 
 In ICS 222 : Basic Concepts of Comp. Sci students were required to do two writing assignments, one at the beginning of the course and one at the end. Students had two options, these being :
