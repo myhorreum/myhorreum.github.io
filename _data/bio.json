@@ -56,6 +56,17 @@
   ],
   "skills": [
     {
+      "name": "Abilities",
+      "level": "",
+      "keywords": [
+        "Networking",
+        "Scripting",
+        "Disk Partitioning",
+        "Web Programming",
+        "General-Purpose Programming"
+      ]
+    },
+    {
       "name": "Languages",
       "level": "",
       "keywords": [
