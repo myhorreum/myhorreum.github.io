@@ -329,6 +329,12 @@ SUSDB.mdf file.
 
 There is a lot of fixing up to do...
 
+After thinking about things I thought of this :
+1. Maybe the missing SUSDB.mdf file is because I don't have SQL Server downloaded? I only have SSMS downloaded.
+2. Maybe the Servername: \\.\pipe\MSSQL$MICROSOFT##SSEE\sql\query is not connecting because of SQL Server not being downloaded?
+3. Maybe the OBDC is because of the SQL Server not downloaded as well?
+
+
 
 
 
