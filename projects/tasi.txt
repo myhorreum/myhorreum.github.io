@@ -303,7 +303,31 @@ I began looking for the SUSDB.mdf file out of curiosity, to see if it was now in
 then used WinDirStat again and realized I had much more space now. But where was the SUSDB.mdf file? Tomorrow I will see if this impacts anything, and
 I will proceed with SSMS and the clean-up script.
 
+04/16/20 (day 19) : 
 
+For some reason the C disk was still maxed out, and the SUSDB.mdf file was no where to be found. I chose to extend the disk. Thomas had to give more
+available memory. To do this he had to merge all snapshots. Once it was done, I used this guide, which was pretty straightforward :
+
+https://docs.microsoft.com/en-us/windows-server/storage/disk-management/extend-a-basic-volume
+
+With the extra 10 GB of space on the C drive, I could now install SSMS without any problems. Once installed, I went to the PowerShell ISE to run the
+script, it was not working for the sqlcmd. I then read through the script and learned that, at the bare mininum, I need these installed for the script:
+
+SQL 2012/2014 - Version 11 - https://www.microsoft.com/en-us/download/details.aspx?id=36433
+                      - ODBC Driver Version 11 - https://www.microsoft.com/en-gb/download/details.aspx?id=36434
+
+However the ODBC Driver could not be installed on this operating system. For the Command Line Utilities 11 for SQL Server, it requires the ODBC Driver.
+
+The other problem is that the SUSDB.mdf file should actually be moved to the new location. I used this guide :
+
+https://www.tecknowledgebase.com/33/how-to-move-wsus-content-and-database-files-to-a-different-volume/
+
+However the Servername: \\.\pipe\MSSQL$MICROSOFT##SSEE\sql\query was not connecting.
+
+Lastly, I ran the WSUS software, but it would not load and this was due to a Database Error. I assume that the Database Error is from the missing
+SUSDB.mdf file.
+
+There is a lot of fixing up to do...
 
 
 
