@@ -334,6 +334,35 @@ After thinking about things I thought of this :
 2. Maybe the Servername: \\.\pipe\MSSQL$MICROSOFT##SSEE\sql\query is not connecting because of SQL Server not being downloaded?
 3. Maybe the OBDC is because of the SQL Server not downloaded as well?
 
+04/17/20 (day 20) : 
+
+From reddit, a user told me that the Servername has been updated for newer OSes. I decided to go for his recommendation and it worked. This was
+the new path :
+
+\\.\pipe\MICROSOFT##WID\tsql\query
+
+So I was in and I could see the directories including the SUSDB.mdf file that I could not find previously. I followed the guide I listed from the
+previous day and got up to step 6 : Move the database files to the new drive or location where you are planning to keep it.
+
+The reason why I was stuck was because I could not find the SUSDB.mdf outside of SSMS. Using File Explorer, nothing could be found. I tried looking
+in Properties of the SUSDB.mdf file in SSMSS itself, but I was getting an error that would not allow me to see the Properties. Then, I looked online
+and found a path that could potentially work, it was :
+
+C > Windows > WID > Data
+
+To my happiness, the path in fact did lead me to the SUSDB.mdf file.
+
+Now, I had to move it from its current location in the C drive to the E drive where I want it to be. Initially, I had an error saying that I could 
+not move the SUSDB.mdf file because because the file is open is another program. To fix this I had to kill the sqlservr.exe proccess. After this, I
+could now move the files to the E drive.
+
+However when I went back to SSMS, an error was coming up where the connecton to the database had been broken. Now nothing was working.
+
+I think this had to do with me stopping the sqlservr.exe. In Task Manager, you can look at the Services tab, maybe it will be in here to get it to
+start working again. Also I noticed WsusService was stopped as well. I may have to start this again further down the line. (Also don't forget that
+I disabled the update services and the IIS). The update services could be the same as the WsusService.
+
+However I could not find a way to restart sqlservr.exe
 
 
 
