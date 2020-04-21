@@ -376,3 +376,11 @@ Now, before attached the new SUSDB.mdf in SSMS, I wanted to delete the orininal 
 to have two copies, and the C disk should not have this file anyway (which is why we are doing this whole process of moving the file). I told Thomas
 to take a Snapshot of the server before deleting the files.
 
+I went to attach the new SUSMD.mdf in the E drive, however I was getting an error. I looked up a guide online and changed the properties of the SUSMD.mdf
+to allow Users full access rights. However when I went back to attach it, I got another error. If you scroll right, you can see what type of error it is 
+in the Message column. It said that I cannot attach a database with the same name. This is because the SUSDB.mdf both are named the same in the C and E drives,
+obviously. I went to remove the SUSDB.mdf reference in the C file structure in SSMS, however I got an error saying the file is not found. I assume this is
+because I deleted it earlier. 
+
+I need to figure out how to fix this.
+
