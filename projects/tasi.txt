@@ -364,7 +364,15 @@ I disabled the update services and the IIS). The update services could be the sa
 
 However I could not find a way to restart sqlservr.exe
 
+04/20/20 (day 21) : 
 
+Back in Task Manager, I was looking around to see if I could find any way to restart the sqlservr.exe. Curiously, I came across MSSQL$MICROSOFT##WID
+in the Services tab. This stuck out to me because I knew the sqlservr.exe was located in the Windows\WID\Binn file path. Note that WID stands for 
+Windows Internal Database. Also, it was stopped.
 
+I restarted it and its Status was now Running. I went back to SSMS and I was no longer getting the database error, so I knew that I had fixed it.
 
+Now, before attached the new SUSDB.mdf in SSMS, I wanted to delete the orininal copy in C > Windows > WID > Data. This is because it would be pointless
+to have two copies, and the C disk should not have this file anyway (which is why we are doing this whole process of moving the file). I told Thomas
+to take a Snapshot of the server before deleting the files.
 
