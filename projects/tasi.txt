@@ -382,5 +382,4 @@ in the Message column. It said that I cannot attach a database with the same nam
 obviously. I went to remove the SUSDB.mdf reference in the C file structure in SSMS, however I got an error saying the file is not found. I assume this is
 because I deleted it earlier. 
 
-I need to figure out how to fix this.
-
+I need to figure out how to fix this. I told Thomas to revert back to before I deleted the SUSMD.mdf file.
