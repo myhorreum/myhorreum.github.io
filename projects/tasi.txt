@@ -372,7 +372,7 @@ Windows Internal Database. Also, it was stopped.
 
 I restarted it and its Status was now Running. I went back to SSMS and I was no longer getting the database error, so I knew that I had fixed it.
 
-Now, before attached the new SUSDB.mdf in SSMS, I wanted to delete the orininal copy in C > Windows > WID > Data. This is because it would be pointless
+Now, before attaching the new SUSDB.mdf in SSMS, I wanted to delete the orininal copy in C > Windows > WID > Data. This is because it would be pointless
 to have two copies, and the C disk should not have this file anyway (which is why we are doing this whole process of moving the file). I told Thomas
 to take a Snapshot of the server before deleting the files.
 
@@ -383,3 +383,31 @@ obviously. I went to remove the SUSDB.mdf reference in the C file structure in S
 because I deleted it earlier. 
 
 I need to figure out how to fix this. I told Thomas to revert back to before I deleted the SUSMD.mdf file.
+
+04/21/20 (day 22) : 
+
+After reverting back to the Snapshot-ted state, I was back to having to detach the old SUSMD database. Remember to be running SSMS as admin while doing
+this. Once detached, I went to attach the new database in the E drive. When trying to attach I initially had a problem, the error message was saying
+something about read-only permissions. To fix this, I went to the WSUS folder I created in E drive (I was outside the folder). I right-clicked the
+folder and went to Properties > Security. I then give Users full permissions. I got an error message about the log.ldf file but did not look at it too
+deeply.
+
+Back at the SSMS, I tried to attach again, but it did not work. It said that the .ldf file was the source of the problem. I went back the to E drive
+to get to the .ldf file. I right-clicked on the file individually and noticed its User permissions were not fully set, I fully set them and the attach
+went smoothly.
+
+Note that when you detach, the SUSDB.mdf disappears, but when you attach, it reappears.
+
+I then told Thomas to take a Snapshot because I want to delete the old SUSDB.mdf on the C drive.
+
+Once the Snapshot was completed, I deleted the two duplicate files. I then remembered to restart Windows Update and IIS. I restarted IIS through command
+prompt. Also, in Task Manager, I noticed WsusService and WSusCertServer were Stopped, so I set them to Running.
+
+However when I went to run WSUS, it would not load the workstations or updates. I did more research online and came across this guide, and while I don't
+think it completely matches this use-case, it has additional steps which I think are worth working through:
+
+https://docs.microsoft.com/en-us/windows-server/administration/windows-server-update-services/manage/wid-to-sql-migration
+
+I stopped Update Services and IIS again (using PowerShell, since its easier) and went through the later portions of the guide. 
+
+I stopped before the "Edit the registry to point WSUS to the SQL Server Instance" of the guide.
