@@ -411,3 +411,8 @@ https://docs.microsoft.com/en-us/windows-server/administration/windows-server-up
 I stopped Update Services and IIS again (using PowerShell, since its easier) and went through the later portions of the guide. 
 
 I stopped before the "Edit the registry to point WSUS to the SQL Server Instance" of the guide.
+
+Also, I learned that SSMS has an internal activity monitor. I utilized it, and interestingly could see a jump in activity when I initiated WSUS.
+I guess this means that they are interacting with one another, but the connection is still failing.
+
+It may be best to revert to before the moving of the databases.
