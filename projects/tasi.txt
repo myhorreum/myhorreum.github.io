@@ -422,3 +422,16 @@ My work process that to get WSUS working is as follows:
 Move database to E drive -> Download the Command Line Utilities & ODBC Driver for the sqlcmd in the PS script -> Run the Adam super-script -> With the cleaned database, schedule other scripts for reporting info on WSUS
 
 However since E drive move might not work, I might just skip that step and potentially come back to it further down the line.
+
+04/22/20 (day 23) : 
+
+I found an online video that went through the similar process of detaching-attaching the database, with a few extra steps. I will follow it and 
+see if it works:
+
+https://www.youtube.com/watch?v=-UOl3PBe1K0
+
+Thomas reverted back to the snapshot that resulted in the merging of all previous snapshots. However it seems that this is before the disk extension.
+
+I followed the guide and seemed to have gotten the SQL Server 2012 installed.
+
+Tomorrow I will start the SSMS and go through with the guide. Hopefully it works!
