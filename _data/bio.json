@@ -29,6 +29,10 @@
         "network": "linkedin",
         "username": "romannicolai",
         "url": "http://linkedin.com/in/romannicolai"
+      },
+      {
+        "username": "Resume in PDF",
+        "url": "({{ site.baseurl }}/_data/Nicolai_Resume.pdf)"
       }
     ]
   },
