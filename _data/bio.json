@@ -32,7 +32,7 @@
       },
       {
         "username": "Resume in PDF",
-        "url": "{{ site.baseurl }}/_data/Nicolai_Resume.pdf"
+        "url": "Nicolai_Resume.pdf"
       }
     ]
   },
