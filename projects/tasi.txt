@@ -435,3 +435,33 @@ Thomas reverted back to the snapshot that resulted in the merging of all previou
 I followed the guide and seemed to have gotten the SQL Server 2012 installed.
 
 Tomorrow I will start the SSMS and go through with the guide. Hopefully it works!
+
+04/23/20 (day 24) : 
+
+After much frustration fiddling with the installations, I just decided to revert back to the very beginning. I extended the disk through disk manager,
+installed SSMS, then followed the video exactly from the 3:20 mark. I went to WSUS to check if it was finally working, and it was. It took a while to 
+load, which discouraged me, but finally loaded the computers on the server.
+
+04/24/20 (day 25) : 
+
+The first thing I did was delete the SUSDB and log from the C drive and then run WSUS to see if it still would connect. It did, which proved that
+the WSUS was in fact interacting with the SUSDB on the E drive.
+
+The next thing I did was download the command line utilities for SQL so that I could use the sqlcmd in the script. I went for Microsoft Command
+Line Utilities 14.0 for SQL Server, it downloaded, but when I went to install it, it failed. It failed because it says it needs Microsoft ODBC
+Driver 11 for SQL Server installed prior.
+
+I went to install the ODBC Driver 11, but it said that it could not be installed on my operating system (Windows Server 2012 R2). I noticed that
+there were other ODBC drivers. I went for ODBC Driver 13, and saw in the System Requirements -> Supported Operating System that Windows Server 2012
+R2 was listed. So I went for it, but then I got an error saying the operating system was not supported.
+
+I decided to delete the ODBC Driver 11 download file. I initially could not because it said it was open in a Windows Installer program. I went to
+Task Manager and terminated it. I then deleted the file completely. Now that the ODBC Driver 13 file was isolated, I went through the install process
+again and it worked. I now had it downloaded.
+
+I then went through the install of the Command Line Utilities and it worked.
+
+I went to run the script, but I got the same sqlcmd error. I then thought that maybe I had to restart the PowerShell ISE to get the script to recognize
+the sqlcmd utility, and it did.
+
+I then ran the script and it began working. It is now in the process of working through the script. I guess now we wait.
