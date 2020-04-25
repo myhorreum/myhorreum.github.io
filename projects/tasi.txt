@@ -465,3 +465,12 @@ I went to run the script, but I got the same sqlcmd error. I then thought that m
 the sqlcmd utility, and it did.
 
 I then ran the script and it began working. It is now in the process of working through the script. I guess now we wait.
+
+*
+*
+*
+*
+*
+*
+*
+*
