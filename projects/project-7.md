@@ -10,7 +10,7 @@ labels:
   - Research & Development
   - Linux
   - Networking
-  - Sandboxed Virtual Servers
+  - Virtualization
 summary: My experience working for and performing research for the Telecommunications and Social Research Program at the University of Hawaii.
 ---
 <img class="ui image" src="../images/TASI-PHIDC.jpg">
