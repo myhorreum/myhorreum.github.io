@@ -484,6 +484,19 @@ workstation computer connected to the WSUS server. I forwarded Thomas the larges
 
 I then went and opened WSUS, ran some reports, and noticed it was displaying the information much faster, without a timeout so far, which is good.
 
+I then decided to try and run the list-updates script I had downloaded previously since the database was now cleared up. It no longer timed out, but
+instead I was getting a 
+
+Method invocation failed because [System.Management.Automation.PSObject] doesn’t contain a method named ‘op_Addition'
+
+on the reports variable within the script. I did research and found it was an easy fix. I just needed to add 
+
+$reports = @()
+
+to the script. The script now seemed to work. It ran, there was no output to the screen, and then it ended. It also was supposed to generate a .csv 
+file, which I think it did. On the script it says that it will generate a .csv file on the Desktop called rep_wsus. This file was on the Desktop,
+however when I clicked to open it, it was blank.
+
 *
 *
 *
