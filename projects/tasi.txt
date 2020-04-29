@@ -466,6 +466,24 @@ the sqlcmd utility, and it did.
 
 I then ran the script and it began working. It is now in the process of working through the script. I guess now we wait.
 
+04/28/20 (day 26) : 
+
+As I logged in to the Remote Server, I immediately noticed PowerShell ISE was not open, as well as a new .txt file being present on the Desktop.
+PowerShell then auto opened, giving a message that the program was not shut down properly. This gave me the thought that maybe the script had been
+interrupted. However when I opened the new .txt file, and read through it, it seemed like the script completed. 
+
+The log gave information on the deleted updates as well as a bunch of other information, some of which I do not completely understand. But at the
+end of the log it said that it took 01:02:18:50 to complete (which I interpreted as 1 Day 2 Hours 18 Minutes 50 Seconds). Also the script deleted
+and compressed updates. I'm not totally sure the difference between deleting and compressing.
+
+I was still a bit skeptical that the script completed because I swore that I had checked on the script at a time after that length. I could be wrong 
+though.
+
+I went to email the log to Thomas when I noticed in my email that there were several emails from the script. I then realized that it is an email for each
+workstation computer connected to the WSUS server. I forwarded Thomas the largest log sent over email.
+
+I then went and opened WSUS, ran some reports, and noticed it was displaying the information much faster, without a timeout so far, which is good.
+
 *
 *
 *
