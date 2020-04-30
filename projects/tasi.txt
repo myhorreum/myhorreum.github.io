@@ -508,6 +508,9 @@ When referring to the status for a computer group, the Installed/Not Applicable 
 which the update is not applicable or not required."
 
 Perhaps we should look into removing these updates.
+
+The non-applicable could be related to the Auto Approval rule.
+
 *
 *
 *
