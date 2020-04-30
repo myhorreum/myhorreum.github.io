@@ -497,6 +497,17 @@ to the script. The script now seemed to work. It ran, there was no output to the
 file, which I think it did. On the script it says that it will generate a .csv file on the Desktop called rep_wsus. This file was on the Desktop,
 however when I clicked to open it, it was blank.
 
+04/28/20 (day 27) : 
+
+I moved on from the list-updates script and then just ran the report for the workstations through WSUS itself. I then exported the reports as Excel
+and .pdf files. The Excel file was too big to email, so I just emailed the .pdf files to Thomas. It is worth noting that the reports had a mass of
+Updates with "Non-Applicable" Status. I looked up on Microsoft Documentation and learned that it means:
+
+"When referring to the status of one computer, Installed/Not Applicable means the update is not applicable to or required by that computer. 
+When referring to the status for a computer group, the Installed/Not Applicable column displays the number of computers in the group for 
+which the update is not applicable or not required."
+
+Perhaps we should look into removiing these updates.
 *
 *
 *
