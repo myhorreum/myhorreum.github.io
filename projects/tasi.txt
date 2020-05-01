@@ -497,7 +497,7 @@ to the script. The script now seemed to work. It ran, there was no output to the
 file, which I think it did. On the script it says that it will generate a .csv file on the Desktop called rep_wsus. This file was on the Desktop,
 however when I clicked to open it, it was blank.
 
-04/28/20 (day 27) : 
+04/29/20 (day 27) : 
 
 I moved on from the list-updates script and then just ran the report for the workstations through WSUS itself. I then exported the reports as Excel
 and .pdf files. The Excel file was too big to email, so I just emailed the .pdf files to Thomas. It is worth noting that the reports had a mass of
@@ -510,6 +510,15 @@ which the update is not applicable or not required."
 Perhaps we should look into removing these updates.
 
 The non-applicable could be related to the Auto Approval rule.
+
+04/30/20 (day 28) : 
+
+The goal is to clear out all of the Updates with the combination of Approval:Installed and Status:NonApplicable. To do this you can use a PS script.
+I created a quick script that uses Get-WSUSUpdate and Deny-WSUSUpdate. It should work but I was running into an error. The error could be something
+very simple (like connecting to WSUS) however I am too inexperienced to solve it. I am waiting on help from reddit.
+
+Also it is possible to decline updates with specific keywords like "office" "outlook" "powerpoint" etc. It could be useful down the line, if we 
+know that certain workstations don't use those programs. We can design scripts tailored to specific workstations.
 
 *
 *
