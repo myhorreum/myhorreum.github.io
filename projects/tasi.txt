@@ -501,7 +501,10 @@ however when I clicked to open it, it was blank.
 
 I moved on from the list-updates script and then just ran the report for the workstations through WSUS itself. I then exported the reports as Excel
 and .pdf files. The Excel file was too big to email, so I just emailed the .pdf files to Thomas. It is worth noting that the reports had a mass of
-Updates with "Non-Applicable" Status. I looked up on Microsoft Documentation and learned that it means:
+Updates with "Non-Applicable" Status. These updates are approved to install but non-applicable to the workstation, therefore they are just sitting
+in a sort of limbo state and not really doing anything.
+
+I also looked it up on Microsoft Documentation:
 
 "When referring to the status of one computer, Installed/Not Applicable means the update is not applicable to or required by that computer. 
 When referring to the status for a computer group, the Installed/Not Applicable column displays the number of computers in the group for 
@@ -519,6 +522,25 @@ very simple (like connecting to WSUS) however I am too inexperienced to solve it
 
 Also it is possible to decline updates with specific keywords like "office" "outlook" "powerpoint" etc. It could be useful down the line, if we 
 know that certain workstations don't use those programs. We can design scripts tailored to specific workstations.
+
+I showed Thomas the error and got the solution immediately. The error was that I was using InstalledNotApplicable when I should have been using
+InstalledOrNotApplicable. I was not using the Or version because I was following the Microsoft Documentation and they did not have the Or.
+
+https://docs.microsoft.com/en-us/powershell/module/updateservices/get-wsusupdate?view=win10-ps
+
+They need to fix that. However, the solution was given in the console output. I should have payed closer attention:
+
+Get-WsusUpdate : Cannot bind parameter 'Status'. Cannot convert value "InstalledNotApplicable" to type 
+"Microsoft.UpdateServices.Commands.WsusUpdateInstallationState". Error: "Unable to match the identifier name 
+InstalledNotApplicable to a valid enumerator name.  Specify one of the following enumerator names and try again: NoStatus, 
+InstalledOrNotApplicable, InstalledOrNotApplicableOrNoStatus, Failed, Needed, FailedOrNeeded, Any"
+At C:\Users\roman\Desktop\Clean-Non-Applicables.ps1:1 char:44
++ Get-WSUSUpdate -Classification All -Status InstalledNotApplicable  -Approval App ...
++                                            ~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-WsusUpdate], ParameterBindingException
+    + FullyQualifiedErrorId : CannotConvertArgumentNoMessage,Microsoft.UpdateServices.Commands.GetWsusUpdateComm
+
+Now the script is running and it is taking awhile. Hopefully it is clearing out all the Non-Applicables.
 
 *
 *
