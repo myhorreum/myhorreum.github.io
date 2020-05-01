@@ -516,7 +516,7 @@ The non-applicable could be related to the Auto Approval rule.
 
 04/30/20 (day 28) : 
 
-The goal is to clear out all of the Updates with the combination of Approval:Installed and Status:NonApplicable. To do this you can use a PS script.
+The goal is to clear out all of the Updates with the combination of Approval:Install and Status:NonApplicable. To do this you can use a PS script.
 I created a quick script that uses Get-WSUSUpdate and Deny-WSUSUpdate. It should work but I was running into an error. The error could be something
 very simple (like connecting to WSUS) however I am too inexperienced to solve it. I am waiting on help from reddit.
 
@@ -552,6 +552,13 @@ It looks like my script removed the updates that I had not intended to remove (I
 basically all others except Not approved/Not Applicable.
 I need to change my script to fix this. I told Thomas to revert to the snapshot before today. Also it is worth noting that the updates went from around 
 33000 down to 1670.
+
+I was thinking... why is the option InstalledOrNotApplicable, not split into two separate options? Perhaps once the update is Approved and then Installed,
+it is just as un-useful as Approved and then deemed Not Applicable (which would explain why they are fused). So then I assume Deny-WSUSUpdate is fine to use
+on both Approved/Installed and Approved/Not-Applicable. I am not 100% sure though.
+
+So the script did actually work, it denied all updates that were approved to install and had either been installed or deemed non-applicable. Now I just
+need to confirm if it is fine to also deny updates that are already installed. My gut feeling is that it is.
 
 *
 *
