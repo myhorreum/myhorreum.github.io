@@ -546,10 +546,12 @@ The script finished after about an hour. I went into WSUS to check the Update Re
 with
 
 Approval: Not approved
-Status: Not Appplicable
+Status: Not Applicable
 
-It looks like my script removed the updates that I had not intended to remove (I wanted the combo of Approved/Not Applicable). I need to change my
-script to fix this. I told Thomas to revert to the snapshot before today. Also it is worth noting that the updates went from around 33000 down to 1670.
+It looks like my script removed the updates that I had not intended to remove (I wanted the combo of Approved/Not Applicable). It removed the Install/Installed,
+basically all others except Not approved/Not Applicable.
+I need to change my script to fix this. I told Thomas to revert to the snapshot before today. Also it is worth noting that the updates went from around 
+33000 down to 1670.
 
 *
 *
