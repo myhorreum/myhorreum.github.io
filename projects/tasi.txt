@@ -542,6 +542,15 @@ At C:\Users\roman\Desktop\Clean-Non-Applicables.ps1:1 char:44
 
 Now the script is running and it is taking awhile. Hopefully it is clearing out all the Non-Applicables.
 
+The script finished after about an hour. I went into WSUS to check the Update Reports. I was surprised to see that the only updates left were those
+with
+
+Approval: Not approved
+Status: Not Appplicable
+
+It looks like my script removed the updates that I had not intended to remove (I wanted the combo of Approved/Not Applicable). I need to change my
+script to fix this. I told Thomas to revert to the snapshot before today.
+
 *
 *
 *
