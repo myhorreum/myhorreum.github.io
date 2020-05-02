@@ -2,7 +2,7 @@
 layout: project
 type: project
 image: images/tasiedit.png
-title: Working at TASI
+title: Working at TASI-PHIDC
 permalink: projects/tasi
 # All dates must be YYYY-MM-DD format!
 date: 2020-03-10
