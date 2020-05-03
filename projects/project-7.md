@@ -27,11 +27,11 @@ I saw an opportunity for a job opening for the position of Systems Support Assis
 
 <img class="ui small left floated image" src="../images/wizard.gif">
 
-.
-.
-.
-.
-.
-.
-.
+~
+~
+~
+~
+~
+~
+~
 I also chose to keep a day-to-day [journal]({{ site.baseurl }}/projects/nothere.txt) to document my experience. 
