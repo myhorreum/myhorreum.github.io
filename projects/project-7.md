@@ -26,3 +26,5 @@ I saw an opportunity for a job opening for the position of Systems Support Assis
 * Automated reporting through PowerShell scripts in Task Manager. Tabulated the updates based on attributes using HTML within PowerShell, then set the report to be auto-emailed to my supervisor on a weekly basis.
 
 I also chose to keep a day-to-day [journal]({{ site.baseurl }}/projects/nothere.txt) to document my experience. 
+
+<img class="ui image" src="../images/wizard.gif">
