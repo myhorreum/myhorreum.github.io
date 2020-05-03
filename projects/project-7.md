@@ -25,6 +25,6 @@ I saw an opportunity for a job opening for the position of Systems Support Assis
 * Used Powershell scripts to reduce bloated WSUS update count from 127,000 to 33,000 to 1600 (<2% of initial volume) and increased speed of WSUS software signficantly. Also eliminated random timeouts completely due to the mass of unneeded updates now being removed.
 * Automated reporting through PowerShell scripts in Task Manager. Tabulated the updates based on attributes using HTML within PowerShell, then set the report to be auto-emailed to my supervisor on a weekly basis.
 
-<img class="ui medium left floated image" src="../images/wizard.gif">
+<img class="ui small left floated image" src="../images/wizard.gif">
 
 I also chose to keep a day-to-day [journal]({{ site.baseurl }}/projects/nothere.txt) to document my experience. 
