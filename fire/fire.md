@@ -1,0 +1,5 @@
+---
+layout: fire
+type: fire
+---
+
