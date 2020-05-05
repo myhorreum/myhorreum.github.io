@@ -548,8 +548,8 @@ with
 Approval: Not approved
 Status: Not Applicable
 
-It looks like my script removed the updates that I had not intended to remove (I wanted the combo of Approved/Not Applicable). It removed the Install/Installed,
-basically all others except Not approved/Not Applicable.
+It looks like my script removed the updates that I had not intended to remove (I wanted the combo of [Approved + Not Applicable]). It removed the combo of 
+[Install + Installed], basically all others except combo of [Not Approved + Not Applicable].
 I need to change my script to fix this. I told Thomas to revert to the snapshot before today. Also it is worth noting that the updates went from around 
 33000 down to 1670.
 
@@ -559,6 +559,18 @@ on both Approved/Installed and Approved/Not-Applicable. I am not 100% sure thoug
 
 So the script did actually work, it denied all updates that were approved to install and had either been installed or deemed non-applicable. Now I just
 need to confirm if it is fine to also deny updates that are already installed. My gut feeling is that it is.
+
+05/04/20 (day 29) : 
+
+The server was reverted to the time after the Adam script ran, actually to the moment I was fiddling with the 
+
+Method invocation failed because [System.Management.Automation.PSObject] doesn’t contain a method named ‘op_Addition'
+
+in the list-updates script (I remember telling Thomas to do a snapshot before I went in to fix this issue.).
+
+Anyway, I recreated the Deny-NotApplicables script. Only this time I did the combo of [-Status InstalledOrNotApplicable + -Approval Any]
+This is because I want to remove any NotApplicable update, no matter what its approval is (which is why the previous removal left the combo
+of [Not Approved + Not Applicable]). I let the script run.
 
 *
 *
