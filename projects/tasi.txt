@@ -572,6 +572,10 @@ Anyway, I recreated the Deny-NotApplicables script. Only this time I did the com
 This is because I want to remove any NotApplicable update, no matter what its approval is (which is why the previous removal left the combo
 of [Not Approved + Not Applicable]). I let the script run.
 
+When it was finished I was surprised to see 32 updates left over, all with [Not Installed + Not Applicable]. Why did the script not
+clear these Not Applicable updates out? I am a bit confused. Also I want to make sure the removed updates actually are on the workstations,
+and not removed completely. I need to make sure the correct updates are getting through.
+
 *
 *
 *
