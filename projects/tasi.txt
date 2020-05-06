@@ -576,6 +576,30 @@ When it was finished I was surprised to see 32 updates left over, all with [Not 
 clear these Not Applicable updates out? I am a bit confused. Also I want to make sure the removed updates actually are on the workstations,
 and not removed completely. I need to make sure the correct updates are getting through.
 
+05/05/20 (day 30) : 
+
+I went to All Updates in WSUS and saw that it had 0 updates of 34192 total updates shown. The display settings were showing a filter of
+Approval:Approved and Status:Any. I switched the filter to Approval:Declined and Status:Any and now 34151 of 34192 updates were displayed.
+I think these declined updates are the result of the script I had ran (the short script I quickly wrote myself). It is interesting to look
+at some of the updates and see that many of these updates are stretching as far back as 2001. Is there a way to delete these updates out of
+WSUS database? It seems they just take up space. I also remember that the database originally had around 127,000 updates before running the
+Adam script. Currently the individual workstations each have under 50 updates each (Last nights sync brought the uku.uhtasi.local workstation
+to 41 updates, however these all have the Non-Applicable status).
+
+I now understand the WSUS update process:
+1. Synchronization brings new updates from Microsoft to WSUS
+    - Our synchronization is automatic, checking at 8:54:00 PM daily
+    - Our last synchronization was on 5/4/20 with 9 new updates
+2. The user then approves the updates either manually or automatically
+    - I am using the Automatic Approval option, with a rule I set.
+    - Haven't looked at it in awhile, I noticed it was set to only approve Critical Updates and Security Updates
+    - I now changed it to approve All Classifications, because I noticed in the last synchronization there were Drivers 
+    - It probably is just good to approve all updates from now on.
+3. With the bulk of updates, we can deny the updates we don't need.
+    - Using PowerShell scripts, we can sort out the Not-Applicable updates that make it through the Auto Approval Rule filter
+    - We can also use PowerShell scripts to deny updates based on keywords like "outlook", "office", "powerpoint", etc
+    - We can tailor make denial scripts for the needs of specific workstations.
+
 *
 *
 *
