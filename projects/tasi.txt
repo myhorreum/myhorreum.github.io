@@ -584,7 +584,8 @@ I think these declined updates are the result of the script I had ran (the short
 at some of the updates and see that many of these updates are stretching as far back as 2001. Is there a way to delete these updates out of
 WSUS database? It seems they just take up space. I also remember that the database originally had around 127,000 updates before running the
 Adam script. Currently the individual workstations each have under 50 updates each (Last nights sync brought the uku.uhtasi.local workstation
-to 41 updates, however these all have the Non-Applicable status).
+to 41 updates, however these all have the Non-Applicable status). Back to the All Updates, I can see the newly synced updates by using a filter
+of Approval:Approved and Status:Any.
 
 I now understand the WSUS update process:
 1. Synchronization brings new updates from Microsoft to WSUS
