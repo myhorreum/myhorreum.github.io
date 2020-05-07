@@ -39,7 +39,12 @@
       ]
     },
     {
-      "name": "Computer Security Policy",
+      "name": "Virtualization",
+      "keywords": [
+      ]
+    },
+    {
+      "name": "Storage Virtualization",
       "keywords": [
       ]
     },
@@ -49,7 +54,7 @@
       ]
     },
     {
-      "name": "Virtualization",
+      "name": "Computer Security Policy",
       "keywords": [
       ]
     },
