@@ -34,7 +34,7 @@
   },
   "interests": [
     {
-      "name": "Privacy Engineering",
+      "name": "Network Design",
       "keywords": [
       ]
     },
@@ -50,11 +50,6 @@
     },
     {
       "name": "Virtualization",
-      "keywords": [
-      ]
-    },
-    {
-      "name": "Systematics",
       "keywords": [
       ]
     },
