@@ -37,6 +37,7 @@
       },
       {
         "network": "goodreads",
+        "icon": "large book icon ",
         "username": "romannicolai",
         "url": "http://goodreads.com/romannicolai"
       }
