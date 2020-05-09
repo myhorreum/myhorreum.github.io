@@ -601,6 +601,27 @@ I now understand the WSUS update process:
     - We can also use PowerShell scripts to deny updates based on keywords like "outlook", "office", "powerpoint", etc
     - We can tailor make denial scripts for the needs of specific workstations.
 
+05/07/20 (day 31) : 
+
+Today I went into the office to check if the updates were actually getting installed on the workstations. The only one that had
+the status of Installed, the Skype update, had in fact been installed. 
+
+I looked into the Auto Approval Rule and remembered you can also confirm updates based on product. I noticed every single option
+for product was checked off, meaning we were confirming updates for products that we probably are not even using. Perhaps if I cut 
+down on these products and restrict it only to the ones we use/need it could potentially clear out all the Not Applicables.
+
+05/08/20 (day 32) : 
+
+I looked into the product aspect of the approval rule again, but I am do not know what we need and do not need. I notice some products
+are for older operatings systems, or operating systems we aren't using, however some are products that I am not sure if we use or not.
+For now I won't touch these products. I will once I learn what exactly we need and don't need.
+
+Also around 300 updates got approved since yesterday, but only one got installed on certain workstations. The rest were Not Applicables.
+
+Also in the future I can email status reports through WSUS, it could be something worthwhile.
+
+What I want to cement is the synchronization, approval, script-cleaning, reporting process. Get that process in a steady weekly rhythm.
+
 *
 *
 *
