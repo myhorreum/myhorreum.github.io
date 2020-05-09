@@ -612,7 +612,7 @@ down on these products and restrict it only to the ones we use/need it could pot
 
 05/08/20 (day 32) : 
 
-I looked into the product aspect of the approval rule again, but I am do not know what we need and do not need. I notice some products
+I looked into the product aspect of the approval rule again, but I do not know what we need and do not need. I notice some products
 are for older operatings systems, or operating systems we aren't using, however some are products that I am not sure if we use or not.
 For now I won't touch these products. I will once I learn what exactly we need and don't need.
 
