@@ -42,7 +42,7 @@ Github is the best version control system today for code, and for good reason.
 
 
 <div class="ui medium rounded images">
-<img class="ui image" src="{{ site.baseurl }}/images/sissys.jpeg">
+<img class="ui image" src="{{ site.baseurl }}/images/ides.png">
 </div>
 
 
