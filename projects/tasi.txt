@@ -642,8 +642,23 @@ Lets formalize the WSUS scheduling:
 5. The Adam script can be run if needed (if the database grows too bloated and decreases performance). Once we start noticing
    timeouts, this script should be run.
 
-The one issue with this is that I E-Mail Notification configuration is that you can only set it to "Weekly". It does not let
+The one issue with this is that the E-Mail Notification configuration is that you can only set it to "Weekly". It does not let
 you set the day (I want it Sunday). It does let you set a time field which I set to 11:00PM as I wanted in the formalization.
+
+Thomas told me how to create my technical documentation:
+
+Please see the attached documents for some examples of technical documentation. The main thing is getting all the documentation down in writing, we could always modify the format/style of the document later.
+
+Do not distribute any of the documents I am sending you.
+
+This is not specific to WSUS, but these are some technical documentation types that I think are useful:
+1. User guides - For tasks that are nonobvious (or one-off types of activities).
+2. An overview document - Describes the general methodology of your implementation.
+3. Diagrams - If your implementation involves multiple moving parts (multiple VMs sending data to and from each other, etc). Some examples are data flow diagrams and infrastructure diagrams. Visio is what I use to make diagrams, let me know if you need a license.
+4. Reference Documents - Things like cheat sheets for different programming languages (PowerShell, Bash, etc).
+5. Presentations - To present the work you have done or to train other staff.
+
+For WSUS I think the main types of technical documentation I'd like are an overview document, a presentation explaining your implementation and potentially a user guide.
 
 *
 *
