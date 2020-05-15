@@ -635,7 +635,7 @@ Lets formalize the WSUS scheduling:
     - The deadline will cause a forced restart at the time of the deadline if the update has not yet been installed
 3. Set the reports to be emailed at Sunday 11:00PM.
     - I configured the emailing of WSUS update reports (per workstation) through Options -> E-Mail Notifications to send
-      the reports to thomasp@uhtasi.org and roman@uhtasi.org.
+      the reports to info@uhtasi.org
     - I will also send the tabluated report created with the PowerShell script.
 4. The Clean-Not-Applicables script will be run on Monday at 12:00AM to remove all updates that have already been Installed
    or deemed Not-Applicable, to save space in the reporting.
