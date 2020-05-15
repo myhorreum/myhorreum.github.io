@@ -622,6 +622,29 @@ Also in the future I can email status reports through WSUS, it could be somethin
 
 What I want to cement is the synchronization, approval, script-cleaning, reporting process. Get that process in a steady weekly rhythm.
 
+05/11/20 (day 34) : 
+
+General research on WSUS.
+
+05/14/20 (day 35) : 
+
+Lets formalize the WSUS scheduling:
+
+1. Synchronize at 9:00:00 PM daily
+2. Auto Approval is running constantly but is setting a deadline for [the next day after the approval at 3:00 AM]
+    - The deadline will cause a forced restart at the time of the deadline if the update has not yet been installed
+3. Set the reports to be emailed at Sunday 11:00PM.
+    - I configured the emailing of WSUS update reports (per workstation) through Options -> E-Mail Notifications to send
+      the reports to thomasp@uhtasi.org and roman@uhtasi.org.
+    - I will also send the tabluated report created with the PowerShell script.
+4. The Clean-Not-Applicables script will be run on Monday at 12:00AM to remove all updates that have already been Installed
+   or deemed Not-Applicable, to save space in the reporting.
+5. The Adam script can be run if needed (if the database grows too bloated and decreases performance). Once we start noticing
+   timeouts, this script should be run.
+
+The one issue with this is that I E-Mail Notification configuration is that you can only set it to "Weekly". It does not let
+you set the day (I want it Sunday). It does let you set a time field which I set to 11:00PM as I wanted in the formalization.
+
 *
 *
 *
