@@ -663,6 +663,8 @@ For WSUS I think the main types of technical documentation I'd like are an overv
 05/14/20 (day 35) : 
 
 Worked on the WSUS technical documentation.
+Learned about Visio.
+Will try and get TASI licensing next week.
 
 *
 *
