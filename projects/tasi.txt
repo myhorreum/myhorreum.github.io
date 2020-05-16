@@ -660,6 +660,10 @@ This is not specific to WSUS, but these are some technical documentation types t
 
 For WSUS I think the main types of technical documentation I'd like are an overview document, a presentation explaining your implementation and potentially a user guide.
 
+05/14/20 (day 35) : 
+
+Worked on the WSUS technical documentation.
+
 *
 *
 *
