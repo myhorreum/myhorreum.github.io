@@ -666,6 +666,14 @@ Worked on the WSUS technical documentation.
 Learned about Visio.
 Will try and get TASI licensing next week.
 
+05/18/20 (day 37) : 
+
+Finished the WSUS technical documentation.
+
+05/19/20 (day 38) : 
+
+Decided to add Visio graphics to the WSUS technical documentation.
+
 *
 *
 *
