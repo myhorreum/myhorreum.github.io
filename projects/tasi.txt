@@ -674,6 +674,10 @@ Finished the WSUS technical documentation.
 
 Decided to add Visio graphics to the WSUS technical documentation.
 
+05/21/20 (day 39) : 
+
+Created the PowePoint presentation version of the WSUS technical documentation.
+
 *
 *
 *
