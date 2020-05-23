@@ -622,11 +622,11 @@ Also in the future I can email status reports through WSUS, it could be somethin
 
 What I want to cement is the synchronization, approval, script-cleaning, reporting process. Get that process in a steady weekly rhythm.
 
-05/11/20 (day 34) : 
+05/11/20 (day 33) : 
 
 General research on WSUS.
 
-05/14/20 (day 35) : 
+05/14/20 (day 34) : 
 
 Lets formalize the WSUS scheduling:
 
@@ -660,23 +660,28 @@ This is not specific to WSUS, but these are some technical documentation types t
 
 For WSUS I think the main types of technical documentation I'd like are an overview document, a presentation explaining your implementation and potentially a user guide.
 
-05/15/20 (day 36) : 
+05/15/20 (day 35) : 
 
 Worked on the WSUS technical documentation.
 Learned about Visio.
 Will try and get TASI licensing next week.
 
-05/18/20 (day 37) : 
+05/18/20 (day 36) : 
 
 Finished the WSUS technical documentation.
 
-05/19/20 (day 38) : 
+05/19/20 (day 37) : 
 
 Decided to add Visio graphics to the WSUS technical documentation.
 
+05/21/20 (day 38) : 
+
+Created the PowerPoint presentation version of the WSUS technical documentation.
+
 05/21/20 (day 39) : 
 
-Created the PowePoint presentation version of the WSUS technical documentation.
+Research on ELK Stack.
+
 
 *
 *
