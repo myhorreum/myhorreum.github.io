@@ -30,6 +30,11 @@
         "icon": "large book icon ",
         "username": "rn-books",
         "url": "https://www.goodreads.com/rn-books"
+      },
+      {
+        "network": "youtube",
+        "username": "rn-videos",
+        "url": "http://youtube.com/channel/UCAlAM18EGW1RyQwafB0FsHA?view_as=subscriber"
       }
     ]
   },
