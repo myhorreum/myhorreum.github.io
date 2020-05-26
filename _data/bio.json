@@ -17,8 +17,8 @@
     "profiles": [
       {
         "network": "github",
-        "username": "myhorreum",
-        "url": "http://github.com/myhorreum"
+        "username": "rn-horreum",
+        "url": "http://github.com/rn-horreum"
       },
       {
         "network": "instagram",
@@ -28,8 +28,8 @@
       {
         "network": "goodreads",
         "icon": "large book icon ",
-        "username": "booksiveread",
-        "url": "https://www.goodreads.com/booksiveread"
+        "username": "rn-books",
+        "url": "https://www.goodreads.com/rn-books"
       }
     ]
   },
