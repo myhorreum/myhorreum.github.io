@@ -1,11 +1,11 @@
 {
   "basics": {
-    "name": "RN Test",
+    "name": "RN",
     "label": "Student + Systems Support Assistant",
-    "picture": "https://romannicolai.github.io/images/pic1mini.png",
-    "email": "rn@pedagouge.org",
+    "picture": "https://myhorreum.github.io/images/pic1mini.png",
+    "email": "rn@rn.guru",
     "phone": "808-321-7704",
-    "website": "https://pedagouge.org",
+    "website": "https://rn.org",
     "summary": "I am studying for a B.S. in Computer Science and a Certificate in Geospatial Information Science at the University of Hawaii. I also work for the Telecommunications and Social Informatics research program at the university.",
     "location": {
       "address": "",
@@ -24,11 +24,6 @@
         "network": "instagram",
         "username": "romancoin",
         "url": "http://instagram.com/romancoin"
-      },
-      {
-        "network": "linkedin",
-        "username": "romannicolai",
-        "url": "http://linkedin.com/in/romannicolai"
       },
       {
         "network": "goodreads",
