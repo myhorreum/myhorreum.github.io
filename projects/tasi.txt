@@ -682,15 +682,15 @@ Created the PowerPoint presentation version of the WSUS technical documentation.
 
 Research on ELK Stack.
 
-05/22/20 (day 39) : 
+05/22/20 (day 40) : 
 
 Research on ELK Stack.
 
-05/26/20 (day 39) : 
+05/26/20 (day 41) : 
 
 Research on ELK Stack.
 
-05/27/20 (day 39) : 
+05/27/20 (day 42) : 
 
 Research on ELK Stack.
 
@@ -713,7 +713,7 @@ seeking resources from servers that provide those resources.
 
 The only ports exposed are the Logstash and the Nginx. The other internal ports are localhost.
 
-05/28/20 (day 39) : 
+05/28/20 (day 43) : 
 
 Begin installation of ELK Stack. 
 
@@ -729,6 +729,8 @@ pass : C3nt0st3mpl4t3!
 I wanted Thomas to take a snapshot before I fiddled with the networking in nmtui.
 
 I was told to use this IP: 10.100.10.36
+
+
 *
 *
 *
