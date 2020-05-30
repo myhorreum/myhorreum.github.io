@@ -720,7 +720,7 @@ Begin installation of ELK Stack.
 Thomas created a virtual server in https://vcsa.uhtasi.local/. When I initially tried to
 get into the VCSA, it would not load after logging in (note this in FireFox). I switched to a Chrome browswer and managed to
 get through without issues. When trying to load the console, it would not connect however (Connection Error). I then went to
-the Summary tab and then the gear icon. I then went for the Web Console, opened in the browser and was working fine.
+the Summary tab and then the gear icon. I then went for the Web Console. It opened in a tab in the browser and was working fine.
 
 I logged in using:
 user : root
