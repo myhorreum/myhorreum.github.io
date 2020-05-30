@@ -698,7 +698,16 @@ Summary of research:
 ELK Stack represents multiple components (Elastisearch, Logstash, Kibana, Beats) that work together to aggregate pipelined data
 and then visualize the data. Logstash is a server‑side data processing pipeline that ingests data from multiple sources 
 simultaneously, transforms it, and then sends it to a "stash" like Elasticsearch. Kibana lets users visualize data with charts
-and graphs in Elasticsearch.
+and graphs in Elasticsearch. These components can all be installed on one main server.
+
+The servers that want to participate with ELK stack should install Filebeat. Filebeat is a lightweight shipper for forwarding 
+and centralizing log data. Installed as an agent on your servers, Filebeat monitors the log files or locations that you specify,
+collects log events, and forwards them either to Elasticsearch or Logstash for indexing.
+
+Nginx (pronounced "engine-X") can also be installed onto the ELK stack server. Nginx is a reverse proxy. When the user connects to
+the Nginx, it proxys the request to Kibana. Kibana pulls the data from Elasticsearch and the user gets the dashboard.
+
+The only ports exposed are the Logstash and the Nginx. The other internal ports are localhost.
 
 05/28/20 (day 39) : 
 
