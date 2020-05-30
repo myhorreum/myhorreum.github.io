@@ -682,6 +682,37 @@ Created the PowerPoint presentation version of the WSUS technical documentation.
 
 Research on ELK Stack.
 
+05/22/20 (day 39) : 
+
+Research on ELK Stack.
+
+05/26/20 (day 39) : 
+
+Research on ELK Stack.
+
+05/27/20 (day 39) : 
+
+Research on ELK Stack.
+
+Summary of research:
+ELK Stack represents multiple components (Elastisearch, Logstash, Kibana, Beats) that work together to aggregate pipelined data
+and then visualize the data. Logstash is a server‑side data processing pipeline that ingests data from multiple sources 
+simultaneously, transforms it, and then sends it to a "stash" like Elasticsearch. Kibana lets users visualize data with charts
+and graphs in Elasticsearch.
+
+05/28/20 (day 39) : 
+
+Begin installation of ELK Stack. 
+
+Thomas created a virtual server in https://vcsa.uhtasi.local/. When I initially tried to
+get into the VCSA, it would not load after logging in (note this in FireFox). I switched to a Chrome browswer and managed to
+get through without issues. When trying to load the console, it would not connect however (Connection Error). I then went to
+the Summary tab and then the gear icon. I then went for the Web Console, opened in the browser and was working fine.
+
+I logged in using:
+user : root
+pass : C3nt0st3mpl4t3!
+
 
 *
 *
