@@ -726,7 +726,9 @@ I logged in using:
 user : root
 pass : C3nt0st3mpl4t3!
 
+I wanted Thomas to take a snapshot before I fiddled with the networking in nmtui.
 
+I was told to use this IP: 10.100.10.36
 *
 *
 *
