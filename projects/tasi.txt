@@ -707,6 +707,10 @@ collects log events, and forwards them either to Elasticsearch or Logstash for i
 Nginx (pronounced "engine-X") can also be installed onto the ELK stack server. Nginx is a reverse proxy. When the user connects to
 the Nginx, it proxys the request to Kibana. Kibana pulls the data from Elasticsearch and the user gets the dashboard.
 
+What is a proxy?
+In computer networking, a proxy server is a server application or appliance that acts as an intermediary for requests from clients
+seeking resources from servers that provide those resources.
+
 The only ports exposed are the Logstash and the Nginx. The other internal ports are localhost.
 
 05/28/20 (day 39) : 
