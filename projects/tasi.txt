@@ -730,6 +730,30 @@ I wanted Thomas to take a snapshot before I fiddled with the networking in nmtui
 
 I was told to use this IP: 10.100.10.36
 
+06/01/20 (day 44) : 
+
+I got the networking working with nmtui. I began the installation process of the ELK stack using this guide:
+
+https://blog.51sec.org/2019/10/easy-deploy-elk-into-centos-7.html
+
+I got up to the step where I had to vi the /etc/yum.repos.d/elasticsearch.repo
+
+Since I was in the Web Console, it seemed that I could not bring my mouse in to right-click the contents, instead I had to 
+type it manually. I did so, but when I ran 
+
+sudo yum install elasticsearch
+
+I was getting an error. I vi'd back into the /etc/yum.repos.d/elasticsearch.repo and noticed the contents were reduced to 
+
+put the contents here once u see them
+
+Instead of trying to type the contents manually, I wished I could have just pasted them in. This is when I went to use PuTTy.
+However I could not log in. I was getting Network Error: Connection refused. Thomas asked me if I could ping it. I pinged the
+ELK server's IP from the ELK Web Console, and got a response. Obviously this would work. I then pinged the ELK server from the
+Command Prompt outside the server, on the actual workstation, and then the ping did not work. This was because the ELK server's 
+IP was not on the VPN access list. 
+
+Next time I work I will disconnect and reconnect to the VPN and it should update.
 
 *
 *
