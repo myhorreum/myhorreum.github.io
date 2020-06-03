@@ -755,6 +755,37 @@ IP was not on the VPN access list.
 
 Next time I work I will disconnect and reconnect to the VPN and it should update.
 
+06/02/20 (day 45) :
+
+I began working through PuTTy and had a much easier time with the installation. I installed the netstat command. I also installed
+Kibana and configured it so that I created an administrative Kibana user named kibanaadmin. The password for kibanaadmin is 
+adminofkibana. I also created
+
+sudo vi /etc/nginx/conf.d/elk.conf
+
+This code configures Nginx to direct your server’s HTTP traffic to the Kibana application, which is listening on localhost:5601. 
+Additionally, it configures Nginx to read the htpasswd.users file and require basic authentication. It is a Nginx server block file.
+
+and added 
+
+server_name 10.100.10.36;
+
+which is the public ip for our ELK VM.
+
+The Kibana visualization was live and could be viewed at 10.100.10.36/status
+
+I then went through with the rest of the guide and installed logstash and filebeat.
+
+This was the guide I used:
+
+https://blog.51sec.org/2019/10/easy-deploy-elk-into-centos-7.html
+
+This is the accompanying video:
+
+https://www.youtube.com/watch?v=JeiPj8eSTSY&t=213s
+
+Next time I work I want to see how to get clients integrated with the ELK server.
+
 *
 *
 *
