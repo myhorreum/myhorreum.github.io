@@ -799,7 +799,7 @@ patterns. If you have a custom format you can still ship them as log lines, but 
 specific parser configuration. Both tools are pretty flexible in what they can do, so as long as your format is consistent I don't see any 
 issues.
 
-So we went with the old settings TASI had for their Graylog server? Enahnced syslog format and Messages Generated Internally by syslogd as the facility.
+So we went with the old settings TASI had for their Graylog server: Enahnced syslog format and Messages Generated Internally by syslogd as the facility.
 
 I told Thomas to set the port to 5044. We will see if this gets us logs from the clients into our ELK server.
 
