@@ -786,6 +786,23 @@ https://www.youtube.com/watch?v=JeiPj8eSTSY&t=213s
 
 Next time I work I want to see how to get clients integrated with the ELK server.
 
+06/03/20 (day 46) :
+
+We decided not to go with Filebeat on clients. Instead we will try and go with syslog. Initially we wanted to know whether the
+format and facilities of syslog would need to be specific for smooth interaction with with the ELK stack.
+
+From Reddit, a user gave me this response:
+
+The facility doesn't matter (it gets recorded as a metadata field), the format is configurable. See here for fluentd, here for logstash, 
+but the TL;DR is that it's treated as a log line. If you have RFC3164 logs then that'll work pretty much out of the box with the built in 
+patterns. If you have a custom format you can still ship them as log lines, but if you want to parse the fields then you'll need to add a 
+specific parser configuration. Both tools are pretty flexible in what they can do, so as long as your format is consistent I don't see any 
+issues.
+
+So we went with the old settings TASI had for their Graylog server? Enahnced syslog format and Messages Generated Internally by syslogd as the facility.
+
+I told Thomas to set the port to 5044. We will see if this gets us logs from the clients into our ELK server.
+
 *
 *
 *
