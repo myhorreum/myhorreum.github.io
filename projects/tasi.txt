@@ -821,7 +821,8 @@ geared towards working with filebeat, not syslog. Thomas did some quick research
 indeed needed, as I had said earlier. 
 
 When I went to install the syslog plug-in, I noticed the command did not match my file directory structure. I did not have the same file
-organization that the elastic.co had. The command was:
+organization that the elastic.co had. This differing file structure presents difficulties here and potentially down the line.
+The command was:
 
 bin/logstash-plugin install logstash-output-syslog
 
