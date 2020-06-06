@@ -803,6 +803,32 @@ So we went with the old settings TASI had for their Graylog server: Enahnced sys
 
 I told Thomas to set the port to 5044. We will see if this gets us logs from the clients into our ELK server.
 
+06/04/20 (day 47) :
+
+I could see Kibana receiving logs, about one every five seconds. However it turned out that these logs were filebeat logs from the
+ELK server itself. I could also receive logs for certain events happening on the ELK server (like getting disconnected from PuTTY).
+The problem was that it seemed I was not receiving logs from outside sources. Thomas tried sending packets from the firewall to my 
+ELK server but no information was coming into Kibana. I then noticed that the port I gave him was incorrect, however it did not fix
+the problem. I then noticed that my .yaml configuration files actually appeared to be commented out, which was weird.
+
+Thomas said that it looked like I installed the ELK stack but did not configure it properly. 
+
+06/05/20 (day 48) :
+
+I wanted to do a completely new install from elastic.co because that is the official site. Thomas was skeptical however. I also told 
+him how I had followed the guide I used exactly, but still could not receive outside data. I told Thomas that the install seemed to be
+geared towards working with filebeat, not syslog. Thomas did some quick research on his own and realized that the syslog plug-in was
+indeed needed, as I had said earlier. 
+
+When I went to install the syslog plug-in, I noticed the command did not match my file directory structure. I did not have the same file
+organization that the elastic.co had. The command was:
+
+bin/logstash-plugin install logstash-output-syslog
+
+However I did not have bin/logstash-plugin on my server. I looked around in my /etc/logstash folder, but could not find anything that seemed
+similar to the bin/logstash-plugin. I decided to revert to before the installation and go with the elastic.co installation next time I work.
+
+
 *
 *
 *
