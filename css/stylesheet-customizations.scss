@@ -25,6 +25,10 @@ body {
   color: white !important;
 }
 
+.ui.menu a.active.item {
+  color:#d9dbff
+}
+
 // Customize the menubar color
 .ui.inverted.stackable.menu {
   border: 0 solid transparent;
