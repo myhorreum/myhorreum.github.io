@@ -829,6 +829,9 @@ bin/logstash-plugin install logstash-output-syslog
 However I did not have bin/logstash-plugin on my server. I looked around in my /etc/logstash folder, but could not find anything that seemed
 similar to the bin/logstash-plugin. I decided to revert to before the installation and go with the elastic.co installation next time I work.
 
+Also I noticed that the weekly WSUS reports were being emailed on every Thursday. I am reasoning that I had set the weekly release on a Thursday,
+and that is why they are being emailed on that day. I will need to return on a Sunday night to see if it resets this.
+
 
 *
 *
