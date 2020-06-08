@@ -832,6 +832,10 @@ similar to the bin/logstash-plugin. I decided to revert to before the installati
 Also I noticed that the weekly WSUS reports were being emailed on every Thursday. I am reasoning that I had set the weekly release on a Thursday,
 and that is why they are being emailed on that day. I will need to return on a Sunday night to see if it resets this.
 
+06/08/20 (day 49) :
+
+https://www.elastic.co/guide/en/logstash/7.7/config-examples.html
+
 
 *
 *
