@@ -834,8 +834,34 @@ and that is why they are being emailed on that day. I will need to return on a S
 
 06/08/20 (day 49) :
 
-https://www.elastic.co/guide/en/logstash/7.7/config-examples.html
+The server was reverted back to its origin state. However when I went into PuTTY the screen was just blank. I then went into the Web Console in
+vCenter and noticed that it was frozen on an nmtui page. I told this to Thomas and then he did a "hard reset" of the server. This worked and now
+I could use the console and PuTTY fine. I then began the elastic.co installation.
 
+The elastic.co installation separates the ELK components into separate installations, with the order of the components' installation mattering.
+I began with the Elasticsearch. 
+
+Once in, instructions depending on operating system are given as options. I went with the Linux option since was what I was working with. 
+
+I was prompted to use the wget command, but I was getting command not found in the terminal. I then tried yum install wget, but I was getting 
+Not Found Trying Another Mirror over and over again in the terminal. After some research, it was recommended to use yum clean all. I then used 
+yum install wget again and it worked.
+
+I then was prompted to use the shasum command. I did not have this either, but found a way to obtain it online.
+
+I then went to install Kibana and noticed, a bit down the page, that there was the option to use CentOS specific installation instructions.
+This could explain why the first download gave me so many problems along the way. I then thought that the doing the Linux install could give
+me problems down the line if I do the CentOS install for the other components. I decided to revert completely.
+
+I went through the Elasticsearch install quickly now and then followed up with the Kibana and Logstash. I wanted to test out Kibana before 
+incorporating the syslog plugin.
+
+However I was having issues. Despite turning on the Kibana service, and also checking the port to be localhost:5601 in the .yaml, I was not
+able to see the Kibana in the browser. I looked in the .yaml and notice all information seemed to be commented out. However, nowhere in the
+instructions says that this is commented out, or mentions anything to do with it. I then disabled the firewall using the process from the old
+guide, but I still could not see the Kibana in the browser.
+
+I'm not sure why.
 
 *
 *
