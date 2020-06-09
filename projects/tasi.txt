@@ -856,7 +856,7 @@ me problems down the line if I do the CentOS install for the other components. I
 I went through the Elasticsearch install quickly now and then followed up with the Kibana and Logstash. I wanted to test out Kibana before 
 incorporating the syslog plugin.
 
-However I was having issues. Despite turning on the Kibana service, and also checking the port to be localhost:5601 in the .yaml, I was not
+However I was having issues. Despite turning on the Kibana service, and also confirming the port to be localhost:5601 in the .yaml, I was not
 able to see the Kibana in the browser. I looked in the .yaml and notice all information seemed to be commented out. However, nowhere in the
 instructions says that this is commented out, or mentions anything to do with it. I then disabled the firewall using the process from the old
 guide, but I still could not see the Kibana in the browser.
