@@ -863,6 +863,25 @@ guide, but I still could not see the Kibana in the browser.
 
 I'm not sure why.
 
+06/09/20 (day 50) :
+
+I began troubleshooting, using commands such as telnet and netstat + grep. Note that telnet actually would not work in this case because 
+attempting to telnet to 8.8.8.8 on port 5601 is like me owning 8.8.8.8 and opening 5601 on that address, in other words, it would never work
+because I don't control Google.
+
+I then checked SELinux and iptables. Security-Enhanced Linux (SELinux) is a Linux kernel security module that provides a mechanism for supporting
+access control security policies, including mandatory access controls (MAC). I checked the SELinux status and it showed that it was enabled and
+enforcing. I then freed the security by completely disabling SELinux (this required a reboot which happens through the reboot command). I then began
+working with iptables. iptables is a user-space utility program that allows a system administrator to configure the IP packet filter rules of the 
+Linux kernel firewall, implemented as different Netfilter modules. I added the 5601 port to iptables.
+
+However even after all of this Kibana was still not being displayed in the browser.
+
+I then uncommented everything in the kibana.yaml, but it did not change anything as I expected. I then went to elasticsearch to see if it was running,
+it was not now and using the start command for elasticsearch was failing.
+
+Now everything was backwards, except I want to try something that may work tomorrow. I will reset the server and try again.
+
 *
 *
 *
