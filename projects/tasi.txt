@@ -880,7 +880,8 @@ However even after all of this Kibana was still not being displayed in the brows
 I then uncommented everything in the kibana.yaml, but it did not change anything as I expected. I then went to elasticsearch to see if it was running,
 it was not now and using the start command for elasticsearch was failing.
 
-Now everything was backwards, except I want to try something that may work tomorrow. I will reset the server and try again.
+Now everything was backwards, except I want to try something that may work tomorrow. I will reset the server and try again. I think it is something very
+small, simple, as it usually is in computer science.
 
 *
 *
