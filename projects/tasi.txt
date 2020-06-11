@@ -883,6 +883,11 @@ it was not now and using the start command for elasticsearch was failing.
 Now everything was backwards, except I want to try something that may work tomorrow. I will reset the server and try again. I think it is something very
 small, simple, as it usually is in computer science.
 
+06/10/20 (day 51) :
+
+I tried 127.0.0.1:5601 instead of localhost:5601 because 127.0.0.1 is what was in the /etc/hosts file. However it did not work. I then thought perhaps 
+adding localhost to the hosts file could work because some websites do care about the url used to get there. However I was not sure how to do this.
+
 *
 *
 *
