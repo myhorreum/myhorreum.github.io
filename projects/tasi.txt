@@ -888,6 +888,34 @@ small, simple, as it usually is in computer science.
 I tried 127.0.0.1:5601 instead of localhost:5601 because 127.0.0.1 is what was in the /etc/hosts file. However it did not work. I then thought perhaps 
 adding localhost to the hosts file could work because some websites do care about the url used to get there. However I was not sure how to do this.
 
+06/12/20 (day 52) :
+
+I tried a new guide:
+
+https://computingforgeeks.com/how-to-install-elk-stack-on-centos-fedora/
+
+However I got stuck at the same step as last time: Kibana not being displayed in the browser. 
+
+I learned that Kibana would start and go active, but then fail after some time. You can observe this behaviour using this command:
+
+journalctl -fu kibana.service
+
+One of the outputs that stood out to me was:
+
+FATAL  Error: [config validation of [elasticsearch].url]: definition for this key is missing
+
+Also you can put this line into the config file, however it did not do anything in this case:
+
+logging.dest: stdout
+
+Thomas then told me that after some research it seemed that there are some problems that arise when doing a Kibana install on root.
+Because of this, I created a new, non-sudo CentOS user. Here are the credentials:
+
+user : puppet
+pass : citrus878
+
+I will do the install again next time.
+
 *
 *
 *
