@@ -15,7 +15,7 @@ labels:
 
 The Internet has become ingrained into all of our daily lives. Virtually everyone has some sort of online presence. It is important to keep
 a positive image of oneself online for obvious reasons. A part of this is knowing how to interact with the Internet appropriately and knowing
-how to communicate over the Internet in a smart and proper way. Most people use the Internet for information, they use this technology to answer
+how to communicate over the Internet in a smart and proper way. I have seen numerous examples of postings by people I know that could be seen negatively and even potentially be used against them. Most people use the Internet for information, they use this technology to answer
 questions. The Internet has so much knowledge that it comes down to the user knowing how to access that information in an effective and smart way.
 
 <div class="ui medium rounded images">
