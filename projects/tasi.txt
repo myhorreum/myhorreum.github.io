@@ -909,7 +909,8 @@ Also you can put this line into the config file, however it did not do anything 
 logging.dest: stdout
 
 Thomas then told me that after some research it seemed that there are some problems that arise when doing a Kibana install on root.
-Because of this, I created a new, non-sudo CentOS user. Here are the credentials:
+The reasoning behind this is that many organizations actually create a specific service user to do particular service installs, like
+Kibana. Because of this, I created a new, non-sudo CentOS user. Here are the credentials:
 
 user : puppet
 pass : citrus878
