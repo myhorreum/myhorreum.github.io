@@ -917,6 +917,35 @@ pass : citrus878
 
 I will do the install again next time.
 
+06/15/20 (day 53) :
+
+I uninstalled Elasticsearch and Kibana using sudo yum remove elasticsearch and sudo yum remove kibana
+
+I then began the install under the puppet account. I was getting "you need to be root to perform this command" when trying to do the yum install.
+I easily gave sudo priviledges by switching back to root and adding puppet to the wheel group. I then went through the install on the puppet account.
+When I checked the status of Elasticsearch it was active and running fine. When I checked the status of Kibana I was getting
+kibana is not-found (no file or directory). I switched back to root and uninstalled and did the install again but was getting the same output. And
+when I went for a systemctl start kibana I would get
+
+Failed to start kibana.service: Unit kibana.service failed to load: No such file or directory.
+
+Also I when I would do the systemctl -enable kibana.service I would get Access denied (on both root and non-root accounts).
+
+Thomas sent me this link which stated that the kibana user must have write permissions to the log file:
+
+https://github.com/elastic/kibana/issues/7041
+
+Therefore I used chmod 777 on the /var/log folder. Note that there was no /var/log/kibana folder like the link had. However after the install
+I was getting the same error again.
+
+Thomas then recommended :
+
+journalctl -u kibana.service
+
+It outputed a lot of information, starting from later rather than recent. I found a way online to run the command so that it flipped the output,
+so it was most recent first. However, I had trouble interpreting the information. I will look into it more tomorrow.
+
+
 *
 *
 *
