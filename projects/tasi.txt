@@ -948,6 +948,28 @@ journalctl -u kibana.service
 It outputed a lot of information, starting from later rather than recent. I found a way online to run the command so that it flipped the output,
 so it was most recent first. However, I had trouble interpreting the information. I will look into it more tomorrow.
 
+06/16/20 (day 54) :
+
+We reverted back to the origin snapshot. I configured the networking and then did the installs of Elasticsearch and Kibana on the root account.
+I then remade the puppet account and started the Kibana service there. However I got the error where Kibana would not be displayed, despite starting
+up fine. I then used the journalctl command to look at the logs. I saw that the Kibana was failing after starting. I looked closer and noticed this 
+error:
+
+FATAL Error: [config validation of [elasticsearch].url]: definition for this key is missing
+
+Online I found a thread where this issue was discussed:
+
+https://github.com/elastic/kibana/issues/40335
+
+It looks like the fix might be adding
+
+elasticsearch.hosts: ["http://localhost:9200"]
+
+to the file 
+
+/etc/kibana/kibana.yml
+
+It is usually always the smallest fixes. Hopefully it works.
 
 *
 *
