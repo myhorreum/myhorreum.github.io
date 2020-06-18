@@ -971,6 +971,22 @@ to the file
 
 It is usually always the smallest fixes. Hopefully it works.
 
+06/17/20 (day 55) :
+
+Changing to elasticsearch.hosts worked and now I could finally connect in the browser. However I was getting:
+
+Kibana server is not ready yet
+
+text over a blank screen. I did a
+
+sudo systemctl -l status kibana.service
+
+to see what was going on with Kibana specifically. I got a repeated output of code that contained a message: 
+"License information could not be obtained from Elasticsearch due to Service Unavailable" along with the error: 
+"Kibana server is not ready yet"
+
+The reason behind this is likely that Kibana is not able to talk with Elasticsearch properly. I need to fix this.
+
 *
 *
 *
