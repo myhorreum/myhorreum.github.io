@@ -987,6 +987,12 @@ to see what was going on with Kibana specifically. I got a repeated output of co
 
 The reason behind this is likely that Kibana is not able to talk with Elasticsearch properly. I need to fix this.
 
+06/18/20 (day 56) :
+
+Was trying to look through logs but could not find anything that stuck out to me. Also note /var/log/elasticsearch was present
+but /var/log/kibana was not. Also I noticed that the elasticsearch.ymal was completely commented-out. I uncommented the fields
+but I still had the same issue.
+
 *
 *
 *
