@@ -963,7 +963,7 @@ https://github.com/elastic/kibana/issues/40335
 
 It looks like the fix might be adding
 
-elasticsearch.hosts: ["http://localhost:9200"]
+elasticsearch.hosts: ["http://localhost:5601/"]
 
 to the file 
 
@@ -990,8 +990,22 @@ The reason behind this is likely that Kibana is not able to talk with Elasticsea
 06/18/20 (day 56) :
 
 Was trying to look through logs but could not find anything that stuck out to me. Also note /var/log/elasticsearch was present
-but /var/log/kibana was not. Also I noticed that the elasticsearch.ymal was completely commented-out. I uncommented the fields
+but /var/log/kibana was not. Also I noticed that the elasticsearch.yaml was completely commented-out. I uncommented the fields
 but I still had the same issue.
+
+06/19/20 (day 57) :
+
+I could not get Elasticsearch to restart. I also tried using the 
+
+sudo systemctl enable --now elasticsearch.service 
+
+as said in the guide but Elasticsearch would not restart. Looking at the logs gave me no info that I could use to help me. I don't
+know what else to do. I tried chaning the kibana.yml to
+
+elasticsearch.hosts: ["http://localhost:9200/"]
+
+but it went from Kibana server not yet ready to not even connecting. I decided it would be best to do a sudo yum remove elasticsearch
+and kibana.
 
 *
 *
