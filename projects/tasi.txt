@@ -1022,6 +1022,16 @@ when it should have been
 
 elasticsearch.hosts: ["http://localhost:9200/"]
 
+I also should mentioned I reduced the memory in the /etc/elasticsearch/jvm.options file from 
+
+-Xms1g
+-Xmx1g
+
+to
+
+-Xms256m
+-Xmx512m
+
 The problem here was that Elasticsearch could not communicate with Kibana (since it was not set to port 9200). Now that it is working,
 I am moving on to the Logstash configuration.
 
