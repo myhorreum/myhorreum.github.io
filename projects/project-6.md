@@ -16,7 +16,7 @@ labels:
   - Cloudinary
   - IntelliJ
   - Github
-summary: My team and I developed a web tool to help create and organize campus-related repairs.
+summary: My team and I developed a web tool to help create and organize campus-related repair reports.
 ---
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/D70NVoY2TAI" frameborder="0" allowfullscreen=""></iframe>
