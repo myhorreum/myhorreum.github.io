@@ -1007,6 +1007,24 @@ elasticsearch.hosts: ["http://localhost:9200/"]
 but it went from Kibana server not yet ready to not even connecting. I decided it would be best to do a sudo yum remove elasticsearch
 and kibana.
 
+06/22/20 (day 58) :
+
+The server was reverted and I started from scratch. I got up to the step where I had always been stuck on. However, I ran the 
+
+sudo firewall-cmd --add-port=5601/tcp --permanent
+sudo firewall-cmd --reload
+
+and it worked. I think before my problem was that I had 
+
+elasticsearch.hosts: ["http://localhost:5601/"]
+
+when it should have been 
+
+elasticsearch.hosts: ["http://localhost:9200/"]
+
+The problem here was that Elasticsearch could not communicate with Kibana (since it was not set to port 9200). Now that it is working,
+I am moving on to the Logstash configuration.
+
 *
 *
 *
