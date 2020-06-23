@@ -1032,7 +1032,9 @@ to
 -Xms256m
 -Xmx512m
 
-The problem here was that Elasticsearch could not communicate with Kibana (since it was not set to port 9200). Now that it is working,
+Not sure if it was actually related to our issue.
+
+The main problem here was that Elasticsearch could not communicate with Kibana (since it was not set to port 9200). Now that it is working,
 I am moving on to the Logstash configuration.
 
 *
