@@ -114,7 +114,7 @@
     },
     {
       "name": "IT Experience",
-      "level": "",
+      "level": "Systems Support Assistant",
       "keywords": [
         "Windows Server Update Services (WSUS) configuration",
         "ELK Stack (Elasticsearch + Logstash + Kibana) installation"
