@@ -113,6 +113,14 @@
       ]
     },
     {
+      "name": "IT Experience",
+      "level": "",
+      "keywords": [
+        "Windows Server Update Services (WSUS) configuration",
+        "ELK Stack (Elasticsearch + Logstash + Kibana) installation"
+      ]
+    },
+    {
       "name": "Toolsets/IDEs",
       "level": "",
       "keywords": [
