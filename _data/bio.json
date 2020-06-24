@@ -96,8 +96,7 @@
         "Java",
         "Javascript",
         "Typescript",
-        "LaTeX",
-        "HTML/CSS"
+        "LaTeX"
       ]
     },
     {
@@ -109,7 +108,8 @@
         "Meteor",
         "MongoDB",
         "Cloudinary",
-        "Google G Suite"
+        "Google G Suite",
+        "HTML/CSS"
       ]
     },
     {
