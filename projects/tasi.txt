@@ -1037,6 +1037,16 @@ Not sure if it was actually related to our issue.
 The main problem here was that Elasticsearch could not communicate with Kibana (since it was not set to port 9200). Now that it is working,
 I am moving on to the Logstash configuration.
 
+06/23/20 (day 59) :
+
+I noticed that in the Kibana dashboard you can do a sample data visualization. I chose a web sample. It was nice to play around with it, but 
+I had trouble removing it from the dashboard. I ultmately could not remove it.
+
+I continued to fiddle with the Logstash configuration. The Logstash YAML was all commented out, don't know if it is related to our issue.
+
+Also the online guide gives running the logstash-syslog.conf in a way that is not CentOS. Possibly I need to figure out how to run it with
+the correct syntax.
+
 *
 *
 *
