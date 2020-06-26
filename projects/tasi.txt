@@ -1053,6 +1053,23 @@ I edited the logstash-syslog.conf so that its input was taking 5044 as its port 
 that using systemctl restart logstash should be good enough. I did this, but still could not see logs. Using netstat was recommended, I will do
 that next time.
 
+06/25/20 (day 61) :
+
+netstat 5044 was giving a lot of info that was hard for me to interpret. On the other hand, I figured out how to use the bin/logstash command. 
+I needed to be within the /usr/share/logstash/bin directory itself to use the command (note the logstash command itself was visible within the
+directory). Once there, I could run the command just by typing ./logstash. However the error that would come up would be that it could not find 
+the needed YAML configuration files and whatnot. This is because (I believe) I was running the command in the folder where those files where not
+present.
+
+I then moved to the /etc/logstash/conf.d folder and of course I could not run the command because I was outside of the logstash command's actual
+location. I then learned that I could actually add directories to the $PATH variable. Once the directory is added to this $PATH variable, you can
+run the commands within the directory from any directory in the system. So I added /usr/share/logstash/bin to the $PATH variable using the export
+command. This worked and I could see the path now added to the default paths in the $PATH variable. It is interesting to learn that the common
+commands such as ls and rm are in directories that are in the $PATH variable.
+
+However I could not run the ./logstash command still. After work, I learned from reddit that you do not need the "./"" in front of logstash to run
+logstash from outside of its directory, only "logstash" should be typed.
+
 *
 *
 *
