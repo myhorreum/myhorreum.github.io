@@ -1047,6 +1047,12 @@ I continued to fiddle with the Logstash configuration. The Logstash YAML was all
 Also the online guide gives running the logstash-syslog.conf in a way that is not CentOS. Possibly I need to figure out how to run it with
 the correct syntax.
 
+06/24/20 (day 60) :
+
+I edited the logstash-syslog.conf so that its input was taking 5044 as its port value. This is the port of TASI's firewall. Thomas then said 
+that using systemctl restart logstash should be good enough. I did this, but still could not see logs. Using netstat was recommended, I will do
+that next time.
+
 *
 *
 *
