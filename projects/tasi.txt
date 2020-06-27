@@ -1070,6 +1070,16 @@ commands such as ls and rm are in directories that are in the $PATH variable.
 However I could not run the ./logstash command still. After work, I learned from reddit that you do not need the "./"" in front of logstash to run
 logstash from outside of its directory, only "logstash" should be typed.
 
+06/26/20 (day 62) :
+
+The new directories that are added to the $PATH variable are not saved after a session ends. Therefore, I had to re-add /usr/share/logstash/bin back
+to $PATH. Once I did this, I went to run logstash. It worked, but the launch failed, citing missing config files. I think the issue here may be that
+I need to run the command in a certain directory. On elastic.co I learned that the -f tag loads the Logstash config from a specific file or directory,
+so perhaps I do not need to be in /etc/logstash/conf.d to start logstash with the logstash-syslog.conf. Instead, maybe I have to be in a different location,
+like one listed here:
+
+https://www.elastic.co/guide/en/logstash/7.7/dir-layout.html
+
 *
 *
 *
