@@ -1080,6 +1080,16 @@ like one listed here:
 
 https://www.elastic.co/guide/en/logstash/7.7/dir-layout.html
 
+06/29/20 (day 63) :
+
+I noticed the firewall did not have the Elasticsearch and Logstash ports open, only the 5601 which belongs to Kibana. I therefore added the 9200, 9300, and
+5044 ports. You can view this info by using this command:
+
+firewall-cmd --list-all
+
+Also, I re-added the /usr/share/logstash/bin directory to the $PATH variable. However, I could not run logstash. I am not sure why, because the
+path was obviously listed when echo $PATH was ran.
+
 *
 *
 *
