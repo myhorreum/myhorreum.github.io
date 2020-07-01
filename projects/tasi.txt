@@ -1090,6 +1090,65 @@ firewall-cmd --list-all
 Also, I re-added the /usr/share/logstash/bin directory to the $PATH variable. However, I could not run logstash. I am not sure why, because the
 path was obviously listed when echo $PATH was ran.
 
+06/30/20 (day 64) :
+
+I once again re-added /usr/share/logstash/bin to $PATH. It actually was working this time. I went to the /etc/logstash/conf.d directory where the logstash-syslog.conf
+was located and ran logstash -f logstash-syslog.conf. It looks like it was reading the logstash-syslog.conf, because unlike last time, I was not getting the Error that
+the logstash-syslog.conf was not found (I can test this by running the command outside of its directory to see if the error pops up again). 
+Instead, I got this output:
+
+[root@templateCentOS7 conf.d]# logstash -f logstash-syslog.conf
+OpenJDK 64-Bit Server VM warning: If the number of processors is expected to increase from one, then you should configure the number of parallel GC threads appropriately using -XX:ParallelGCThreads=N
+WARNING: Could not find logstash.yml which is typically located in $LS_HOME/config or /etc/logstash. You can specify the path using --path.settings. Continuing using the defaults
+Could not find log4j2 configuration at path /usr/share/logstash/config/log4j2.properties. Using default config which logs errors to the console
+[WARN ] 2020-06-24 19:30:58.882 [LogStash::Runner] multilocal - Ignoring the 'pipelines.yml' file because modules or command line options are specified
+[INFO ] 2020-06-24 19:30:59.065 [LogStash::Runner] runner - Starting Logstash {"logstash.version"=>"7.8.0", "jruby.version"=>"jruby 9.2.11.1 (2.5.7) 2020-03-25 b1f55b1a40 OpenJDK 64-Bit Server VM 25.252-b09 on 1.8.0_252-b09 +indy +jit [linux-x86_64]"}
+[INFO ] 2020-06-24 19:31:16.650 [Converge PipelineAction::Create<main>] Reflections - Reflections took 287 ms to scan 1 urls, producing 21 keys and 41 values
+[INFO ] 2020-06-24 19:31:27.004 [[main]-pipeline-manager] elasticsearch - Elasticsearch pool URLs updated {:changes=>{:removed=>[], :added=>[http://localhost:9200/]}}
+[WARN ] 2020-06-24 19:31:28.170 [[main]-pipeline-manager] elasticsearch - Restored connection to ES instance {:url=>"http://localhost:9200/"}
+[INFO ] 2020-06-24 19:31:28.922 [[main]-pipeline-manager] elasticsearch - ES Output version determined {:es_version=>7}
+[WARN ] 2020-06-24 19:31:28.927 [[main]-pipeline-manager] elasticsearch - Detected a 6.x and above cluster: the `type` event field won't be used to determine the document _type {:es_version=>7}
+[INFO ] 2020-06-24 19:31:29.305 [[main]-pipeline-manager] elasticsearch - New Elasticsearch output {:class=>"LogStash::Outputs::ElasticSearch", :hosts=>["//localhost:9200"]}
+[INFO ] 2020-06-24 19:31:29.487 [Ruby-0-Thread-6: :1] elasticsearch - Using default mapping template
+[INFO ] 2020-06-24 19:31:30.153 [Ruby-0-Thread-6: :1] elasticsearch - Attempting to install template {:manage_template=>{"index_patterns"=>"logstash-*", "version"=>60001, "settings"=>{"index.refresh_interval"=>"5s", "number_of_shards"=>1, "index.lifecycle.name"=>"logstash-policy", "index.lifecycle.rollover_alias"=>"logstash"}, "mappings"=>{"dynamic_templates"=>[{"message_field"=>{"path_match"=>"message", "match_mapping_type"=>"string", "mapping"=>{"type"=>"text", "norms"=>false}}}, {"string_fields"=>{"match"=>"*", "match_mapping_type"=>"string", "mapping"=>{"type"=>"text", "norms"=>false, "fields"=>{"keyword"=>{"type"=>"keyword", "ignore_above"=>256}}}}}], "properties"=>{"@timestamp"=>{"type"=>"date"}, "@version"=>{"type"=>"keyword"}, "geoip"=>{"dynamic"=>true, "properties"=>{"ip"=>{"type"=>"ip"}, "location"=>{"type"=>"geo_point"}, "latitude"=>{"type"=>"half_float"}, "longitude"=>{"type"=>"half_float"}}}}}}}
+[INFO ] 2020-06-24 19:31:31.097 [[main]-pipeline-manager] javapipeline - Starting pipeline {:pipeline_id=>"main", "pipeline.workers"=>1, "pipeline.batch.size"=>125, "pipeline.batch.delay"=>50, "pipeline.max_inflight"=>125, "pipeline.sources"=>["/etc/logstash/conf.d/logstash-syslog.conf"], :thread=>"#<Thread:0x314039a run>"}
+[INFO ] 2020-06-24 19:31:36.854 [[main]-pipeline-manager] javapipeline - Pipeline started {"pipeline.id"=>"main"}
+[INFO ] 2020-06-24 19:31:36.971 [[main]<tcp] tcp - Starting tcp input listener {:address=>"0.0.0.0:5044", :ssl_enable=>"false"}
+[INFO ] 2020-06-24 19:31:37.937 [Agent thread] agent - Pipelines running {:count=>1, :running_pipelines=>[:main], :non_running_pipelines=>[]}
+[INFO ] 2020-06-24 19:31:38.043 [[main]<udp] udp - Starting UDP listener {:address=>"0.0.0.0:5044"}
+[ERROR] 2020-06-24 19:31:39.171 [[main]<udp] udp - UDP listener died {:exception=>#<Errno::EADDRINUSE: Address already in use - bind - Address already in use>, :backtrace=>["org/jruby/ext/socket/RubyUDPSocket.java:206:in `bind'", "/usr/share/logstash/vendor/bundle/jruby/2.5.0/gems/logstash-input-udp-3.3.4/lib/logstash/inputs/udp.rb:116:in `udp_listener'", "/usr/share/logstash/vendor/bundle/jruby/2.5.0/gems/logstash-input-udp-3.3.4/lib/logstash/inputs/udp.rb:68:in `run'", "/usr/share/logstash/logstash-core/lib/logstash/java_pipeline.rb:345:in `inputworker'", "/usr/share/logstash/logstash-core/lib/logstash/java_pipeline.rb:336:in `block in start_input'"]}
+[INFO ] 2020-06-24 19:31:39.903 [Api Webserver] agent - Successfully started Logstash API endpoint {:port=>9601}
+[ERROR] 2020-06-24 19:31:43.441 [[main]<tcp] javapipeline - A plugin had an unrecoverable error. Will restart this plugin.
+  Pipeline_id:main
+  Plugin: <LogStash::Inputs::Tcp type=>"syslog", port=>5044, id=>"5b5803b5fe889965002c2a1e8e496af4a52aa0b965a43d516bb8ca5f7c8d91d4", enable_metric=>true, codec=><LogStash::Codecs::Line id=>"line_a12eb22e-225b-43fd-b035-b4e8eb191140", enable_metric=>true, charset=>"UTF-8", delimiter=>"\n">, host=>"0.0.0.0", mode=>"server", proxy_protocol=>false, ssl_enable=>false, ssl_verify=>true, ssl_key_passphrase=><password>, tcp_keep_alive=>false, dns_reverse_lookup_enabled=>true>
+  Error: Address already in use
+  Exception: Java::JavaNet::BindException
+  Stack: sun.nio.ch.Net.bind0(Native Method)
+sun.nio.ch.Net.bind(sun/nio/ch/Net.java:433)
+sun.nio.ch.Net.bind(sun/nio/ch/Net.java:425)
+sun.nio.ch.ServerSocketChannelImpl.bind(sun/nio/ch/ServerSocketChannelImpl.java:220)
+io.netty.channel.socket.nio.NioServerSocketChannel.doBind(io/netty/channel/socket/nio/NioServerSocketChannel.java:128)
+io.netty.channel.AbstractChannel$AbstractUnsafe.bind(io/netty/channel/AbstractChannel.java:558)
+io.netty.channel.DefaultChannelPipeline$HeadContext.bind(io/netty/channel/DefaultChannelPipeline.java:1283)
+io.netty.channel.AbstractChannelHandlerContext.invokeBind(io/netty/channel/AbstractChannelHandlerContext.java:501)
+io.netty.channel.AbstractChannelHandlerContext.bind(io/netty/channel/AbstractChannelHandlerContext.java:486)
+io.netty.channel.DefaultChannelPipeline.bind(io/netty/channel/DefaultChannelPipeline.java:989)
+io.netty.channel.AbstractChannel.bind(io/netty/channel/AbstractChannel.java:254)
+io.netty.bootstrap.AbstractBootstrap$2.run(io/netty/bootstrap/AbstractBootstrap.java:364)
+io.netty.util.concurrent.AbstractEventExecutor.safeExecute(io/netty/util/concurrent/AbstractEventExecutor.java:163)
+io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(io/netty/util/concurrent/SingleThreadEventExecutor.java:403)
+io.netty.channel.nio.NioEventLoop.run(io/netty/channel/nio/NioEventLoop.java:463)
+io.netty.util.concurrent.SingleThreadEventExecutor$5.run(io/netty/util/concurrent/SingleThreadEventExecutor.java:858)
+io.netty.util.concurrent.FastThreadLocalRunnable.run(io/netty/util/concurrent/FastThreadLocalRunnable.java:30)
+java.lang.Thread.run(java/lang/Thread.java:748)
+[INFO ] 2020-06-24 19:31:44.188 [[main]<udp] udp - Starting UDP listener {:address=>"0.0.0.0:5044"}
+[ERROR] 2020-06-24 19:31:44.201 [[main]<udp] udp - UDP listener died {:exception=>#<Errno::EADDRINUSE: Address already in use - bind - Address already in use>, :backtrace=>["org/jruby/ext/socket/RubyUDPSocket.java:206:in `bind'", "/usr/share/logstash/vendor/bundle/jruby/2.5.0/gems/logstash-input-udp-3.3.4/lib/logstash/inputs/udp.rb:116:in `udp_listener'", "/usr/share/logstash/vendor/bundle/jruby/2.5.0/gems/logstash-input-udp-3.3.4/lib/logstash/inputs/udp.rb:68:in `run'", "/usr/share/logstash/logstash-core/lib/logstash/java_pipeline.rb:345:in `inputworker'", "/usr/share/logstash/logstash-core/lib/logstash/java_pipeline.rb:336:in `block in start_input'"]}
+^C[WARN ] 2020-06-24 19:31:46.261 [SIGINT handler] runner - SIGINT received. Shutting down.
+^C[FATAL] 2020-06-24 19:31:47.436 [SIGINT handler] runner - SIGINT received. Terminating immediately..
+[ERROR] 2020-06-24 19:31:47.803 [LogStash::Runner] Logstash - org.jruby.exceptions.ThreadKill
+
+Obviously, there are a whole slew of new errors to deal with.
+
 *
 *
 *
