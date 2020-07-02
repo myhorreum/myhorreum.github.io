@@ -1235,6 +1235,16 @@ I see the error here is <Errno::EADDRINUSE: Address already in use - bind - Addr
 My instinct tells me that this is because I already have a running instance of either Elasticsearch or Logstash, and therefore the address used by those processes
 is being taken up. To fix this, I will stop those services and then run the command.
 
+To do this I will work with these series of commands:
+
+service logstash stop
+service logstash start
+service logstash status -l
+
+systemctl stop logstash.service
+systemctl start logstash.service
+systemctl status logstash.service -l
+
 *
 *
 *
