@@ -1245,6 +1245,17 @@ systemctl stop logstash.service
 systemctl start logstash.service
 systemctl status logstash.service -l
 
+Stopping logstash and the logstash service seemed to work. Doing the status gave that the process had been killed and that it is now failed/dead. Also I want to mention
+that prior to this (when Logstash was coming back as Active) it said this active instance of Logstash had been running since June 23 (06/23).
+
+I re-ran the logstash --path.settings /etc/logstash/ -f logstash-syslog.conf and there were no errors at all. I got to the line saying something like Logstash successfully 
+started on endpoint 9200 or something. However it was just stuck on that line, without going to the next line in the terminal. I just waited it out, until PuTTY actually 
+timedout. When I went reloaded PuTTY, I did a systemctl status logstash and got back that Logstash was killed/inactive. I then ran the 
+logstash --path.settings /etc/logstash/ -f logstash-syslog.conf again but it was back to the old error of saying the Logstash instance is occupied by another instance, which
+was weird because I was getting that Logstash was dead. I did the stop logstash command again just in case but was getting the same error. Not sure why.
+
+[2020-06-25T19:40:20,895][FATAL][logstash.runner          ] Logstash could not be started because there is already another instance using the configured data directory.  If you wish to run multiple instances, you must change the "path.data" setting.
+
 *
 *
 *
