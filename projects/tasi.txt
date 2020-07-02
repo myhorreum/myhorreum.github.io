@@ -1149,6 +1149,92 @@ java.lang.Thread.run(java/lang/Thread.java:748)
 
 Obviously, there are a whole slew of new errors to deal with.
 
+07/01/20 (day 65) :
+
+I wanted to test my theory that moving out of the /etc/logstash/conf.d directory and running logstash -f logstash-syslog.conf would result in failure.
+It in fact did. I got this:
+
+[root@templateCentOS7 ~]# logstash -f logstash-syslog.conf
+OpenJDK 64-Bit Server VM warning: If the number of processors is expected to increase from one, then you should configure the number of parallel GC threads appropriately using -XX:ParallelGCThreads=N
+WARNING: Could not find logstash.yml which is typically located in $LS_HOME/config or /etc/logstash. You can specify the path using --path.settings. Continuing using the defaults
+Could not find log4j2 configuration at path /usr/share/logstash/config/log4j2.properties. Using default config which logs errors to the console
+[WARN ] 2020-06-25 17:18:14.356 [LogStash::Runner] multilocal - Ignoring the 'pipelines.yml' file because modules or command line options are specified
+[INFO ] 2020-06-25 17:18:14.548 [LogStash::Runner] runner - Starting Logstash {"logstash.version"=>"7.8.0", "jruby.version"=>"jruby 9.2.11.1 (2.5.7) 2020-03-25 b1f55b1a40 OpenJDK 64-Bit Server VM 25.252-b09 on 1.8.0_252-b09 +indy +jit [linux-x86_64]"}
+[INFO ] 2020-06-25 17:18:17.075 [Agent thread] configpathloader - No config files found in path {:path=>"/root/logstash-syslog.conf"}
+[ERROR] 2020-06-25 17:18:17.097 [Agent thread] sourceloader - No configuration found in the configured sources.
+[INFO ] 2020-06-25 17:18:18.458 [LogStash::Runner] runner - Logstash shut down.
+[root@templateCentOS7 ~]#
+
+Therefore, I know for certain I need to be within /etc/logstash/conf.d to run the application. Also I want to mention something peculiar that occured
+in the /etc/logstash/conf.d directory (note this happened when I right logged in, not after I moved out of the directory and ran the command). 
+When I ls within the directory, I get a bunch of jumbled information:
+
+[root@templateCentOS7 conf.d]# ls
+[],     jruby 9.2.11.1 (2.5.7) 2020-03-25 b1f55b1a40 OpenJDK 64-Bit Server VM 25.252-b09 on 1.8.0_252-b09 +indy +jit [linux-x86_64]}
+7}      logstash-syslog.conf
+7.8.0,  {:removed=
+9601}
+[root@templateCentOS7 conf.d]#
+
+Not sure why, but I can still sudo vi the logstash-syslog.conf file and everything looks normal there.
+
+Anyhow, I want to now troubleshoot the errors displayed when I launch from the etc/logstash/conf.d directory (the ones seen yesterday). Here is
+what I will look at specifically:
+
+1.
+WARNING: Could not find logstash.yml which is typically located in $LS_HOME/config or /etc/logstash. You can specify the path using --path.settings. Continuing using the defaults
+Could not find log4j2 configuration at path /usr/share/logstash/config/log4j2.properties. Using default config which logs errors to the console
+
+To fix this, I will use --path.settings as recommended by the console itself. After researching online, I decided to follow this thread:
+
+https://discuss.elastic.co/t/warning-could-not-find-logstash-yml-which-is-typically-located-in-ls-home-config-or-etc-logstash/131022/5
+
+Here is an example of what they used:
+
+sudo bin/logstash --path.settings /etc/logstash/ --path.data sensor39 -f /home/sayed/logstash/sayed.conf
+
+I want to break their command structure into pieces:
+
+sudo bin/logstash is equivalent to my logstash
+
+--path.settings /etc/logstash/ would be the same as mine
+
+--path.data sensor39 not too sure on this one, or if I need it
+
+-f /home/sayed/logstash/sayed.conf looks like they put the entire path into the command, I guess you can do this
+
+My version of the command would be:
+
+logstash --path.settings /etc/logstash/ -f logstash-syslog.conf
+
+while in the /etc/logstash/conf.d directory.
+
+This worked and I got the errors down to one:
+
+[root@templateCentOS7 conf.d]# logstash --path.settings /etc/logstash -f logstash-syslog.conf
+OpenJDK 64-Bit Server VM warning: If the number of processors is expected to increase from one, then you should configure the number of parallel GC threads appropriately using -XX:ParallelGCThreads=N
+Sending Logstash logs to /var/log/logstash which is now configured via log4j2.properties
+[2020-06-25T18:44:02,891][WARN ][logstash.config.source.multilocal] Ignoring the 'pipelines.yml' file because modules or command line options are specified
+[2020-06-25T18:44:03,469][FATAL][logstash.runner          ] Logstash could not be started because there is already another instance using the configured data directory.  If you wish to run multiple instances, you must change the "path.data" setting.
+[2020-06-25T18:44:03,527][ERROR][org.logstash.Logstash    ] java.lang.IllegalStateException: Logstash stopped processing because of an error: (SystemExit) exit
+[root@templateCentOS7 conf.d]#
+
+So now onto the next error!
+
+2.
+[ERROR] 2020-06-24 19:31:39.171 [[main]<udp] udp - UDP listener died {:exception=>#<Errno::EADDRINUSE: Address already in use - bind - Address already in use>, :backtrace=>["org/jruby/ext/socket/RubyUDPSocket.java:206:in `bind'", "/usr/share/logstash/vendor/bundle/jruby/2.5.0/gems/logstash-input-udp-3.3.4/lib/logstash/inputs/udp.rb:116:in `udp_listener'", "/usr/share/logstash/vendor/bundle/jruby/2.5.0/gems/logstash-input-udp-3.3.4/lib/logstash/inputs/udp.rb:68:in `run'", "/usr/share/logstash/logstash-core/lib/logstash/java_pipeline.rb:345:in `inputworker'", "/usr/share/logstash/logstash-core/lib/logstash/java_pipeline.rb:336:in `block in start_input'"]}
+[INFO ] 2020-06-24 19:31:39.903 [Api Webserver] agent - Successfully started Logstash API endpoint {:port=>9601}
+[ERROR] 2020-06-24 19:31:43.441 [[main]<tcp] javapipeline - A plugin had an unrecoverable error. Will restart this plugin.
+  Pipeline_id:main
+  Plugin: <LogStash::Inputs::Tcp type=>"syslog", port=>5044, id=>"5b5803b5fe889965002c2a1e8e496af4a52aa0b965a43d516bb8ca5f7c8d91d4", enable_metric=>true, codec=><LogStash::Codecs::Line id=>"line_a12eb22e-225b-43fd-b035-b4e8eb191140", enable_metric=>true, charset=>"UTF-8", delimiter=>"\n">, host=>"0.0.0.0", mode=>"server", proxy_protocol=>false, ssl_enable=>false, ssl_verify=>true, ssl_key_passphrase=><password>, tcp_keep_alive=>false, dns_reverse_lookup_enabled=>true>
+  Error: Address already in use
+  Exception: Java::JavaNet::BindException
+  Stack: sun.nio.ch.Net.bind0(Native Method)
+
+I see the error here is <Errno::EADDRINUSE: Address already in use - bind - Address already in use>
+My instinct tells me that this is because I already have a running instance of either Elasticsearch or Logstash, and therefore the address used by those processes
+is being taken up. To fix this, I will stop those services and then run the command.
+
 *
 *
 *
