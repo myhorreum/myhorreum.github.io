@@ -1256,6 +1256,25 @@ was weird because I was getting that Logstash was dead. I did the stop logstash 
 
 [2020-06-25T19:40:20,895][FATAL][logstash.runner          ] Logstash could not be started because there is already another instance using the configured data directory.  If you wish to run multiple instances, you must change the "path.data" setting.
 
+07/06/20 (day 66) :
+
+Stopped logstash and elasticsearch this time. Launched service again, got the same error that another Logstash instance was running. 
+
+I looked into the "If you wish to run multiple instances, you must change the "path.data" setting." part of the error. 
+
+I followed this guide and it worked:
+
+https://www.programmersought.com/article/4108631457/
+
+I was then getting a different error, "a plug-in had an unrecoverable error". I did a systemctl status logstash and saw it was not active. I then
+started the service, but then got the [Address already in use] error. I stopped logstash again, and got a new error:
+
+[ERROR][io.netty.util.concurrent.DefaultPromise.rejectedExecution][main][5b5803b5fe889965002c2a1e8e496af4a52aa0b965a43d516bb8ca5f7c8d91d4] Failed to submit a listener notification task. Event loop shut down?
+java.util.concurrent.RejectedExecutionException: event executor terminated
+
+This could be farfetched, but perhaps the error could be related to the fact that Logstash launched successfully last time I worked, and it never shut off.
+Therefore, when I am trying to run it now, the launch failure is related to this.
+
 *
 *
 *
