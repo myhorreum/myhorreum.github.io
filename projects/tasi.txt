@@ -1275,6 +1275,16 @@ java.util.concurrent.RejectedExecutionException: event executor terminated
 This could be farfetched, but perhaps the error could be related to the fact that Logstash launched successfully last time I worked, and it never shut off.
 Therefore, when I am trying to run it now, the launch failure is related to this.
 
+07/07/20 (day 67) :
+
+Was still experiecing the Address in use Error. Used WinSCP to transfer the logstash.yml from the server to my desktop to send to Thomas. Thomas could not identify
+the error and said he would have to go onto the server itself and poke around when he had time. I went onto Kibana -> Index Management and saw a 
+logstash.2020.06.18 listed. So it seems that there was a successful connection made between Logstash and Kibana some time ago. I went to create an Index Pattern but
+could not find any Elasticsearch indices when using the search query "logstash". So something must be wrong. Overall, the entire situation felt fishy. I think it is
+linked to the launch being successful, but then timing out, that might be the source of the glitch. I think what might be best would be to revert back to the snapshot
+before I deleted the .lock file. Thomas said the second to last snapshot was taken on 6/25. Notably, for technical consequences, this state was before I added
+ports 9200, 9300, and 5044 to the firewall (also need to reload).
+
 *
 *
 *
