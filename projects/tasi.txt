@@ -1285,6 +1285,39 @@ linked to the launch being successful, but then timing out, that might be the so
 before I deleted the .lock file. Thomas said the second to last snapshot was taken on 6/25. Notably, for technical consequences, this state was before I added
 ports 9200, 9300, and 5044 to the firewall (also need to reload).
 
+07/08/20 (day 68) :
+
+I reverted back to 6/25 snapshot. I added the new firewall ports. I then launched Logstash and got this:
+
+[root@templateCentOS7 conf.d]# logstash --path.settings /etc/logstash/ -f logstash-syslog.conf
+OpenJDK 64-Bit Server VM warning: If the number of processors is expected to increase from one, then you should configure the number of parallel GC threads appropriately using -XX:ParallelGCThreads=N
+Sending Logstash logs to /var/log/logstash which is now configured via log4j2.properties
+[2020-06-19T19:25:44,228][WARN ][logstash.config.source.multilocal] Ignoring the 'pipelines.yml' file because modules or command line options are specified
+[2020-06-19T19:25:45,127][INFO ][logstash.runner          ] Starting Logstash {"logstash.version"=>"7.8.0", "jruby.version"=>"jruby 9.2.11.1 (2.5.7) 2020-03-25 b1f55b1a40 OpenJDK 64-Bit Server VM 25.252-b09 on 1.8.0_252-b09 +indy +jit [linux-x86_64]"}
+[2020-06-19T19:25:58,279][INFO ][org.reflections.Reflections] Reflections took 178 ms to scan 1 urls, producing 21 keys and 41 values
+[2020-06-19T19:26:06,682][INFO ][logstash.outputs.elasticsearch][main] Elasticsearch pool URLs updated {:changes=>{:removed=>[], :added=>[http://localhost:9200/]}}
+[2020-06-19T19:26:08,089][WARN ][logstash.outputs.elasticsearch][main] Restored connection to ES instance {:url=>"http://localhost:9200/"}
+[2020-06-19T19:26:08,761][INFO ][logstash.outputs.elasticsearch][main] ES Output version determined {:es_version=>7}
+[2020-06-19T19:26:08,894][WARN ][logstash.outputs.elasticsearch][main] Detected a 6.x and above cluster: the `type` event field won't be used to determine the document _type {:es_version=>7}
+[2020-06-19T19:26:10,023][INFO ][logstash.outputs.elasticsearch][main] New Elasticsearch output {:class=>"LogStash::Outputs::ElasticSearch", :hosts=>["//localhost:9200"]}
+[2020-06-19T19:26:10,452][INFO ][logstash.outputs.elasticsearch][main] Using default mapping template
+[2020-06-19T19:26:11,290][INFO ][logstash.outputs.elasticsearch][main] Attempting to install template {:manage_template=>{"index_patterns"=>"logstash-*", "version"=>60001, "settings"=>{"index.refresh_interval"=>"5s", "number_of_shards"=>1, "index.lifecycle.name"=>"logstash-policy", "index.lifecycle.rollover_alias"=>"logstash"}, "mappings"=>{"dynamic_templates"=>[{"message_field"=>{"path_match"=>"message", "match_mapping_type"=>"string", "mapping"=>{"type"=>"text", "norms"=>false}}}, {"string_fields"=>{"match"=>"*", "match_mapping_type"=>"string", "mapping"=>{"type"=>"text", "norms"=>false, "fields"=>{"keyword"=>{"type"=>"keyword", "ignore_above"=>256}}}}}], "properties"=>{"@timestamp"=>{"type"=>"date"}, "@version"=>{"type"=>"keyword"}, "geoip"=>{"dynamic"=>true, "properties"=>{"ip"=>{"type"=>"ip"}, "location"=>{"type"=>"geo_point"}, "latitude"=>{"type"=>"half_float"}, "longitude"=>{"type"=>"half_float"}}}}}}}
+[2020-06-19T19:26:12,168][INFO ][logstash.javapipeline    ][main] Starting pipeline {:pipeline_id=>"main", "pipeline.workers"=>1, "pipeline.batch.size"=>125, "pipeline.batch.delay"=>50, "pipeline.max_inflight"=>125, "pipeline.sources"=>["/etc/logstash/conf.d/logstash-syslog.conf"], :thread=>"#<Thread:0x5d437e20 run>"}
+[2020-06-19T19:26:16,686][INFO ][logstash.javapipeline    ][main] Pipeline started {"pipeline.id"=>"main"}
+[2020-06-19T19:26:16,768][INFO ][logstash.inputs.tcp      ][main][5b5803b5fe889965002c2a1e8e496af4a52aa0b965a43d516bb8ca5f7c8d91d4] Starting tcp input listener {:address=>"0.0.0.0:5044", :ssl_enable=>"false"}
+[2020-06-19T19:26:17,392][INFO ][logstash.agent           ] Pipelines running {:count=>1, :running_pipelines=>[:main], :non_running_pipelines=>[]}
+[2020-06-19T19:26:17,524][INFO ][logstash.inputs.udp      ][main][ffe4a9808fa9947c4f540a8fadf2a5ffc2d2fffde75c49594848e2261bb4dc2d] Starting UDP listener {:address=>"0.0.0.0:5044"}
+[2020-06-19T19:26:17,915][INFO ][logstash.inputs.udp      ][main][ffe4a9808fa9947c4f540a8fadf2a5ffc2d2fffde75c49594848e2261bb4dc2d] UDP listener started {:address=>"0.0.0.0:5044", :receive_buffer_bytes=>"106496", :queue_size=>"2000"}
+[2020-06-19T19:26:18,616][INFO ][logstash.agent           ] Successfully started Logstash API endpoint {:port=>9600}
+
+It was stuck here so I did a ^C before it timed-out and got:
+
+^C[2020-06-19T19:38:31,897][WARN ][logstash.runner          ] SIGINT received. Shutting down.
+^C[2020-06-19T19:38:32,298][FATAL][logstash.runner          ] SIGINT received. Terminating immediately..
+[2020-06-19T19:38:32,593][ERROR][org.logstash.Logstash    ] org.jruby.exceptions.ThreadKill
+
+Doing a systemctl status logstash gave that Logstash was inactive and killed.
+
 *
 *
 *
