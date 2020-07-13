@@ -1318,6 +1318,16 @@ It was stuck here so I did a ^C before it timed-out and got:
 
 Doing a systemctl status logstash gave that Logstash was inactive and killed.
 
+07/09/20 (day 69) :
+
+I ran the command and still got up to the same step, with it just hanging there. I went to check the Kibana dashboard but could not find anything new or Logstash
+related in the indices. Not sure what else to do...
+
+07/10/20 (day 70) :
+
+Installed Filebeat on the server. Eventually realized that Filebeat is meant to be installed on other servers that will be sending data to the Logstash server.
+
+
 *
 *
 *
@@ -1326,3 +1336,31 @@ Doing a systemctl status logstash gave that Logstash was inactive and killed.
 *
 *
 *
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a
