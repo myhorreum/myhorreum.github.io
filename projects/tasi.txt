@@ -1326,7 +1326,7 @@ related in the indices. Not sure what else to do...
 07/10/20 (day 70) :
 
 Installed Filebeat on the server. Eventually realized that Filebeat is meant to be installed on other servers that will be sending data to the Logstash server.
-
+a
 
 *
 *
