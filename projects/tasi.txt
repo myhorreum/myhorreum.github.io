@@ -1326,7 +1326,20 @@ related in the indices. Not sure what else to do...
 07/10/20 (day 70) :
 
 Installed Filebeat on the server. Eventually realized that Filebeat is meant to be installed on other servers that will be sending data to the Logstash server.
-a
+
+07/13/20 (day 71) :
+
+I followed these instructions on the Kibana dashboard and managed to get Filebeat set-up:
+
+http://10.100.10.36:5601/app/kibana#/home/tutorial/systemLogs
+
+But I was only getting the templateCentOS logs, not logs comming in from the NSA 2650 SonicOS firewall. Also I accidently removed the OS column in the syslog logs display,
+I could not figure out how to re-add it.
+
+I also managed to remove the sample data, with instructions towards the end of this guide:
+
+https://www.elastic.co/guide/en/kibana/current/tutorial-sample-data.html
+
 
 *
 *
