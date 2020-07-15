@@ -1340,6 +1340,44 @@ I also managed to remove the sample data, with instructions towards the end of t
 
 https://www.elastic.co/guide/en/kibana/current/tutorial-sample-data.html
 
+07/14/20 (day 72) :
+
+I looked into the command tcpdump. This command allows the user to display TCP/IP and other packets being transmitted or received over a network to which the computer is attached.
+tcpdump -D shows the interfaces that are available/coming in. I used this command:
+
+[root@templateCentOS7 ~]# tcpdump -D
+1.nflog (Linux netfilter log (NFLOG) interface)
+2.nfqueue (Linux netfilter queue (NFQUEUE) interface)
+3.eno16777984
+4.any (Pseudo-device that captures on all interfaces)
+5.lo [Loopback]
+
+Thomas told me eno16777984 was the firewall that was sending the syslog logs. I then ran this command:
+
+tcpdump -i eno16777984 src 10.100.10.2
+
+and got a ton of data being spat out on through the terminal. This was expected, since the firewall was sending a lot of info constantly.
+
+Thomas then recommended taking out the grok filter{} portion of the logstash-syslog.yml, since it actually may just be overcomplicating things. 
+Removing it should not effect anything too important because it is just the filter. So I did this.
+
+Before running logstash --path.settings /etc/logstash/ -f logstash-syslog.conf I told Thomas to take a snapshot so that if I got a timeout I
+wouldn't run in to the same issue as last time (no clear fix, having the glitch). The snapshot was called "no filter logstash test".
+
+So I ran the command and it reached:
+
+[2020-06-25T18:46:24,658][INFO ][logstash.agent           ] Successfully started Logstash API endpoint {:port=>9600}
+
+as usual. I then thought that I should free up the 9600 port in the firewall as well, since I had not opened that. Thomas then told me to 
+open 5044/udp as well, since syslog sends through udp not tcp usually. I did this.
+
+Also for some reason syslog was configured to be sending through 5601, not 5044. Thomas changed it back to 5044 on his end.
+
+I then re-ran the command, and once it reached the 
+
+[2020-06-25T18:46:24,658][INFO ][logstash.agent           ] Successfully started Logstash API endpoint {:port=>9600}
+
+it actually began spitting out firewall/syslog logs! Next step is to get it into Kibana and begin parsing the messages.
 
 *
 *
