@@ -1358,7 +1358,7 @@ tcpdump -i eno16777984 src 10.100.10.2
 
 and got a ton of data being spat out on through the terminal. This was expected, since the firewall was sending a lot of info constantly.
 
-Thomas then recommended taking out the grok filter{} portion of the logstash-syslog.yml, since it actually may just be overcomplicating things. 
+Thomas then recommended taking out the grok{} portion of the logstash-syslog.yml, since it actually may just be overcomplicating things. 
 Removing it should not effect anything too important because it is just the filter. So I did this.
 
 Before running logstash --path.settings /etc/logstash/ -f logstash-syslog.conf I told Thomas to take a snapshot so that if I got a timeout I
@@ -1379,21 +1379,43 @@ I then re-ran the command, and once it reached the
 
 it actually began spitting out firewall/syslog logs! Next step is to get it into Kibana and begin parsing the messages.
 
-*
-*
-*
-*
-*
-*
-*
-*
+07/15/20 (day 73) :
+
+To get the syslog logs out of the terminal and into Kibana, basically I need an Elasticsearch instance that Logstash 
+can send to and Kibana to read from ES. I wanted to change the port in the elasticsearch.yml from 9200 to 9600, because
+this is what the Logstash says it successfully is launching from.
+
+I went into the elasticsearch.yml in /etc/elasticsearch and found that the http.port: 9200 was actually commented out.
+I uncommented it out and set it to 9600. I also then did a sudo systemctl restart elasticsearch to cement the changes.
+However I was getting an error message:
+
+Job for elasticsearch.service failed because the control process exited with error code.
+
+I guess it is related to me changing the .yml
+
+I went back into the .yml and to the Network block where http.port was located, I thought perhaps I would need to 
+uncomment the above network.hosts line as well. I did this, but when I did another restart I got the same error.
+I recommented the lines and did a restart, no error now, and ES was coming back as active and running.
+
+07/16/20 (day 74) :
+
+Further research/troubleshooting on ELK Stack.
+
+07/16/20 (day 74) :
+
+I  learned that I am actually supposed to wait-out the terminal output, it means that all of those syslogs are being indexed into Elasticsearch. 
+So I guess I will leave the terminal running until the output is finished. Thomas also said that the logs are being generated pretty much every second.
+There might be a way to view the logs in Kibana while it is still being indexed in ES.
 
 
-
-
-
-
-
+*
+*
+*
+*
+*
+*
+*
+*
 
 
 
