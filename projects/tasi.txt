@@ -1407,6 +1407,10 @@ I  learned that I am actually supposed to wait-out the terminal output, it means
 So I guess I will leave the terminal running until the output is finished. Thomas also said that the logs are being generated pretty much every second.
 There might be a way to view the logs in Kibana while it is still being indexed in ES.
 
+07/17/20 (day 75) :
+
+Quick day. Further troubleshooting.
+
 
 *
 *
