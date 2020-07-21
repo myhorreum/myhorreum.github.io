@@ -1411,6 +1411,14 @@ There might be a way to view the logs in Kibana while it is still being indexed 
 
 Quick day. Further troubleshooting.
 
+07/20/20 (day 76) :
+
+Went into Dev Tools and tried to see if I could see any incoming data. I couldn't. I then let the Logstash run on for too long and it timed out, which gave
+me the glitch with no clear fix. I could not fix it despite removing the .lock file (the file keeps regenerating). I will need to revert to the
+last snapshot.
+
+This is the new video that I have been following:
+https://www.youtube.com/watch?v=imrKm6dV3NQ
 
 *
 *
