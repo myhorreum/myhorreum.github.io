@@ -1420,17 +1420,31 @@ last snapshot.
 This is the new video that I have been following:
 https://www.youtube.com/watch?v=imrKm6dV3NQ
 
-*
-*
-*
-*
-*
-*
-*
-*
+07/21/20 (day 77) :
 
+Quick day. Further troubleshooting. Reverted to 7/14 snapshot.
 
+07/22/20 (day 78) :
 
+Decided to revisit the WSUS server to see how things were going. The workstations were really clogged up (5000+ updates on the servers). 
+Generating the WSUS-made report resulted in time-out. I decided to run the Adam Clean-Up.ps1 again. Remember to run it from administrator
+in ISE (do this by right-clicking on the regular Powershell icon and selecting the Run as Administrator option). I used the -FirstRun tag,
+but noticed the -MonthlyRun, which could be useful.
+
+I then went back to the ELK server to fiddle with the elasticsearch.yml. I uncommented the 9200 port again and did a systemctl restart elasticsearch
+I then did a systemctl status elasticsearch and it actually came back as active and running. I ran the logstash command but once it finished I was not
+getting syslogs, and I remembered I forgot to open the necessary ports in the firewall. I did this and then did a snapshot called "firewall done".
+
+However I still could not get anything to come up in Kibana.
+
+*
+*
+*
+*
+*
+*
+*
+*
 
 
 
