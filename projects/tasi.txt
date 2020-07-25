@@ -1414,7 +1414,7 @@ Quick day. Further troubleshooting.
 07/20/20 (day 76) :
 
 Went into Dev Tools and tried to see if I could see any incoming data. I couldn't. I then let the Logstash run on for too long and it timed out, which gave
-me the glitch with no clear fix. I could not fix it despite removing the .lock file (the file keeps regenerating). I will need to revert to the
+me the familiar glitch with no clear fix. I could not fix it despite removing the .lock file (the file keeps regenerating). I will need to revert to the
 last snapshot.
 
 This is the new video that I have been following:
@@ -1437,18 +1437,25 @@ getting syslogs, and I remembered I forgot to open the necessary ports in the fi
 
 However I still could not get anything to come up in Kibana.
 
-*
-*
-*
-*
-*
-*
-*
-*
+07/23/20 (day 79) :
 
+The first fix I thought could change something was putting the filter{} block of code back into the logstash-syslog.conf file. I did this but was
+getting a grokparsefailure message along with each syslog coming through the terminal. Also going to Dev Tools and doing the run gave a stack timeout
+type of error instead of nothing unlike last time.
 
+Played around with disabling SELinux and the firewall. I edited the SELinux's config file in vi to permissive and did a reboot. This didn't really
+change anything however. Though when I did run logstash again I was getting an error that I was not even connecting to Elasticsearch. I went
+back to /etc/elasticsearch/elasticsearch.yml and re-commented the http.port: 9200 line and did a restart on elasticsearch. This fixed the issue
+and I was getting syslog logs again.
 
-
+*
+*
+*
+*
+*
+*
+*
+*
 
 
 
