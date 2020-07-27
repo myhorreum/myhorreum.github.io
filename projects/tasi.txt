@@ -1448,6 +1448,21 @@ change anything however. Though when I did run logstash again I was getting an e
 back to /etc/elasticsearch/elasticsearch.yml and re-commented the http.port: 9200 line and did a restart on elasticsearch. This fixed the issue
 and I was getting syslog logs again.
 
+07/24/20 + 07/26/20 (day 80 + Sunday outside hours) :
+
+I did research online, learning that incoming logs are given an auto-created index. This reddit thread that I created helped a lot:
+
+https://www.reddit.com/r/elkstack/comments/hwvqsd/need_help_viewing_incoming_syslogs_in_kibana/
+
+Basically, read my conversation with daqqad in the thread and you will learn what I did. So now I am able to actually view the syslog logs in
+the Discover tab. So this entire time, the connection actually was there, I just did not have enough experience with Kibana to see the connection.
+Well anyways, next time I will work with visualizations. Also I want to learn what the syslogs logs actually are saying, because as of now, I do
+not know what they are trying to communicate.
+
+I also logged into the WSUS server and set the reports to be emailed weekly. This will have the effect of the reports to be emailed on Sundays, because
+it was a Sunday when I did this. Once again, this is only my theory, I will check on this to see if it is in fact doing this. Also, I scheduled a clean
+script to auto-run on Sundays at 11:59:59.
+
 *
 *
 *
