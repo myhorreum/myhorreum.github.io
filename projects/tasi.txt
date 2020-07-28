@@ -1463,7 +1463,7 @@ I also logged into the WSUS server and set the reports to be emailed weekly. Thi
 it was a Sunday when I did this. Once again, this is only my theory, I will check on this to see if it is in fact doing this. Also, I scheduled a clean
 script to auto-run on Sundays at 11:59:59.
 
-07/27/20 (day 79) :
+07/27/20 (day 81) :
 
 Apparently PuTTY closed while Logstash was still running, which sent me back to the weird glitch. I learned to actually fix this was to run
 
