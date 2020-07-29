@@ -1470,12 +1470,36 @@ Apparently PuTTY closed while Logstash was still running, which sent me back to 
 ps -ef | grep logstash
 
 and kill the PID given at the top of the output. Now it was working again and I went to viewing logs in Kibana. Also I could query the logs by
-searching with a specific term, for example "IPS" for Intrusion Prevention System. I had 116 logs over four days. They all seemed to have "Priority: low:"
+searching with a specific term, for example "IPS" for Intrusion Prevention System. I had 116 IPS logs over four days. They all seemed to have "Priority: low:"
 though. I also queried with "login" and pulled up five logs that showed uhtasi users logging in through the firewall.
 
 Thomas then wanted me to find SSLVPN logs. SSLVPN are related to when people try to connect through a VPN. Thomas said one thing he would like to
 get out of ELK is to get a daily report of SSLVPN authentication attempts. The next step is to figure out how to do reporting and filter out the logs
 we need/don't need.
+
+07/28/20 (day 82) :
+
+I checked the disk space using a command in terminal and saw we only had about 10% total space used. Refreshing the Kibana gave that new logs had come in.
+I could actually see the logins from yesterday (7/27), so they were coming in, its just that there was a back-up. 
+
+I also noticed that the server time and real time were not consistent. The server time was a bit behind. To find server time, use the date command.
+
+What Thomas wants is SSLVPN login reports. Querying with 'SSLVPN' gives logs with either srcZone=SSLVPN or dstZone=SSLVPN. The srcZone=SSLVPN comes with a 
+user, the dstZone=SSLVPN doesn’t. I am assuming that the srcZone=SSLVPN represents a login, while the dstZone=SSLVPN represents general activity. TASI has
+a SSLVPN zone which is the group of IPs that get assigned to user computers when they connect via SSLVPN.
+
+Thomas tweaked the firewall's settings in the web UI that had access to in order to get new logs. Previously it was on warning level, now it was set to inform
+level. To find these new logs, query with thomasp and "14:47:48". That pulls up the new logs with the new info. Notably, these new logs come with the info showing
+the IP of the computer that attempts authentication from the VPN. Hopefully this would also come with the time of the login attempt. Thomas also wants to get logouts.
+
+I ended the day trying to figure out the log for when a user is denied or an attempt is denied. To try and find these, Thomas and I tried to login with a false 
+password through NetExtender. However it was stuck on the Verifying User loading bar for the remainder of work. Thomas said to search "SSL VPN zone remote user login allowed"
+to potential see logs surrounding approved authentications. 
+
+I also did further research on reporting log info:
+
+https://www.elastic.co/guide/en/kibana/current/reporting-getting-started.html
+
 
 *
 *
