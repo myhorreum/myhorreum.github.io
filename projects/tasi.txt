@@ -1494,7 +1494,7 @@ the IP of the computer that attempts authentication from the VPN. Hopefully this
 
 I ended the day trying to figure out the log for when a user is denied or an attempt is denied. To try and find these, Thomas and I tried to login with a false 
 password through NetExtender. However it was stuck on the Verifying User loading bar for the remainder of work. Thomas said to search "SSL VPN zone remote user login allowed"
-to potential see logs surrounding approved authentications. 
+to potentially see logs surrounding approved authentications. 
 
 I also did further research on reporting log info:
 
