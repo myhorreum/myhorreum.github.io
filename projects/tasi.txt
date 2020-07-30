@@ -1500,6 +1500,51 @@ I also did further research on reporting log info:
 
 https://www.elastic.co/guide/en/kibana/current/reporting-getting-started.html
 
+07/29/20 (day 83) :
+
+Found a way to see a log-in from a specific computer in the form of its IP. The example I have is :
+
+msg="SSL VPN zone remote user login allowed" src=98.150.210.160::X1 dst=128.171.103.3.0:X1 usr="thomasp@uhtasi.org"
+
+The src is the IP of the computer connecting, the dst is the IP given by the VPN.
+
+Also I downloaded SonicWALL Mobile Connect from the Microsoft Store. This was to try and find another way to login with a false password and get an
+error log. When I did this, make sure to Add a VPN Connection with SonicWALL Mobile Connect, not the Windows (built-in). This will prompt you for a
+password after the connection is started. 
+
+This mobile version worked and I got an error displayed without a timeout. I will now wait for the log to pop up (hopefully it actually does). The error
+occured between 12:25 and 12:30 PM.
+
+I found two types of logs that stuck out to me as potential logs representing the login error.
+
+One had the message:
+
+msg="Initiator from country blocked: Initiator IP:168.181.181.27 Country Name:Brazil" 
+
+However it turned out that this was likely a geo-ip filter block (blocking a country that TASI does not allow connections from).
+
+The next had the message:
+
+msg="destination for 10.100.10.179 is not allowed by access control"
+
+However this was likely a blocked access attempt from 10.100.10.179 to someplace.
+
+I decided to wait for a bit to let the log have time to come in. After I while I queried with "beau" since that was the username I used to
+log in with (as well as the false password). I got this:
+
+msg="User login denied - LDAP authentication failure" src=50.113.3.57:0:X1 dst=128.171.103.2:0:X1 usr="beau" proto=tcp sess="sslypnc' dur=8 note="beau" n=292 timestamp: Jul 29, 2820 0 12:50:27
+
+So this was in fact the correct log. I spent the rest of the day researching how to group and report these types of logs:
+
+1. SSLVPN logins
+2. SSLVPN logouts
+3. Failed attempts
+
+Also Thomas wants to parse out information from each of the logs. Like username, initiator IP address, date / time.
+
+Here is a video that could potentially do this:
+
+https://www.youtube.com/watch?v=Jd8-A3fIGjo
 
 *
 *
