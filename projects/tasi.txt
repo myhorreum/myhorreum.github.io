@@ -1546,19 +1546,32 @@ Here is a video that could potentially do this:
 
 https://www.youtube.com/watch?v=Jd8-A3fIGjo
 
-*
-*
-*
-*
-*
-*
-*
-*
+07/30/20 (day 84) :
 
+To search for
 
+1. SSLVPN logins
+2. SSLVPN logouts
+3. Failed attempts
 
+the query is 
 
+"SSL VPN zone remote user" or "login denied" or "logged out"
 
+I began working with creating the CSV reports. The problem was that the message field contained too many fields that we had no need for. Also,
+its sub-fields were not broken up into pieces, so the message was coming out as one big blob that was hard to read. I had to parse the data.
+
+Through research, I learned the way to do this was through the grok filter in the config file. Our grok filter was giving a _grokparsefailure
+because I was using the given grok on the site, but it did not match our data. Therefore, I went to create our own grok filter in Kibana.
+
+*
+*
+*
+*
+*
+*
+*
+*
 
 
 
