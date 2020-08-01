@@ -29,7 +29,7 @@ I saw a job opening for the position of Systems Support Assistant at Telecommuni
 ## ELK Stack (Elasticsearch + Logstash + Kibana) :
 
 * Installed ELK Stack components and fitted it in accordance to the organization's firewall.
-* Ran the Logstash pipeline with a syslog configuration in order to receive and interpret logs from a syslog instance. Specifically, we wanted to search for SSLVPN logins, SSLVPN logouts, and rejected authentication attempts.
+* Ran the Logstash pipeline with a syslog configuration in order to receive and interpret logs from a syslog instance. Specifically, we wanted to search for SSLVPN logins, SSLVPN logouts, and rejected authentication attempts that were hitting the firewall.
 * Created a custom grok filter to parse the syslog data for our specific use-case.
 * Automated reporting in Kibana.
 
