@@ -26,6 +26,13 @@ I saw a job opening for the position of Systems Support Assistant at Telecommuni
 * Automated reporting through PowerShell scripts in Task Manager. Tabulated the updates based on attributes using HTML within PowerShell, then set the report to be auto-emailed to my supervisor on a weekly basis.
 * Lastly, I created a technical [documentation]({{ site.baseurl }}/projects/notallowedtodistribute.pdf) of what I did with WSUS, as well as a PowerPoint version, and gave a presentation to my supervisor, the director, and the rest of the technical team.
 
+## ELK Stack (Elasticsearch + Logstash + Kibana) :
+
+* Installed ELK Stack components and fitted it in accordance to the organization's firewall.
+* Ran Logstash with a syslog configuration in order to receive and interpret logs from a syslog instance.
+* Created a custom grok filter to parse the syslog data for our specific use-case.
+* Automated reporting in Kibana.
+
 <img class="ui small left floated image" src="../images/wizard.gif">
 
 ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ * 
