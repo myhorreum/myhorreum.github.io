@@ -29,7 +29,7 @@ I saw a job opening for the position of Systems Support Assistant at Telecommuni
 ## ELK Stack (Elasticsearch + Logstash + Kibana) :
 
 * Installed ELK Stack components and fitted it in accordance to the organization's firewall.
-* Ran Logstash with a syslog configuration in order to receive and interpret logs from a syslog instance.
+* Ran the Logstash pipeline with a syslog configuration in order to receive and interpret logs from a syslog instance.
 * Created a custom grok filter to parse the syslog data for our specific use-case.
 * Automated reporting in Kibana.
 

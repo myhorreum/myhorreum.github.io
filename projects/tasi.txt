@@ -1564,6 +1564,23 @@ its sub-fields were not broken up into pieces, so the message was coming out as 
 Through research, I learned the way to do this was through the grok filter in the config file. Our grok filter was giving a _grokparsefailure
 because I was using the given grok on the site, but it did not match our data. Therefore, I went to create our own grok filter in Kibana.
 
+07/31/20 (day 85) :
+
+This was the log I was using to build our grok filter. This log's formatting is consistant across all of our logs:
+
+id=firewall sn=1813169961D00 time="2020-07-29 12:28:15" fw=128.171.103.2 pri=6 c=16 gcat=4 m=745 msg="User login denied
+- LDAP authentication failure" src=50.113.3.57:0:X1 dst=128.171.103.2:0:X1 usr="beau" proto=tcp sess="sslvpnc" dur=0 note="beau"
+n=292 @timestamp: Jul 29, 2020 CP 12:50:27.190 type: syslog host: 10.100.10.2 @version: 1 _id: ihHFnHMBrBe8pKN-EMuA _type: _doc 
+_index: logstash-2020.07.24-000002 _score: - 
+
+To work with the grok filter debugger, only the data must be inputted:
+
+firewall 18B169961D00 "2020-07-30 14:21:18" 128.171.103.2 6 262144 6 98 "Connection Opened" 128.171.103.230:48150:X2 DMZ 
+6c:41:6a:19:57:3f 128.171.3.13:53:X1 WAN udp/dns 62 "122 (DMZ->WAN)" 49169 "General DNS" 706323111
+
+Building the filter, I got stuck on the "2020-07-30 14:21:18" component. I could not find a regex that could interpret the component.
+I need to search further.
+
 *
 *
 *
@@ -1573,19 +1590,9 @@ because I was using the given grok on the site, but it did not match our data. T
 *
 *
 
-1. First I should say what Marxism is. "Marxism is a social, political, and economic philosophy named after Karl Marx, which examines the effect of capitalism on labor, productivity, 
-and economic development and argues for a worker revolution to overturn capitalism in favor of communism." In the years prior to WWI, there was a failure of 
-social movements, which lead to a greater appreciation of Marxism and the "theory of imperalism". I don't have much other knowledge, but perhaps countries that
-had no ties to Marxism still acted similar to its principles during this time, just because of the nature of the times.
 
-2. Tanks were least successful early on in the stalemate, because they were not technologically advanced enough. But through development and trial-and-error, tanks 
-became more advanced, and found success in the stalemate's later stages (like the Hundred Days Offensive). However, at this point in time, tanks were still far from 
-perfected and still had many mechanical issues which did not lead it to be the one main factor in wiping out trench warfare.
-
-3. I think the people pushing war guilt were the ones who received the damage from the Germans, because they would be the ones who would want some kind of compensation
-for the damages done to them and their property. The debate is between the Germans and those they would have to pay. Germans did not want to pay, and found it to be 
-humiliating. As a journalist, I think these issues were important at the time because of the gravity of how they would impact future events that would lead to other
-scenarios (like WWII). Some say that the War Guilt clause is what contributed to WWII.
+firewall 18B169961D00 "2020-07-30 14:21:18" 128.171.103.2 6 262144 6 98 "Connection Opened" 128.171.103.230:48150:X2 
+DMZ 6c:41:6a:19:57:3f 128.171.3.13:53:X1 WAN udp/dns 62 "122 (DMZ->WAN)" 49169 "General DNS" 706323111
 
 
 
