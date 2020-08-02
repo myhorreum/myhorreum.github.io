@@ -1589,14 +1589,3 @@ I need to search further.
 *
 *
 *
-
-
-firewall 18B169961D00 "2020-07-30 14:21:18" 128.171.103.2 6 262144 6 98 "Connection Opened" 128.171.103.230:48150:X2 
-DMZ 6c:41:6a:19:57:3f 128.171.3.13:53:X1 WAN udp/dns 62 "122 (DMZ->WAN)" 49169 "General DNS" 706323111
-
-
-
-
-
-
-a
