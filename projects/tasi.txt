@@ -1583,8 +1583,6 @@ I need to search further.
 
 08/03/20 (day 86) :
 
-11:15 - 03:30
-
 I wanted to view the syslog logs completely raw, as of now I was seeing them indexed in Elasticsearch in Kibana. To do this, I took out
 the elasticsearch port in the output{} block of code in the logstash-syslog.conf and added a path to a .txt file
 
@@ -1600,7 +1598,14 @@ output {
 For our case, I did not use the codec portion, because I wanted the logs completely raw with no formatting whatsoever. For my path, I just set it
 as "/usr/output.txt". Note I did not use set it to be a "/C:/blah/blah/blah" because we are not on a OS with a C drive (or any amount of letter drives).
 
-When this was done, I ran logstash and did end up getting logs in the output.txt file. I used WinSCP to drag the files from the server to my work Desktop. 
+When this was done, I ran logstash and did end up getting logs in the output.txt file. I used WinSCP to drag the files from the server to my work Desktop.
+
+This is an example of a one of the logs in the output.txt :
+
+{"type":"syslog","@timestamp":"2020-08-04T01:44:46.782Z","@version":"1","message":"<46> id=firewall sn=18B167761D00 time=\"2020-08-03 15:25:20\" 
+fw=128.181.104.2 pri=6 c=1024 gcat=6 m=577 msg=\"Connection Closed\" srcMac=00:60:86:bd:1c:88 src=128.181.104.65:34166:X2 srcZone=DMZ dstMac=6c:44:6b:11:57:3f
+dst=128.181.1.1:53:X1 dstZone=WAN proto=udp/dns sent=74 rcvd=261 spkt=1 rpkt=1 cdur=30353 rule=\"122 (DMZ->WAN)\" app=49169 appName=\"General DNS\" 
+sn=835711412","host":"10.100.10.3"}
 
 *
 *
