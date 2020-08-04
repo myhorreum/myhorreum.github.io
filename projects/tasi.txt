@@ -1581,6 +1581,27 @@ firewall 18B169961D00 "2020-07-30 14:21:18" 128.171.103.2 6 262144 6 98 "Connect
 Building the filter, I got stuck on the "2020-07-30 14:21:18" component. I could not find a regex that could interpret the component.
 I need to search further.
 
+08/03/20 (day 86) :
+
+11:15 - 03:30
+
+I wanted to view the syslog logs completely raw, as of now I was seeing them indexed in Elasticsearch in Kibana. To do this, I took out
+the elasticsearch port in the output{} block of code in the logstash-syslog.conf and added a path to a .txt file
+
+This is the format given online:
+
+output {
+ file {
+   path => ...
+   codec => line { format => "custom format: %{message}"}
+ }
+}
+
+For our case, I did not use the codec portion, because I wanted the logs completely raw with no formatting whatsoever. For my path, I just set it
+as "/usr/output.txt". Note I did not use set it to be a "/C:/blah/blah/blah" because we are not on a OS with a C drive (or any amount of letter drives).
+
+When this was done, I ran logstash and did end up getting logs in the output.txt file. I used WinSCP to drag the files from the server to my work Desktop. 
+
 *
 *
 *
