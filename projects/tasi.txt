@@ -1607,6 +1607,8 @@ fw=128.181.104.2 pri=6 c=1024 gcat=6 m=577 msg=\"Connection Closed\" srcMac=00:6
 dst=128.181.1.1:53:X1 dstZone=WAN proto=udp/dns sent=74 rcvd=261 spkt=1 rpkt=1 cdur=30353 rule=\"122 (DMZ->WAN)\" app=49169 appName=\"General DNS\" 
 sn=835711412","host":"10.100.10.3"}
 
+Note how there is no _id or index fields, which indicates that it is not an indexed document.
+
 *
 *
 *
