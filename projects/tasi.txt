@@ -1609,6 +1609,40 @@ sn=835711412","host":"10.100.10.3"}
 
 Note how there is no _id or index fields, which indicates that it is not an indexed document.
 
+08/04/20 (day 87) :
+
+I changed the filter contents to:
+
+filter {
+  grok {
+    match => {
+      "message" => "^<%{NUMBER:[syslog][priority]}>%{SPACE}++%{GREEDYDATA:[syslog][message]}$"
+    }
+    add_field => [ "received_at", "%{@timestamp}" ]
+    add_field => [ "received_from", "%{host}" ]
+    remove_field => "message"
+  }
+  kv {
+    source => "[syslog][message]"
+    target => "sslvpn"
+    remove_field => "[syslog][message]"
+  }
+  date {
+    match => [ "[sslvpn][time]", "yyyy-MM-dd HH:mm:ss" ]
+  }
+}
+
+This worked and the data was now split into portions. 
+
+I also want to mention that I forgot to change the output from the output.txt back to the elasticsearch port from yesterday. I let it run
+like this for about an hour without knowing. I then switched it back to the elasticsearch port. This grew the output.txt file from around 100KB
+to 100MB, a notable increase in size (1000x larger). 
+
+08/05/20 (day 88) :
+
+Thomas wanted to take the reporting a step further: if a user makes a SSLVPN connection, we want to then also track all RDP and SSH connections
+they make as well. To do this, you must match destination ports to RDP and SSH.
+
 *
 *
 *
@@ -1617,3 +1651,48 @@ Note how there is no _id or index fields, which indicates that it is not an inde
 *
 *
 *
+
+
+1. The 1920s and 1930s were not exactly peaceful years, although there was no World War until 1941. What would you suggest were the major sources of conflict between the World Wars?
+
+There were many violent events throughout the years between WWI and WWII. I want to use a treaty from the Materials on War, Peace and Internationalism, 1919-1939 text: The Kellogg–Briand pact.
+The Kellogg–Briand Pact is a 1928 international agreement in which signatory states promised not to use war to resolve "disputes or conflicts of whatever nature or of whatever origin they may be, 
+which may arise among them". There were no mechanisms for enforcement. Because of this, the treaty gets no attention (especially in comparison to the Treaty of Versaiiles that we were introduced
+to last week). 
+
+"That's because the treaty went into effect on July 24, 1929, after which the following occurred: Japan invaded Manchuria (1931); Italy invaded Ethiopia (1935); Japan invaded China (1937); 
+Germany invaded Poland (1939); the Soviet Union invaded Finland (1939); Germany invaded Denmark, Norway, Belgium, the Netherlands, Luxembourg, and France and attacked Great Britain (1940);
+and Japan attacked the United States (1941), culminating in a global war that produced the atomic bomb and more than sixty million deaths. A piece of paper signed in Paris does not seem to 
+have presented an obstacle to citizens of one country engaging in the organized slaughter of the citizens of other countries."
+
+2. Although there was much conflict, there was also considerable time and effort directed towards managing, limiting and even preventing war. Consider three examples of peace or peace-making. Were they successful, or not? Why?
+
+From the Materials on War, Peace and Internationalism, 1919-1939 text:
+
+"In modern political history, therefore, the Paris Peace Pact, if it is mentioned at all, usually gets a condescending tip of the hat or is dutifully registered in footnote. Even in books on the law of war, little is made of it. 
+There is not a single reference to it in the political philosopher Michael Walzer's "Just and Unjust Wars," a classic work published in 1977. The summary on the U.S. State Department's Web site is typical: "In the end, the Kellogg-Briand 
+Pact did little to prevent World War II or any of the conflicts that followed. Its legacy remains as a statement of the idealism expressed by advocates for peace in the interwar period." 
+
+Therefore we see that Paris Peace Pact and the Kellogg–Briand Pact were both not successful and forgotten about and/or made fun of for how big of a failure they were. They did nothing more than just be a statement
+of peace, a dream but not a reality.
+
+For my third example, I want to look at an idea presented in Peace in World History, Chapter 7: Isolationism. Isolationism is the desire for Americans to disconnect themselves from the outside world, and not participate
+in any deep engagements with other countries (especially Europe). This is does seem to be an effective strategy because it moves conflict away from one own's country. However, it also raises another question: If a country 
+is able to assist another country and develop an alliance with them to help achieve peace, should they? And eventually isolationism failed for the US because they were eventually sucked into the war due to their strained 
+relations with Japan (and the aggresiveness of Japan in the Pacific).
+
+3. Discuss the roles of civilians during World War Two. Does the term "non-combatant" have any real significance in your discussion? Why, or why not?
+
+First I should say how deadly WWII was in terms of civilian deaths: 40 million civilians were killed as a result of the war. Many civilians died because of deliberate genocide, massacres, mass-bombings, disease, and starvation.
+I'm not completely sure if "non-combatant" has any significance during this time because it seems many nations just wanted to kill all people, no matter if they were non-combatants or not, which explains the high casualties for 
+civilians. 
+
+4. Which military technology applied between 1939 and 1945 was most effective, and why? Were there moral or ethical and political issues about using that technology at the time? Since?
+
+I think the use of airplanes as a technology were the most effective during this time period because of their effectiveness in deploying weaponry and capacity for 
+inflicting high damage quickly and effieciently. One example of this is the airstrikes, for example the London Blitz. Airstrikes (also called bombers) inflicted massive damage
+upon the cities, towns, and industrial centers of London. They were effiecient because the airplanes could come in and out quickly, and despense their artillery quickly.
+
+Another example of a prominent use of airplanes during this time would be for nuclear attacks. The most famous examples would be the Bombings of Hiroshima and Nagasaki.
+Without the use of the airplane, the bomb would not be able to be carried in and dropped. This is why I think airplanes used as a military technology were so effective,
+especially during this time period.
