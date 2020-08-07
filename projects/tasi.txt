@@ -1645,16 +1645,16 @@ they make as well. To do this, you must match destination ports to RDP and SSH.
 
 08/06/20 (day 89) :
 
-I learned that the Connection Opened / Closed is not for the logins / logouts, but instead can represent a variety of different network activity.
+I learned that the Connection Opened / Closed is not for the logins / logouts, but instead can represent a variety of different network activities.
 For example, some of the logs using thomasp as the user, and having Connection Opened / Closed, represent DNS activity / searching. We can see this
 because of the sslvpn.dst: xx.xxx.xx.x:53 
 The 53 port is the port reserved for DNS requests. This would give reasoning to why there are so many Connection Opened logs in Kibana; it represents all
-the time a search is made (if the 53 port is there).
+the times a search is made (if the 53 port is there).
 
 Following the port line-of-thought, :3389 and :22 are reserved for RDP and SSH ports. I searched these numbers in Kibana and found logs having the info.
-Also, we could actually install Filebeat on the servers that we want to view RDP and SSH information and send their Event Viewer logs directly to Kibana from there.
-But in regards of actually building the reporting, we don't want to include the Connection Opened / Closed, instead we want to include the keyphrases we found
-earlier:
+Alternatively, we could actually install Filebeat on the servers that we want to view RDP and SSH information and send their Event Viewer logs directly to
+Kibana from there. But in regards of actually building the reporting, we don't want to include the Connection Opened / Closed, instead we want to include
+the keyphrases we found earlier:
 
 SSL VPN Traffic
 SSL VPN zone remote user login allowed 
