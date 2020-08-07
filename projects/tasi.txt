@@ -1658,7 +1658,7 @@ the keyphrases we found earlier:
 
 SSL VPN Traffic
 SSL VPN zone remote user login allowed 
-User logged out - thomasp 
+User logged out
 SSL VPN Traffic 
 User login denied - LDAP authentication failure
 
