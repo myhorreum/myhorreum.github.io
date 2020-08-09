@@ -1662,6 +1662,10 @@ User logged out
 SSL VPN Traffic 
 User login denied - LDAP authentication failure
 
+08/07/20 (day 90) :
+
+I created the report with the selected fields. I included the key phrases listed yesterday. However for this report it turns out that Thomas did not want 
+the SSL VPN Traffic lines (which make up most of the report).
 
 *
 *
@@ -1671,5 +1675,3 @@ User login denied - LDAP authentication failure
 *
 *
 *
-
-
