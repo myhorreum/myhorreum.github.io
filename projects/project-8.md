@@ -27,7 +27,13 @@ Aside from the scientific learning the actual experience was similar to [Survivo
 
 Overall it was a great experience.
 
+<img class="ui image" src="../images/biosphereboats.jpg">
+               *The boats we took to Menjangan Island*
+
 Also I want to tie in a CS-related event that occured during this experience. It happened on the way back home, in the South Korean airport. I wanted to view some of the images I had captured in Bali. I plugged the SD card into a port in a public computer in the airport. I viewed my images and safely ejected the SD card. When I got home however, many of the images were corrupted. Was this a virus? What had happened? I am not sure, but it is something to keep in mind while traveling again.
+
+<img class="ui image" src="../images/biospherevirus.jpg">
+               *One of the corrupted images*
 
 ***************************************************************************************
 
