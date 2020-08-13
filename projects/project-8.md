@@ -23,7 +23,9 @@ The health of the environment has always been a large concern of mine. I like to
 <img class="ui image" src="../images/biospherecouncil.jpg">
                *The council*
 
-Aside from the scientific learning the actual experience was similar to [Survivor](https://en.wikipedia.org/wiki/Survivor_(American_TV_series)), a show I enjoyed watching growing up. Every so often we would have a council at night. Friendships and rivalries were developed between different groups of stewards. Physical labor was similar to the challenges on the show. I often thought that this is what the show would likely feel like if I was actually on the show. Also I want to mention that the snorkeling around Menjangan Island was one of the most stunning experiences I've ever had.
+Aside from the scientific learning the actual experience was similar to [Survivor](https://en.wikipedia.org/wiki/Survivor_(American_TV_series)), a show I enjoyed watching growing up. Every so often we would have a council at night. Friendships and rivalries were developed between different groups of stewards. Physical labor was similar to the challenges on the show. I often thought that this is what the show would likely feel like if I was actually on the show. 
+
+Other things that stuck out to me were also how good the native boys were at chess. Also I really looked up to our guide No Nosurparno; his knowledge of the park was extensive and he would also craft beautifully functional bags out of trash. Lastly I want to mention that the snorkeling around Menjangan Island was one of the most stunning experiences I've ever had.
 
 Overall it was a great experience.
 
