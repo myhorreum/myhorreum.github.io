@@ -1,5 +1,5 @@
 ---
-layout: korean
-type: korean
+layout: chest
+type: chest
 ---
 
