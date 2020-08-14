@@ -1703,11 +1703,13 @@ I think the error could possibly be related to editing the logstash.yml ... the 
 
 08/12/20 (day 94) :
 
-Turns out the error was permissions related. All files that Logstash is working from should be under logstash ownership/group
+Turns out the error was permissions related. All files that Logstash is working from should be under logstash user ownership/group
 The journalctl was giving a trail of permission errors from certain directories/files. I followed these errors and gave read access
 from root to logstash through the listed directories/files. This ultimately lead up to a .lock file in /var/lib/logstash
 Once I fixed that, I ran started logstash again and this time was getting syslogs in the journalctl. I then checked Kibana and was seeing
 logs there, so it was in fact working now as a service.
+
+Logstash is now running 24/7 constantly.
 
 *
 *
