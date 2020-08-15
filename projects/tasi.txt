@@ -1701,7 +1701,7 @@ Also, logstash service is trying to run from this file, so it may be related to 
 
 I think the error could possibly be related to editing the logstash.yml ... the syntax could be thrown off, similar to an experience I had with elasticsearch.yml
 
-08/12/20 (day 94) :
+08/13/20 (day 94) :
 
 Turns out the error was permissions related. All files that Logstash is working from should be under logstash user ownership/group
 The journalctl was giving a trail of permission errors from certain directories/files. I followed these errors and gave read access
@@ -1710,6 +1710,27 @@ Once I fixed that, I ran started logstash again and this time was getting syslog
 logs there, so it was in fact working now as a service.
 
 Logstash is now running 24/7 constantly.
+
+08/14/20 (day 95) :
+
+I ran these series of commands to get Elasticsearch working as a service:
+
+[root@templateCent0S7 -]# sudo /bin/systemctl daemon-reload 
+[root@templateCent0S7 -]# sudo /bin/systemctl enable elasticsearch.service 
+[root@templateCent0S7 -]# sudo systemctl start elasticsearch.service 
+
+I then rebooted the ELK VM to see if all the ELK components would start up on their own.
+Logstash and Kibana started up, but not Elasticsearch. 
+
+Thomas then added
+
+Restart=always
+
+to the elasticsearch.service file.
+
+On the reboot, Elasticsearch took a little while to start up, but it eventually did.
+
+I then began researching automatic reporting.
 
 *
 *
