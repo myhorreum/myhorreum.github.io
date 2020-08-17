@@ -1659,7 +1659,6 @@ the keyphrases we found earlier:
 SSL VPN Traffic
 SSL VPN zone remote user login allowed 
 User logged out
-SSL VPN Traffic 
 User login denied - LDAP authentication failure
 
 08/07/20 (day 90) :
