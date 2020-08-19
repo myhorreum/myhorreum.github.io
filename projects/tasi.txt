@@ -1731,6 +1731,16 @@ On the reboot, Elasticsearch took a little while to start up, but it eventually 
 
 I then began researching automatic reporting.
 
+08/18/20 (day 96) :
+
+I learned that we will have to put the POST URL into a Watcher watch. The watch is like a script that goes into the Kibana UI that works with
+Elasticsearch. It can work for reporting but can also be used in many other ways (like tracking variables that we want for the RDP/SSH). 
+
+Initially I could not find the Watcher UI in Kibana. I later learned that it is not immediately available with the open source ELK Stack that we
+have. I will need to research how to obtain it. It could be part of a Basic License. Also I found this install link:
+
+https://www.elastic.co/downloads/watcher
+
 *
 *
 *
