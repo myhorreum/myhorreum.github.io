@@ -51,7 +51,7 @@ Here I will list some specific contributions I had to the project...
 I am overall satisfied with the project. I think it does have some niche use within the maintenence department, I would be interested in seeing it actually in use and if it can benefit them in the long run. My experience working with a team was a mixed-bag; I am thankful for their contributions and it is nice being able to have other people take on some of the workload, however it is inevitable to evenually run into disagreements with members regarding site concepts. For example, I do not want My Reports and All Reports to be separated, I would rather just have it as List Reports as it first was. This is because I wanted the site to be more of a "bulletin board" where people post reports and that is it. This isn't a site to follow a users individual submissions, since that is not the main point of the site. Following individual submissions could have more of a use on a "Buy-&-Sell" sort of site, but not this one. Also, I wanted the Status field to be inside the View Attributes tab, since I think it looks messy outside of it (especially with the other tags directly below it). Overall it was a great learning experience.
 
 ## RESULT:
-You can view the live app on Galaxy [here](http://manoafixed.meteorapp.com/#/).
+You can view the live app on Galaxy [here](http://manoafixed.meteorapp.com/#/). (*As of now the class subscription has expired. The site is no longer active*)
 
 You can view the Project Page [here](https://manoa-fixed.github.io/).
 
