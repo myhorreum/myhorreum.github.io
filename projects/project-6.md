@@ -52,7 +52,7 @@ I am overall satisfied with the project. I think it does have some niche use wit
 
 ## RESULT:
 You can view the live app on Galaxy [here](http://manoafixed.meteorapp.com/#/). 
-*(*As of now the class subscription has expired. The site is no longer active*)
+* (*As of now the class subscription has expired. The site is no longer active*)
 
 You can view the Project Page [here](https://manoa-fixed.github.io/).
 
