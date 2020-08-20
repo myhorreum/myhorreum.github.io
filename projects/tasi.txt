@@ -1741,7 +1741,9 @@ have. I will need to research how to obtain it. It could be part of a Basic Lice
 
 https://www.elastic.co/downloads/watcher
 
-08/19/20 (day 97) :
+08/19/20 (day 97 + 1 = 98) :
+
+Note I caught a duplicate day (day 76) so I'm adding a day.
 
 The download link from yesterday was from back in 2016. The download commands weren't working (the plugin command was not found).
 The next option is to get the X-Pack, which comes with Watcher. It has a free 30-day trial, but costs a subscription afterwards.
