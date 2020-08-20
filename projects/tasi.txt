@@ -1725,7 +1725,7 @@ Thomas then added
 
 Restart=always
 
-to the elasticsearch.service file.
+to the elasticsearch.service file located in /etc/systemd/system.
 
 On the reboot, Elasticsearch took a little while to start up, but it eventually did.
 
