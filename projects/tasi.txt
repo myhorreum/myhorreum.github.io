@@ -1752,6 +1752,27 @@ I found this example which could be similar to what we what to do with Watcher i
 
 https://github.com/elastic/examples/tree/master/Security%20Analytics/ssh_analysis
 
+08/20/20 (day 99) :
+
+We won't be using Watcher because of the cost. View the different licences and their features here :
+
+https://www.elastic.co/subscriptions
+
+So instead we will be using a bash script to automate the reporting. The instructions are here:
+
+https://www.elastic.co/guide/en/kibana/current/automating-report-generation.html
+
+First I created a scripts directory in /etc/elasticsearch/scripts
+I then created a file called generateCSV.sh
+I just copied the curl example given. Be sure each line ends with the / 
+I also had to change the kbn.version to 7.8.0
+To check the version, I ran /usr/share/kibana/bin/kibana --version --allow-root
+I then copied the POST URL from Kibana and pasted it into the script.
+Before running the script, I had to give it execute permissions using chmod +x generateCSV.sh
+Running the script I was prompted to enter a host password for user 'elastic'
+It turns out the default password is 'changeme'
+Doing this gave a bunch of info into the PuTTY console, I assume it is the report's info
+
 *
 *
 *
