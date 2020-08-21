@@ -1775,8 +1775,11 @@ Doing this gave a bunch of info into the PuTTY console, I assume it is the repor
 
 Also I logged into the RDP WSUS server. There was some weird stuff going on. First of all, there were about 5000 backed up Installed/Non-Applicable
 updates on the WSUS. Then in Task Scheduler, the AdamJ Clean WSUS script had been set to run daily. I don't recall doing this. Also there was a description
-saying that the user (me) did this. Also the CLean WSUS script that I had set to be run weekly has been running, but it says that it has been stopped
-each time. We must get to the bottom of this.
+saying that the user (me) did this. Also the CLean WSUS (Deny-NotApplicables.ps1) script that I had set to be run weekly has been running, but 
+it says that it has been stopped each time. We must get to the bottom of this.
+ 
+I went to manually run Deny-NotApplicables.ps1 in the PowerShell IDE. It failed on a permissions related issue. I then ran opened the PS IDE as admin
+and re-ran the script. It cleaned out most of the unneeded reports (brought the number down to under 10).
 
 *
 *
