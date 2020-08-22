@@ -7,11 +7,12 @@ permalink: projects/tasi
 # All dates must be YYYY-MM-DD format!
 date: 2020-03-10
 labels:
-  - Research & Development
   - Linux
   - Networking
   - Virtualization
-summary: My experience working for and performing research for the Telecommunications and Social Informatics Program (TASI) / Pacific Health Informatics Data Center (PHIDC) at the University of Hawaii.
+  - WSUS
+  - ELK Stack
+summary: My experience working as a Systems Support Assistant for the Telecommunications and Social Informatics Program (TASI) / Pacific Health Informatics Data Center (PHIDC) at the University of Hawaii.
 ---
 <img class="ui image" src="../images/TASI-PHIDC.jpg">
 
