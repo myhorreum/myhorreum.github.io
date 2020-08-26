@@ -1781,6 +1781,37 @@ it says that it has been stopped each time. We must get to the bottom of this.
 I went to manually run Deny-NotApplicables.ps1 in the PowerShell IDE. It failed on a permissions related issue. I then ran opened the PS IDE as admin
 and re-ran the script. It cleaned out most of the unneeded reports (brought the number down to under 10).
 
+08/24/20 (day 100) :
+
+I was getting these errors when running the bash script:
+
+ line 13: uuencode: command not found
+./generateCSV.sh: line 39: warning: here-document at line 17 delimited by end-of-file (wanted `EOF')
+./generateCSV.sh: command substitution: line 27: syntax error near unexpected token `)'
+./generateCSV.sh: command substitution: line 27: `    "--frontier" done) EOF'
+sendmail: fatal: root(0): No recipient addresses found in message header
+
+08/25/20 (day 101) :
+
+I installed uuencode using this command: 
+
+yum install sharutils
+
+But I was still getting the 
+
+sendmail: fatal: root(0): No recipient addresses found in message header
+
+error (along with the EOF warning). To fix this, I tried moving variables above the curl portion of the script. I also
+tried writing the variables with out brackets like $TO instead of ${TO}, but this did not work either.
+
+Also I logged into the WSUS server, went into the Task Scheduler and right clicked on the Adamj Clean WSUS script and clicked on
+properties. I then deleted the trigger for the script to run daily. Its status is not Disabled. I then went into the properties of
+the Clean-WSUS script and followed these instructions:
+
+https://www.windowstricks.in/2018/08/how-to-run-the-powershell-script-in-scheduled-task-with-run-as-administrator.html
+
+Hopefully it will run successfully now.
+
 *
 *
 *
