@@ -1812,6 +1812,81 @@ https://www.windowstricks.in/2018/08/how-to-run-the-powershell-script-in-schedul
 
 Hopefully it will run successfully now.
 
+08/26/20 (day 102) :
+
+Thomas told me to install ClamAV on the ELK server. It is an anti-virus detection software. After installing, I ran the command freshclam
+which brought up a working, updated database. I then tried to do a systemctl status on ClamAV to see if it was running, but I was getting
+that the file or directory was not found.
+
+I then found another guide with more steps, I will go through with it next time:
+
+https://www.golinuxcloud.com/steps-install-configure-clamav-antivirus-centos-linux/
+
+08/27/20 (day 103) :
+
+Went through the guide and got stuck on this issue:
+
+https://www.reddit.com/r/linuxadmin/comments/ihztiq/issue_starting_clamav_service/
+
+^ That is the thread I created targetting the issue. 
+
+08/28/20 (day 104) :
+
+We looked through the clamd.service file to see if there were any info there that could give us a hint on how to solve the issue. There was
+no User field listed, unlike the ELK stack services which have specific users, which doesn't help a permissions issue. 
+
+I also copied the config files for clamd and freshclam. Here is example of the command for clamd:
+
+cp /etc/clamd.d/scan.conf /etc/clamd.d/scan.conf.bk
+
+Also the error message was saying ERROR: Can't open/parse the confg file /etc/clamd.d/.conf
+
+I then thought: How can I get it so that the scan.conf is actually listed in the ERROR message?
+
+I did this by editing the clamd.service file:
+
+ExecStart = /usr/sbin/clamd -c /etc/clamd.d/.conf
+
+When running systemctl start cla I now get a different error, so I guess that did fix that issue.
+
+08/31/20 (day 105) :
+
+For some reason the Logstash service had been stopped. I restarted it using systemctl start logstash and it restarted without issue.
+Logs began coming back into Kibana. Also the clamd.service was running. Not sure how the errors were fixed but it was working.
+
+I then tried testing scans for malware detection. I used this command:
+
+$ clamdscan [*options*] [*file/directory/-*]
+
+It took awhile to work on the directory I chose because of the large amount of files. No infected files were found.
+
+09/02/20 (day 106) :
+
+The Kibana was giving a lot of issues regarding to loading and timing out. Thomas thought it could be disk-space-related. I ran
+df -h I got that the server still had a lot of space left, so that wasn't the issue. I then restarted all the services. I was getting
+an error on the elasticsearch.service, but when I checked the status on the elasticsearch, it came back as active. At the 
+end of the restarting, the Kibana was now working smoothly again, and logs were coming into the dashboard. Note that if restarting 
+the services failed, the next could be doing a reset of the entire VM.
+
+Next I wanted to split the generateCSV.sh into only the CURL and the email seperately. I put the curl into a script called onlyCURL.sh,
+I had to give it execute permissions using chmod +x. However I ran into an issue with the CURL, it was saying XPOST is not a command. 
+I am not sure what the issue is because the code is exactly as the other script.
+
+09/03/20 (day 107) :
+
+The XPOST was just a syntax error, I forgot a hyphen. Also I learned that the HTTP GET request is just another way of using cURL or wget
+on the path you want to use to grab server data. In our case, the first property is what we need to do the HTTP GET request on:
+
+ "path":"/api/reporting/jobs/download/keoyrbo700qa8558116ysqps"
+
+ So curl that in url form.
+
+ The format needs to be:
+
+ http://localhost/path
+
+ https://colab.research.google.com/drive/1DUKlh5eKq-NYmNTCFkFb-QAWQZ80a5GZ#scrollTo=J8pKGgUyhsAg&line=10&uniqifier=1
+
 *
 *
 *
