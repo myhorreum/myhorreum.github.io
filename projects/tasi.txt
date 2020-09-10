@@ -1885,7 +1885,36 @@ on the path you want to use to grab server data. In our case, the first property
 
  http://localhost/path
 
- https://colab.research.google.com/drive/1DUKlh5eKq-NYmNTCFkFb-QAWQZ80a5GZ#scrollTo=J8pKGgUyhsAg&line=10&uniqifier=1
+ turns out it actually needs to be the IP of the ELK server with the :5601 Kibana port:
+
+ http://10.100.10.36:5601/path
+
+ 09/08/20 (day 107) :
+
+ I now have a way to actually bring in the .csv :
+
+ curl -o /etc/elasticsearch/scripts/SSLVPN_report.csv http://10.100.10.36:5601/api/reporting/jobs/download/keupsqfp00qa855811by44ze
+
+ Now we have to script it. Something that might be an issue is the 
+ 
+ Enter host password for user 'elastic':
+
+ that pops up. I think the workaround is to log in as the elastic user, since right now we are working under root.
+
+ This might be the script:
+
+strname=$(curl -X POST \
+-u elastic \
+-H 'kbn-version: 7.8.0' \
+'http://10.100.10.36:5601/api/reporting/generate/c....'
+
+if [[ $strname =~ '"Path":(.+)"' ]]; then
+        strresult=${BASH_REMATCH[1]}
+else
+        echo "unable to parse string $strname"
+fi
+
+curl -o /etc/elasticsearch/scripts/SSLVPN_report.csv "http://10.100.10.36:5601${strresult}"
 
 *
 *
