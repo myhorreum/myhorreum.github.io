@@ -1935,6 +1935,35 @@ Anyway, I also created a reddit thread addressing the issue with elasticsearch.s
 
 https://www.reddit.com/r/elasticsearch/comments/ipun12/elasticsearch_has_been_working_for_months_but_now/
 
+ 09/10/20 (day 110) :
+
+I ended up stopping logstash and then starting elasticsearch after the stop. It gave a failure message saying
+that elasticsearch timed out, but when I checked the status, it was Active/Running. I think perhaps the order of
+starting the services matters (during the install, logstash needed to be started last if I recall correctly).
+
+Also I checked the RAM using the command
+
+free -l 
+
+It gave back that the RAM wasn't completely used yet, but it almost was. We currently had 1.7/1.8 Gs of RAM occupied.
+We should allocate more RAM to the host because it Logstash and Elasticsearch both start with a default of 1G each.
+The issues we have been having could also be to the memory constraint.
+
+Then we began working on the script. Thomas ended up getting the script to work. It was a syntax/regex issue.
+
+09/11/20 (day 111) :
+
+This is the full script. It is working except the .csv is coming in blank.
+
+09/14/20 (day 112) :
+
+In order to add more RAM we must merge all the old snapshots and shut off/restart the server.
+
+09/15/20 (day 113) :
+
+The RAM has been added and I was able to start Elasticsearch without having to stop the other services, so I guess the
+extra memory is helping. Other than that, we contiued trying to get the report with data in it emailed out.
+
 *
 *
 *
