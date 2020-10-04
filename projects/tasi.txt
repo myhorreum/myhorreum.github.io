@@ -1953,7 +1953,7 @@ Then we began working on the script. Thomas ended up getting the script to work.
 
 09/11/20 (day 111) :
 
-This is the full script. It is working except the .csv is coming in blank.
+Worked on script. It is working except the .csv is coming in blank.
 
 09/14/20 (day 112) :
 
@@ -1963,6 +1963,99 @@ In order to add more RAM we must merge all the old snapshots and shut off/restar
 
 The RAM has been added and I was able to start Elasticsearch without having to stop the other services, so I guess the
 extra memory is helping. Other than that, we contiued trying to get the report with data in it emailed out.
+
+09/17/20 (day 114) :
+
+To fix the script, I put in a 
+
+sleep 3min
+
+into the script which pauses the script for 3 minutes at that point in the script. The issue we were having was that the report was
+being emailed before it had the time to fully download. Now, since we pause for a bit, the report has time to download the data properly.
+
+This is the full new script:
+
+TODAY=$(date +"%m-%d-%Y")
+
+strname=$(curl -X POST \
+-u elastic \
+-H 'kbn-version: 7.8.0' \
+'http://10.100.10.36:5601/api/reporting/generate/csv?jobParams=%28conflictedTypesFields%3A%21%28%29%2Cfields%3A%21%28%27%40timestamp%27%2Creceived_at%2Csslvpn.src%2Csslvpn.dst%2Csslvpn.msg%2Csslvpn.usr%29%2CindexPatternId%3A%271eaf7fd0-cf76-11ea-8955-b9ed3b9b5921%27%2CmetaFields%3A%21%28_source%2C_id%2C_type%2C_index%2C_score%29%2CsearchRequest%3A%28body%3A%28_source%3A%28excludes%3A%21%28%29%2Cincludes%3A%21%28%27%40timestamp%27%2Creceived_at%2Csslvpn.src%2Csslvpn.dst%2Csslvpn.msg%2Csslvpn.usr%29%29%2Cdocvalue_fields%3A%21%28%28field%3A%27%40timestamp%27%2Cformat%3Adate_time%29%29%2Cquery%3A%28bool%3A%28filter%3A%21%28%28bool%3A%28minimum_should_match%3A1%2Cshould%3A%21%28%28multi_match%3A%28lenient%3A%21t%2Cquery%3A%27SSL%20VPN%20zone%20remote%20user%20login%20allowed%27%2Ctype%3Aphrase%29%29%2C%28bool%3A%28minimum_should_match%3A1%2Cshould%3A%21%28%28multi_match%3A%28lenient%3A%21t%2Cquery%3A%27User%20logged%20out%27%2Ctype%3Aphrase%29%29%2C%28multi_match%3A%28lenient%3A%21t%2Cquery%3A%27User%20login%20denied%20-%20LDAP%20authentication%20failure%27%2Ctype%3Aphrase%29%29%29%29%29%29%29%29%2C%28range%3A%28%27%40timestamp%27%3A%28format%3Astrict_date_optional_time%2Cgte%3A%272020-09-17T02%3A14%3A14.001Z%27%2Clte%3A%272020-09-18T02%3A14%3A14.001Z%27%29%29%29%29%2Cmust%3A%21%28%29%2Cmust_not%3A%21%28%29%2Cshould%3A%21%28%29%29%29%2Cscript_fields%3A%28%29%2Csort%3A%21%28%28%27%40timestamp%27%3A%28order%3Adesc%2Cunmapped_type%3Aboolean%29%29%29%2Cstored_fields%3A%21%28%27%40timestamp%27%2Creceived_at%2Csslvpn.src%2Csslvpn.dst%2Csslvpn.msg%2Csslvpn.usr%29%2Cversion%3A%21t%29%2Cindex%3A%27logstash%2A%27%29%2Ctitle%3A%27Scheduled%20SSLVPN%20Report%205%20day%27%2Ctype%3Asearch%29')
+
+if [[ $strname =~ \{\"path\":\"(.+)\",\"job\" ]]; then
+        strresult=${BASH_REMATCH[1]}
+else
+        echo "unable to parse string $strname"
+fi
+
+sleep 3m
+
+curl -o "/etc/elasticsearch/scripts/SSLVPN_report_${TODAY}.csv" "http://10.100.10.36:5601${strresult}"
+
+echo "Here is the report" | mail -s "SSLVPN Report ${TODAY}" -r "relay2@uhtasi.org" -a "/etc/elasticsearch/scripts/SSLVPN_report_${TODAY}.csv" info@uhtasi.org
+
+09/21/20 (day 115) :
+
+The report was not being emailed into the info@uhtasi.org recipient/group. I tried changing the sender but still had no success. This was 
+weird because it was sending to other recipients (like my own personal email) and the WSUS server has no problem sending to info@uhtasi.org.
+
+09/22/20 (day 116) :
+
+Thomas added info@uhtasi.org to the trusted list on the mail server, but it still would not send in. I then checked the mail log by using
+
+tail -f /var/log/maillog
+
+and I did see an issue. I was getting a Connection timed out error when tring to connect to mailsec.uhtasi.org
+
+09/24/20 (day 117) :
+
+The new strategy is to do a mail relay. I tried to relay through a gmail server but was getting a failure on credentials validity. I was thinking
+it was a security precaution on the gmail accounts end. I was trying my own account and an account called healthnet.mailman@gmail.com but I was getting
+the same issue. The next thing to do would be to relay through mail.uhtasi.org and see if it works.
+
+09/25/20 (day 118) :
+
+More work on email. Also Thomas got the relay working. He created a new gmail account and allowed less secure apps to connect in the settings
+of the account.
+
+09/30/20 (day 118) :
+
+To work around the elastic user password, this line was added to the script:
+
+-u elastic:changeme
+
+Also we got the time to be fluid and update instead of be fixed on a certain day in the past. To do this we added 
+
+now -1d 
+
+in the range field of the POST URL. Before I added the new date math, the range field looked like this:
+
+range%3A%28%27%40
+
+It means that the information is encoded. You can encode and decode information using this tool:
+
+https://meyerweb.com/eric/tools/dencoder/
+
+Before switching the old date with the date match, it looked like this:
+
+(range:('@timestamp':(format:strict_date_optional_time,gte:'2020-09-17T02:14:14.001Z',lte:'2020-09-18T02:14:14.001Z'))))
+
+We want to change the gte and the lte. It was changed to this:
+
+(range:('@timestamp':(format:strict_date_optional_time,gte:now-1d,lte:now)))),must:!(),must_not:!(),should:!()))
+
+Once this is done, encode the URL again and put it back into the script.
+
+10/01/20 (day 118) :
+
+Today I went into the office to help with the techincal side of the Zoom meeting. The Zoom meeting was over 100 people and was focused
+on climate change. The people belonged to different universities. The people added their university after their username. I then added
+each person to a Zoom Breakout Group based on their university. The Waseda University said that their group was too large, however it
+was too late to split the group into smaller versions. I think next times could do Waseda 1, Waseda 2, Waseda 3 or something similar.
+
+Also I was responsible for launching the polling. To display poll results to the Zoom members, I have to end the poll and show results.
+
+Once the meeting ends, the recording is converted to .mp4 and located in Documents > Zoom > .. API Collaborative ..
 
 *
 *
