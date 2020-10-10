@@ -2018,7 +2018,7 @@ the same issue. The next thing to do would be to relay through mail.uhtasi.org a
 More work on email. Also Thomas got the relay working. He created a new gmail account and allowed less secure apps to connect in the settings
 of the account.
 
-09/30/20 (day 118) :
+09/30/20 (day 119) :
 
 To work around the elastic user password, this line was added to the script:
 
@@ -2046,7 +2046,7 @@ We want to change the gte and the lte. It was changed to this:
 
 Once this is done, encode the URL again and put it back into the script.
 
-10/01/20 (day 118) :
+10/01/20 (day 120) :
 
 Today I went into the office to help with the techincal side of the Zoom meeting. The Zoom meeting was over 100 people and was focused
 on climate change. The people belonged to different universities. The people added their university after their username. I then added
@@ -2056,6 +2056,87 @@ was too late to split the group into smaller versions. I think next times could 
 Also I was responsible for launching the polling. To display poll results to the Zoom members, I have to end the poll and show results.
 
 Once the meeting ends, the recording is converted to .mp4 and located in Documents > Zoom > .. API Collaborative ..
+
+10/07/20 (day 121) :
+
+Worked on installing nginx to Kibana with a password. Also the issue with the crontab not sending the email was that we did not have the
+
+./
+
+in front of the path. So we added it. It ended up working. 
+
+I also opened the port 80 on the firewall. I opened the udp and tcp ports because I wasn't sure if it mattered.
+
+10/08/20 (day 122) :
+
+The nginx guides I used were:
+
+https://www.digitalocean.com/community/tutorials/how-to-install-elasticsearch-logstash-and-kibana-elastic-stack-on-centos-7
+
+https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-centos-7
+
+I changed the example.com.conf to 10.100.10.36.conf
+
+It turns out that nginx was actually working. But only on the localhost (which is 10.100.10.36 without the :5601 port).
+
+If I typed just the IP without the port into the browser, I would get the prompt for credentials. If I added the port, I would not.
+
+To work around this, I began following the 
+
+Forwarding Port with Firewalld
+
+part of this guide:
+
+https://linuxize.com/post/how-to-setup-a-firewall-with-firewalld-on-centos-7/
+
+10/09/20 (day 123) :
+
+Instead of following the forwarding firewall guide, instead I thought it would be easier to just block the 5601 on the firewall. 
+It worked and now only the Kibana could be accessed by 10.100.10.36 not 10.100.10.36:5601
+
+I blocked it using this:
+
+sudo firewall-cmd --zone=public --permanent --remove-port=5601/tcp
+
+then 
+
+firewall-cmd --reload
+
+Also I want to add a timeout to the nginx, so it forces users to re-enter credentials.
+
+The example is here:
+
+http://nginx.org/en/docs/http/configuring_https_servers.html
+
+Specifically it would look something like this from that link:
+
+worker_processes auto;
+
+http {
+    ssl_session_cache   shared:SSL:10m;
+    ssl_session_timeout 10m;
+
+    server {
+        listen              443 ssl;
+        server_name         www.example.com;
+        keepalive_timeout   70;
+
+        ssl_certificate     www.example.com.crt;
+        ssl_certificate_key www.example.com.key;
+        ssl_protocols       TLSv1 TLSv1.1 TLSv1.2;
+        ssl_ciphers         HIGH:!aNULL:!MD5;
+        ...
+
+Actually I think the credentials were just not being prompted because it was related to the browswer remembering them. Opening the Edge
+browser causes the credentials to be prompted. Also opening an Incoginto screen (ctrl + shift + n) causes the credentials to be prompted.
+
+Also the SSLVPN_report was not coming through to the email. I realized the issue was that we were still curling with the 5601 port
+
+curl -o "/etc/elasticsearch/scripts/SSLVPN_report_${TODAY}.csv" "http://10.100.10.36:5601${strresult}"
+
+It was not cron/email related because manually running the report did not bring the report into the email.
+
+I took the :5601 out and then manually ran the report, which caused it to come it.
 
 *
 *
