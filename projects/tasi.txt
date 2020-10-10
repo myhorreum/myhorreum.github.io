@@ -1708,6 +1708,10 @@ from root to logstash through the listed directories/files. This ultimately lead
 Once I fixed that, I ran started logstash again and this time was getting syslogs in the journalctl. I then checked Kibana and was seeing
 logs there, so it was in fact working now as a service.
 
+Here is the reddit thread that I used to help troubleshoot:
+
+https://www.reddit.com/r/elasticsearch/comments/i7ho5p/want_to_run_logstash_as_a_service_with_a_custom/g1diyoj/
+
 Logstash is now running 24/7 constantly.
 
 08/14/20 (day 95) :
@@ -2136,7 +2140,7 @@ curl -o "/etc/elasticsearch/scripts/SSLVPN_report_${TODAY}.csv" "http://10.100.1
 
 It was not cron/email related because manually running the report did not bring the report into the email.
 
-I took the :5601 out and then manually ran the report, which caused it to come it.
+I took the :5601 out and then manually ran the report, which caused it to come in.
 
 *
 *
