@@ -34,6 +34,7 @@ I saw a job opening for the position of Systems Support Assistant at Telecommuni
 * Took it a step further to see RDP and SSH connections from a SSLVPN source IP.
 * Created a custom grok filter to parse the syslog data for our specific use-case.
 * Automated reporting by writing a bash script that receives a .csv from Kibana via a generated POST URL, waits for the .csv to fully download, the emails then .csv out to designated recipients.
+* Integrating with nginx to secure Kibana and require credentials to access Kibana.
 
 <img class="ui small left floated image" src="../images/wizard.gif">
 
