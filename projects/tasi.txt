@@ -2142,6 +2142,25 @@ It was not cron/email related because manually running the report did not bring 
 
 I took the :5601 out and then manually ran the report, which caused it to come in.
 
+10/13/20 (day 124) :
+
+Created a new zone in the firewall and added a source IP and port. Also the report in the email was giving a non-authorized nginx
+message, which was blocking the report data.
+
+10/14/20 (day 125) :
+
+Turns out nginx needs the :5601 port in the second curl that we had taken out the other day. Now it allows the report to come in with data.
+We also want to delete old syslog logs that are built up in the server, since it is taking up too much space. To see the occupied indices,
+run this in Kibana Dev Tools:
+
+GET _cat/indices?v
+
+GET _cat/allocation?v
+
+Also this line must be added to the elasticsearch.yml :
+
+discovery.type: single-node
+
 *
 *
 *
