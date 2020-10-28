@@ -2161,6 +2161,13 @@ Also this line must be added to the elasticsearch.yml :
 
 discovery.type: single-node
 
+Also we added rich rules to the firewall. Those in particular allow 10.100.10.36 and 127.0.0.1 (localhost) to access TCP port 5601 (Kibana)
+I added that so that the local machine could access Kibana directly. But for us since we connect with browsers from other IPs, we cannot directly hit port 5601
+
+10/15/20 (day 126) :
+
+A snapshot for Curator was created and we will begin the install of Curator.
+
 *
 *
 *
