@@ -2168,6 +2168,84 @@ I added that so that the local machine could access Kibana directly. But for us 
 
 A snapshot for Curator was created and we will begin the install of Curator.
 
+                         --- UPDATE ---
+
+I haven't been taking daily notes for the last several days. Instead I will offer an update of what ground I have made so far. First, we abandoned
+Curator. Instead we are using Index Lifecycle Management (ILM) in Kibana. The ILM is located in 
+
+Kibana > Stack Management > Index Lifecycle Policies 
+
+I then set the policies to create new indicies daily instead of monthly and to delete indices once they hit an age of 10 days.
+
+The reason why we need to delete old indices is because they are taking up way too much memory on the machine, which was giving us
+this error:
+
+Error: Too Many Requests 
+
+in the Kibana Discovery. And I was getting no logs. Running the journalctl -u logstash gave the Error: Too Many Requests and this
+
+({"type"=>"cluster_block_exception", "reason"=>"blocked by: [FORBIDDEN/12/index read-only / allow delete (api)]
+
+repeated. Once the memory was freed up through ILM, to clear the error, this must be run in Kibana Dev Tools:
+
+PUT _settings
+    {
+    "index": {
+    "blocks": {
+    "read_only_allow_delete": null
+    }
+    }
+    }
+
+ PUT your_index_name/_settings
+    {
+    "index": {
+    "blocks": {
+    "read_only_allow_delete": null
+    }
+    }
+    }
+
+Also I will list the various Dev Tool commands that are useful to have:
+
+
+
+Lastly, we finally fixed the email reporting script. To fix it, it was a combination of changing the script
+and the crontab.
+
+This is the new script:
+
+
+#!/bin/bash
+
+
+TODAY=$(/bin/date +"%m-%d-%Y")
+
+strname=$(/bin/curl -X POST \
+-u elastic:changeme \
+-H 'kbn-version: 7.8.0' \
+'http://10.100.10.36:5601/api/reporting/generate/csv?jobParams=%28conflictedTypesFields%3A%21%28%29%2Cfields%3A%21%28%27%40timestamp%27%2Creceived_at%2Csslvpn.src%2Csslvpn.dst%2Csslvpn.msg%2Csslvpn.usr%29%2CindexPatternId%3A%271eaf7fd0-cf76-11ea-8955-b9ed3b9b5921%27%2CmetaFields%3A%21%28_source%2C_id%2C_type%2C_index%2C_score%29%2CsearchRequest%3A%28body%3A%28_source%3A%28excludes%3A%21%28%29%2Cincludes%3A%21%28%27%40timestamp%27%2Creceived_at%2Csslvpn.src%2Csslvpn.dst%2Csslvpn.msg%2Csslvpn.usr%29%29%2Cdocvalue_fields%3A%21%28%28field%3A%27%40timestamp%27%2Cformat%3Adate_time%29%29%2Cquery%3A%28bool%3A%28filter%3A%21%28%28bool%3A%28minimum_should_match%3A1%2Cshould%3A%21%28%28multi_match%3A%28lenient%3A%21t%2Cquery%3A%27SSL%20VPN%20zone%20remote%20user%20login%20allowed%27%2Ctype%3Aphrase%29%29%2C%28bool%3A%28minimum_should_match%3A1%2Cshould%3A%21%28%28multi_match%3A%28lenient%3A%21t%2Cquery%3A%27User%20logged%20out%27%2Ctype%3Aphrase%29%29%2C%28multi_match%3A%28lenient%3A%21t%2Cquery%3A%27User%20login%20denied%20-%20LDAP%20authentication%20failure%27%2Ctype%3Aphrase%29%29%29%29%29%29%29%29%2C%28range%3A%28%27%40timestamp%27%3A%28format%3Astrict_date_optional_time%2Cgte%3Anow-1d%2Clte%3Anow%29%29%29%29%2Cmust%3A%21%28%29%2Cmust_not%3A%21%28%29%2Cshould%3A%21%28%29%29%29%2Cscript_fields%3A%28%29%2Csort%3A%21%28%28%27%40timestamp%27%3A%28order%3Adesc%2Cunmapped_type%3Aboolean%29%29%29%2Cstored_fields%3A%21%28%27%40timestamp%27%2Creceived_at%2Csslvpn.src%2Csslvpn.dst%2Csslvpn.msg%2Csslvpn.usr%29%2Cversion%3A%21t%29%2Cindex%3A%27logstash%2A%27%29%2Ctitle%3A%27Scheduled%20SSLVPN%20Report%205%20day%27%2Ctype%3Asearch%29')
+
+if [[ $strname =~ \{\"path\":\"(.+)\",\"job\" ]]; then
+        strresult=${BASH_REMATCH[1]}
+else
+        /bin/echo "unable to parse string $strname"
+fi
+
+/bin/sleep 3m
+
+/bin/curl -o "/etc/elasticsearch/scripts/SSLVPN_report_${TODAY}.csv" "http://10.100.10.36:5601${strresult}"
+
+/bin/echo "Here is the report" | /bin/mail -s "SSLVPN Report ${TODAY}" -r "relay2@uhtasi.org" -a "/etc/elasticsearch/scripts/SSLVPN_report_${TODAY}.csv" info@uhtasi.org
+
+
+
+The difference is that we added the file paths to the commands like curl, sleep, and echo. Now here is the crontab:
+
+45 18 * * * /bin/bash /etc/elasticsearch/scripts/onlyCURL.sh
+
+We took out the root user. Anyways, it is now working.
+
 *
 *
 *
