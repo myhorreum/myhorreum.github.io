@@ -2208,7 +2208,11 @@ PUT _settings
 
 Also I will list the various Dev Tool commands that are useful to have:
 
+GET /logstash-2020.10.23-000005/_stats
 
+GET /_cat/indices
+
+GET _cat/allocation?v
 
 Lastly, we finally fixed the email reporting script. To fix it, it was a combination of changing the script
 and the crontab.
