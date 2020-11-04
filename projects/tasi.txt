@@ -1047,6 +1047,43 @@ I continued to fiddle with the Logstash configuration. The Logstash YAML was all
 Also the online guide gives running the logstash-syslog.conf in a way that is not CentOS. Possibly I need to figure out how to run it with
 the correct syntax.
 
+This is the contents of our logstash-syslog.conf :
+
+input {
+  tcp {
+    port => 5044
+    type => syslog
+  }
+  udp {
+    port => 5044
+    type => syslog
+  }
+}
+
+filter {
+  grok {
+    match => {
+      "message" => "^<%{NUMBER:[syslog][priority]}>%{SPACE}++%{GREEDYDATA:[syslog][message]}$"
+    }
+    add_field => [ "received_at", "%{@timestamp}" ]
+    add_field => [ "received_from", "%{host}" ]
+    remove_field => "message"
+  }
+  kv {
+    source => "[syslog][message]"
+    target => "sslvpn"
+    remove_field => "[syslog][message]"
+  }
+  date {
+    match => [ "[sslvpn][time]", "yyyy-MM-dd HH:mm:ss" ]
+  }
+}
+
+output {
+  elasticsearch { hosts => ["localhost:9200"] }
+  stdout { codec => rubydebug }
+}
+
 06/24/20 (day 60) :
 
 I edited the logstash-syslog.conf so that its input was taking 5044 as its port value. This is the port of TASI's firewall. Thomas then said 
