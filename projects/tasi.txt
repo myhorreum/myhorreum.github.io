@@ -2845,6 +2845,86 @@ Start-Service Filebeat
 
 It is a good idea to check the status of Filebeat or Winlogbeat by typing services.mcs in PowerShell.
 
+                         --- UPDATE ---
+
+We decided to send the Winlogbeat through the Logstash output instead of the Elasticsearch output directly. In the guide
+it said that first we must load the index template manually. This was the command they said to run:
+
+PS > .\winlogbeat.exe setup --index-management -E output.logstash.enabled=false -E 'output.elasticsearch.hosts=["localhost:9200"]'
+
+I was running that command with the PS in front. This caused an error to be displayed onto the screen. It also corrupted the
+winlogbeat.exe because it was being displayed as having 0 memory. To fix this, we downloaded the Winlogbeat again, and just copied
+the new winlogbeat.exe into the folder and replaced the old one. 
+
+I then ran the command without the PS > as well as replacing the localhost:9200 with the ELK server's IP + port like this:
+
+.\winlogbeat.exe setup --index-management -E output.logstash.enabled=false -E 'output.elasticsearch.hosts=["10.100.10.36:9200"]'
+
+It then ran successfully. 
+
+We also changed the logstash-syslog.conf to this:
+
+input {
+  tcp {
+    port => 5055
+    type => syslog
+  }
+  udp {
+    port => 5055
+    type => syslog
+  }
+  beats {
+    port => 5044
+    type => winlogbeat
+  }
+}
+
+filter {
+  if [type]=="syslog" {
+        grok {
+                match => {
+                "message" => "^<%{NUMBER:[syslog][priority]}>%{SPACE}++%{GREEDYDATA:[syslog][message]}$"
+                }
+                add_field => [ "received_at", "%{@timestamp}" ]
+                add_field => [ "received_from", "%{host}" ]
+                remove_field => "message"
+        }
+        kv {
+                source => "[syslog][message]"
+                target => "sslvpn"
+                remove_field => "[syslog][message]"
+        }
+        date {
+                match => [ "[sslvpn][time]", "yyyy-MM-dd HH:mm:ss" ]
+        }
+  }
+
+  if ![ecs] {
+                mutate {
+                        rename => ["host", "[host][name]" ]
+                        update => { "[ecs][version]" => "1.5.0" }
+                        add_tag => [ "ecs_converted" ]
+                }
+  }
+}
+output {
+
+        if [type]=="syslog" {
+                elasticsearch {
+                hosts => ["localhost:9200"]
+                }
+        stdout { codec => rubydebug }
+        }
+        if [type]=="winlogbeat" {
+                elasticsearch {
+                hosts => ["localhost:9200"]
+                index => "%{[@metadata][beat]}-%{[@metadata][version]}"
+                }
+
+        }
+}
+
+
 *
 *
 *
