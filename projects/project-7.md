@@ -22,7 +22,7 @@ I saw a job opening for the position of Systems Support Assistant at Telecommuni
 
 ## Windows Server Update Services (WSUS) :
 
-<img class="ui image" src="../images/susdb.jpg">
+<img class="ui image" src="../images/task-scheduler.png">
 
 * Detached SUSDB.mdf database file from C drive and attached it to E drive using SQL Server Management Studio.
 * Used PowerShell scripts to reduce bloated WSUS update count from 127,000 to 33,000 to 1600 (<2% of initial volume) and increased speed of WSUS software signficantly. Also eliminated random timeouts completely due to the mass of unneeded updates now being removed.
