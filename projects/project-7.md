@@ -33,7 +33,7 @@ I saw a job opening for the position of Systems Support Assistant at Telecommuni
 ## ELK Stack (Elasticsearch + Logstash + Kibana) :
 
 <img class="ui image" src="../images/elastic.jpg">
-      -    *Working with Elasticsearch logs to aid in troubleshooting*    -
+      -    *             Working with Elasticsearch logs to aid in troubleshooting*    -
 
 * Installed ELK Stack components on a CentOS VM and fit them in accordance to the organization's firewall.
 * Ran the Logstash pipeline with a syslog configuration in order to receive and interpret logs from a syslog instance. Specifically, we wanted to search for SSLVPN logins, SSLVPN logouts, and rejected authentication attempts that were hitting the firewall.
