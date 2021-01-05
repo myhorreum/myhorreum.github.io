@@ -2942,8 +2942,8 @@ from the kv{} block. Upon restarting the logstash service I was getting error:
 It turned out that this error was (likely) not related to any changes made in the config. Instead it was a result of all of the random files that
 had been generated inside of the directory. I did an ls -al to display all files and rm'ed all the files that were not the config. Upon doing this,
 logs were present in the journalctl -u logstash. These random files were somehow generated on an event occuring Dec. 23 according to their dates. 
-The error that we were getting makes sense when you realize that the logstash.yml looks in the directory specified in the path.config field (/etc/logstash/conf.d/*)
-in our case. If the directory is full of junk files, it makes sense why we getting an error at line 1, column 1 (byte 1). Upon cleaning the directory,
+The error that we were getting makes sense when you realize that the logstash.yml looks in the directory specified in the path.config field (/etc/logstash/conf.d/*
+in our case). If the directory is full of junk files, it makes sense why we getting an error at line 1, column 1 (byte 1). Upon cleaning the directory,
 we no longer have this issue and can load the config.
 
 *
