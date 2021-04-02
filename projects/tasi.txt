@@ -2946,6 +2946,23 @@ The error that we were getting makes sense when you realize that the logstash.ym
 in our case). If the directory is full of junk files, it makes sense why we getting an error at line 1, column 1 (byte 1). Upon cleaning the directory,
 we no longer have this issue and can load the config.
 
+                         --- UPDATE ---
+
+First I want to provide a useful command for wrapping the journalctl lines:
+
+journalctl --since '1 hour ago' -u elasticsearch -xn | less
+
+Next I want to discuss an issue we had involving logs incoming in the logstash journalctl but not showing in the Kibana.
+In order to pinpoint incoming activity from a particular IP you can pipe a grep through the journalctl:
+
+journalctl --since '10 minutes ago' | grep 10.100.10.2
+
+Where 10.100.10.2 is the IP of the syslog firewall. This command came back with activity so we did have syslogs coming into our server.
+However the syslogs were not present in the Kibana. I then noticed that the logs in the grep 10.100.10.2 had a timestamp from days ago.
+This time was the time of the server which was set in the past (from the reverting of the snapshots). I then toggled the Kibana to the timeframe
+with the timestamp of the grep 10.100.10.2 - this gave the logs. I then went to reset the time on the server to the current time to see if 
+it would fix our issue.
+
 *
 *
 *
