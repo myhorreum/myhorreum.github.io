@@ -16,11 +16,6 @@
     },
     "profiles": [
       {
-        "network": "github",
-        "username": "rn-repos",
-        "url": "http://github.com/rn-horreum"
-      },
-      {
         "network": "instagram",
         "username": "elavator",
         "url": "http://instagram.com/elavator"
