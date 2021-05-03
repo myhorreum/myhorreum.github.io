@@ -29,7 +29,7 @@
       {
         "icon": "large file pdf outline icon",
         "username": "resume",
-        "url": "{{ site.baseurl }}/_data/Nicolai_Resume.pdf"
+        "url": "{{ site.baseurl }}/essays/Nicolai_Resume.pdf"
       },
       {
         "network": "youtube",
@@ -40,7 +40,7 @@
   },
   "interests": [
     {
-      "name": "ppNetwork Design",
+      "name": "popNetwork Design",
       "keywords": [
       ]
     },
