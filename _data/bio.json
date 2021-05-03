@@ -27,20 +27,20 @@
         "url": "https://www.goodreads.com/rn-books"
       },
       {
-        "icon": "large file pdf outline icon",
-        "username": "resume",
-        "url": "Nicolai_Resume.pdf"
-      },
-      {
         "network": "youtube",
         "username": "rn-videos",
         "url": "http://youtube.com/channel/UCAlAM18EGW1RyQwafB0FsHA?view_as=subscriber"
+      },
+      {
+        "icon": "large file pdf outline icon",
+        "username": "Resume",
+        "url": "Nicolai_Resume.pdf"
       }
     ]
   },
   "interests": [
     {
-      "name": "poopNetwork Design",
+      "name": "Network Design",
       "keywords": [
       ]
     },
