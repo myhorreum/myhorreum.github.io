@@ -27,7 +27,7 @@
         "url": "https://www.goodreads.com/rn-books"
       },
       {
-        "icon": "large file pdf outline icon ",
+        "icon": "large file pdf outline icon",
         "username": "resume",
         "url": "{{ site.baseurl }}/_data/Nicolai_Resume.pdf"
       },
