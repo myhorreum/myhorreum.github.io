@@ -1,0 +1,5 @@
+---
+layout: religion
+type: religion
+---
+
