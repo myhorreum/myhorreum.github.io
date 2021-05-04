@@ -32,6 +32,6 @@ Here is my [full report]({{ site.baseurl }}/essays/Nicolai_355_project.pdf).
 
 -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  - 
 
-<div class="ui medium rounded images">
+<div class="ui large rounded images">
 <img class="ui image" src="../images/tuscany.jpg">
 </div>
