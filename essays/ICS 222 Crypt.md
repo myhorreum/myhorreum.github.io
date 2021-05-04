@@ -30,5 +30,4 @@ In ICS 355 : Security and Trust I: Resource Protections, we were also tasked to 
 Here is my [full report]({{ site.baseurl }}/essays/Nicolai_355_project.pdf).
 
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
+-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  - 
