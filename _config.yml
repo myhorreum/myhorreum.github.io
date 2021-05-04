@@ -22,6 +22,7 @@ theme-pay: theme-pay.html
 theme-chest: theme-chest.html
 theme-water: theme-water.html
 theme-fire: theme-fire.html
+theme-religion: theme-religion.html
 
 # Specify the rouge syntax highlighter theme. Pick one from css/rouge.
 rouge-theme: igorpro
