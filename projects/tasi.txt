@@ -2827,6 +2827,13 @@ processors:
 # This allows to enable 6.7 migration aliases
 #migration.6_to_7.enabled: true
 
+# ============================== Bonus Configs =================================
+setup.ilm.overwrite: false
+setup.ilm.enabled: auto
+setup.ilm.pattern: "{now/d}-000001"
+
+**** Note I added the Bonus Configs in order to format the winlogbeat indices.
+
 
  ----- END OF CONFIGS ----
 
