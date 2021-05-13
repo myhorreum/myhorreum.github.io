@@ -117,7 +117,7 @@ public class FiniteStates {
  myTiles.get(5).translateBy(0, +10);
  myTiles.get(6).translateBy(0, +10);
  myTiles.get(7).translateBy(0, +10);
- myTiles.get(😎.translateBy(0, +10);
+ myTiles.get(8.translateBy(0, +10);
  myTiles.get(9).translateBy(0, +10);
  myTiles.get(10).translateBy(0, +30);
  myTiles.get(11).translateBy(0, +30);
@@ -153,8 +153,8 @@ public class FiniteStates {
  if ((myTiles.get(7).getYCenter() % 136)!=0){
  myTiles.get(7).translateBy(0, 1);
  }
- if ((myTiles.get(😎.getYCenter() % 136)!=0){
- myTiles.get(😎.translateBy(0, 1);
+ if ((myTiles.get(8.getYCenter() % 136)!=0){
+ myTiles.get(8.translateBy(0, 1);
  }
  if ((myTiles.get(9).getYCenter() % 136)!=0){
  myTiles.get(9).translateBy(0, 1);
@@ -180,7 +180,7 @@ public class FiniteStates {
  myTiles.get(2).getYCenter() % 136==0 && myTiles.get(3).getYCenter() % 136==0 && 
  myTiles.get(4).getYCenter() % 136==0 && myTiles.get(5).getYCenter() % 136==0 && 
  myTiles.get(6).getYCenter() % 136==0 && myTiles.get(7).getYCenter() % 136==0 && 
- myTiles.get(😎.getYCenter() % 136==0 && myTiles.get(9).getYCenter() % 136==0 && 
+ myTiles.get(8.getYCenter() % 136==0 && myTiles.get(9).getYCenter() % 136==0 && 
  myTiles.get(10).getYCenter() % 136==0 && myTiles.get(11).getYCenter() % 136==0 && 
  myTiles.get(12).getYCenter() % 136==0 && myTiles.get(13).getYCenter() % 136==0 && 
  myTiles.get(14).getYCenter() % 136==0){
@@ -213,7 +213,7 @@ public class FiniteStates {
  if (myTiles.get(7).isPointInElement(PinkX, PinkY)) {
  b = 3;
  }
- if (myTiles.get(😎.isPointInElement(PinkX, PinkY)) {
+ if (myTiles.get(8.isPointInElement(PinkX, PinkY)) {
  b = 4;
  }
  if (myTiles.get(9).isPointInElement(PinkX, PinkY)) {
