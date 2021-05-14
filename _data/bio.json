@@ -2,7 +2,7 @@
   "basics": {
     "name": "Roman Nicolai",
     "label": "Student + Systems Support Assistant",
-    "picture": "https://rn.systems/images/pic3.PNG",
+    "picture": "{{ site.baseurl }}/images/pic3.PNG",
     "email": "rn@rn.systems",
     "phone": "808-321-7704",
     "website": "https://rn.systems",
