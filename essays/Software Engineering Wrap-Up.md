@@ -31,7 +31,7 @@ merging, and project boards.
 A sort of "breakthrough moment" I had with Github was tied to a previous experience I had with the site. A few years ago I was directed to Github
 to download the code for an online game I had been playing. I went to Github because I was told that it would be possible to customize the game
 to my own desires, and eventually be able to play my own version of the game. However I found the instructions to be complicated and beyond
-my level of understanding. Therefore, I never had the chance to modify and play the game to my liking. I also had a very elementary understanding
+my level of understanding. Therefore, I never had the chance to modify and play the game to my liking. I also had ae very elementary understanding
 of code at the time (this game had a lot of JavaScript).
 
 After taking ICS 314, I now have the knowledge needed to actually work with open source software projects. I now have the tools (such as Github
