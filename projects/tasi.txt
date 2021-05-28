@@ -3000,6 +3000,13 @@ I went through this process:
 4. Run this in PowerShell: 
             Start-Service winlogbeat
 
+                         --- UPDATE ---
+
+I forgot to provide the query for the DCON reporting:
+
+NOT "netmon" AND NOT "jcuser" AND NOT *$ AND NOT "ldapuser" AND NOT "service-sqladmin" AND NOT "relay" AND NOT "relay2" AND NOT "ANONYMOUS LOGON" AND 
+("An account was logged off." OR "A logon was attempted using explicit credentials." OR "An account was successfully logged on.")
+
 *
 *
 *
