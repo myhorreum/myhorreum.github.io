@@ -2970,6 +2970,36 @@ This time was the time of the server which was set in the past (from the reverti
 with the timestamp of the grep 10.100.10.2 - this gave the logs. I then went to reset the time on the server to the current time to see if 
 it would fix our issue.
 
+                         --- UPDATE ---
+
+The opendistro alerting plugin was giving errors relating to specific plugins that we had installed. These being the opendistroAlerting and
+opendistroQueryWorkbenchKibana. The errors were basically complaining about a parse error related to a particular file. For the opendistroAlerting
+the file was located in:
+
+/usr/share/kibana/plugins/opendistroAlertingKibana/
+
+for the opendistroQueryWorkbenchKibana the file was located in:
+
+/usr/share/kibana/plugins/.plugin.installing
+
+To fix the issue, deleting the entire director was sufficient to solve the issue since all the files in those directory were only opendistro related.
+
+                         --- UPDATE ---
+
+Our winlogbeat indices were not deleting. We were having issues with them not being the write index, and not having the date alias attached. To fix this
+I went through this process:
+
+1. Stop the service.
+2. Change the configs to this:
+           setup.ilm.overwrite: false
+           setup.ilm.enabled: auto
+           setup.ilm.policy_name: "winlogbeat"
+           setup.ilm.pattern: "{now/d}-000001"
+3. Run this in PowerShell:
+            .\winlogbeat.exe setup --index-management -E          output.logstash.enabled=false -E 'output.elasticsearch.hosts=["10.100.10.36:9200"]'
+4. Run this in PowerShell: 
+            Start-Service winlogbeat
+
 *
 *
 *
