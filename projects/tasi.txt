@@ -2972,9 +2972,9 @@ it would fix our issue.
 
                          --- UPDATE ---
 
-The opendistro alerting plugin was giving errors relating to specific plugins that we had installed. These being the opendistroAlerting and
-opendistroQueryWorkbenchKibana. The errors were basically complaining about a parse error related to a particular file. For the opendistroAlerting
-the file was located in:
+The opendistro alerting plugin was giving errors relating to specific plugins that we had installed after I had thought I had removed them via command. 
+These being the opendistroAlerting and opendistroQueryWorkbenchKibana. The errors were basically complaining about a parse error related to a particular file. 
+For the opendistroAlerting the file was located in:
 
 /usr/share/kibana/plugins/opendistroAlertingKibana/
 
