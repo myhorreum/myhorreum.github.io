@@ -21,6 +21,11 @@
         "url": "http://instagram.com/king"
       },
       {
+        "network": "venmo",
+        "username": "rn-pay",
+        "url": "https://account.venmo.com/u/masaichi"
+      },
+      {
         "network": "goodreads",
         "icon": "book icon ",
         "username": "rn-books",
