@@ -33,4 +33,4 @@ This fun project taught me the power of certain coding techniques. The idea that
 *This project was developed in the [Eclipse IDE](https://www.eclipse.org/) and utilized the [EZ Graphics Library](http://www2.hawaii.edu/~dylank/ics111/) created by graduate student Dylan Kobayashi.*
 
 
-<img class="ui image" src="../images/hansel_uns_gretel">
+<img class="ui image" src="../images/hansel_uns_gretel.jpgg">
