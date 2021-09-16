@@ -60,7 +60,6 @@ You can view the Github repo [here](https://github.com/manoa-fixed).
 
 ***************************************************************************************
 
-<img class="ui left floated image" src="../images/cheetah.gif">
 
 <!-- https://ics314bois.github.io/clubs-of-manoa.github.io/ -->
 
