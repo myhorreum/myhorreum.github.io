@@ -209,11 +209,23 @@
   ],
   "work": [
     {
+      "company": "Research Corporation of the University of Hawaiʻi (RCUH)",
+      "position": "Student Assistant",
+      "website": "https://www.rcuh.com/about/about-us/",
+      "startDate": "2022",
+      "endDate": "Present",
+      "summary": "My position as Systems Support Assistant at TASI was shifted to Student Assistant at RCUH.",
+      "highlights": ["Conducted software testing in VMware ESXi generated environments",
+        "Installed the ELK Stack and configured WSUS for the organization", "Installed ElastAlert for the ELK implementation", "Gained further experience with scripting, networking, and log reporting", 
+        "Created technical documentation, gave presentations"
+      ]
+    },
+    {
       "company": "Telecom. and Social Informatics Research Program / Pacific Health Informatics Data Center (TASI-PHIDC), University of Hawaii at Mānoa",
       "position": "Systems Support Assistant",
       "website": "https://ssri.manoa.hawaii.edu/tasi-phidc/",
       "startDate": "2020",
-      "endDate": "Present",
+      "endDate": "2022",
       "summary": "This position involves providing staff with in-house technical support as well as research on technical solutions to meet the program's needs.",
       "highlights": ["Conducted software testing in VMware ESXi generated environments",
         "Installed the ELK Stack and configured WSUS for the organization","Gained further experience with scripting, networking, and log reporting", 
