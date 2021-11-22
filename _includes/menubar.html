@@ -16,6 +16,9 @@
     {% if num_essays > 0 %}
     <a href="{{ site.baseurl }}/essays" class=" {% if include.active == "essays" %} active {% endif %} item">Essays ({{ num_essays }})</a>
     {% endif %}
+    {% if num_projects > 0 %}
+    <a href="{{ site.baseurl }}/treks" class=" {% if include.active == "projects" %} active {% endif %}item">Treks ({{ num_projects }})</a>
+    {% endif %}
     <a href="{{ site.baseurl }}/bio" class=" {% if include.active == "bio" %} active {% endif %} item">{{ site.bio-page-label }}</a>
     <a href="{{ site.baseurl }}/water" class=" {% if include.active == "water" %} active {% endif %} item">💧</a>
     <a href="{{ site.baseurl }}/fire" class=" {% if include.active == "fire" %} active {% endif %} item">🔥</a>
