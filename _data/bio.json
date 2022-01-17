@@ -149,7 +149,7 @@
       "level": "Systems Support Assistant",
       "keywords": [
         "Windows Server Update Services (WSUS) configuration",
-        "ELK Stack (Elasticsearch + Logstash + Kibana) installation",
+        "ELK Stack (Elasticsearch + Logstash + Kibana) installation & configuration",
         "ElastAlert w/ Docker"
       ]
     },
@@ -228,7 +228,7 @@
       "summary": "This position involves providing staff with in-house technical support as well as research on technical solutions to meet the program's needs.",
       "highlights": ["Conducted software testing in VMware ESXi generated environments",
         "Installed the ELK Stack and configured WSUS for the organization","Gained further experience with scripting, networking, and log reporting", 
-        "Created technical documentation, gave presentations", "Managed large-scale educational Zoom meetings hosted by the organization"
+        "Created technical documentation, gave presentations", "Managed large-scale educational Zoom meetings hosted by the organization (50+ people)"
       ]
     }
   ],
