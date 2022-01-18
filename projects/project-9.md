@@ -9,7 +9,7 @@ date: 2021-01-14
 labels:
   - Troubleshooting
   - Digging Deeper
-summary: A compromised password turned out to most likely be a DNS issue from recycled VPN IPs. 
+summary: A compromised password turned out to most likely be a DNS issue resulting from recycled VPN IPs. 
 ---
 
 <img class="ui image" src="../images/slot.gif">
