@@ -11,7 +11,7 @@ labels:
   - Digging Deeper
 summary: A compromised password turned out to most likely be a DNS issue resulting from recycled VPN IPs. 
 ---
-
+<img class="ui image" src="../images/pool.gif">
 <img class="ui image" src="../images/jose-login.png">
 
 ## Back-Story:
