@@ -14,7 +14,7 @@ summary: A compromised password turned out to most likely be a DNS issue resulti
 
 <img class="ui image" src="../images/jose-login.png">
 
-## INTRODUCTION:
+## Back-Story:
 The above image is a screeshot from what I saw after logging in to my work VM at TASI (check more on my experience with TASI here[]). I was initially worried that my password was known and used to sign in from Jose's workstation. Obviously, no one would ever want their password to be known by others so I asked my supervisor about this and he told me that it most likely was TASI's firewall DNS associating old IPs with hostnames. Thomas told me to dig a little deeper to confirm this. This post is my experience doing so.
 
 ## HOW DOES IT WORK?
