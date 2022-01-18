@@ -12,11 +12,10 @@ labels:
 summary: A compromised password turned out to most likely be a DNS issue resulting from recycled VPN IPs. 
 ---
 
-<img class="ui image" src="../images/slot.gif">
-               *Note this is a GIF*
+<img class="ui image" src="../images/jose-login.png">
 
 ## INTRODUCTION:
-This was a project I had a lot of fun in thinking up, designing, and ultimately programming in my first Computer Science class. It is a simple and straightforward slot machine coded in [Java]({{ site.baseurl }}/projects/slot.txt). Users start off with an alloted amount of coins, which value gets added or subtracted to based on what combination of fruits they roll. I thought my project was unique, especially when compared to my peers', because instead of implementing fighting or shooting type games, I designed something more pattern/application-based.
+The above image is a screeshot from what I saw after logging in to my work VM at TASI (check more on my experience with TASI here[]). I was initially worried that my password was known and used to sign in from Jose's workstation. Obviously, no one would ever want their password to be known by others so I asked my supervisor about this and he told me that it most likely was TASI's firewall DNS associating old IPs with hostnames. Thomas told me to dig a little deeper to confirm this. This post is my experience doing so.
 
 ## HOW DOES IT WORK?
 The main coding framework behind this is known as the *finite state machine*. A finite state machine is a very simple, yet very effective coding techinque that is applicable in Computer Science as well as Engineering. Here, I designated the various "states" of my slot machine as the different logical steps one would take in interacting with the machine in real life. For example: starting the machine, spinning the rolls, obtaining coins, etc. Between the start and end states, nothing is static, and can be interchanged indefinitely until a user runs out of coins to play.
