@@ -23,7 +23,7 @@ The above image is a screeshot from what I saw after logging into my work VM at 
 
 The first step to take is to check the audit logs on the VM. Audit logs provide granular details in regards to what is going on on the system. In this case I did a simple `grep` command to isolate logs containing `jose`. The login event was displayed on the screen and gave me further information. Most importantly it displayed that the login from `jose-laptop.uhtasi.local` had an IP address of `10.100.10.81`.
 
-## Check the ELK-Stack
+## Check ELK-Stack
 <img class="ui image" src="../images/jose-elk.jpg">
 
 I decided to look in Kibana to see the login patterns of Jose and I. I found activity from Jose when he was assigned the `10.100.10.81` IP. 
