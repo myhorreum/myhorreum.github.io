@@ -9,6 +9,9 @@ date: 2021-01-14
 labels:
   - Troubleshooting
   - Digging Deeper
+  - Audit logs
+  - ELK Stack
+  - Firewall IP Pools
 summary: A compromised password turned out to most likely be a DNS issue resulting from recycled VPN IPs. 
 ---
 <img class="ui image" src="../images/pool.gif">
@@ -33,5 +36,7 @@ I decided to look in Kibana to see the login patterns of Jose and I. I found act
 I then wanted to see what IP I had been assigned. It turned out that I had been given the `10.100.10.81` IP as well. So it appears that Jose was assigned the `10.100.10.81` IP earlier on in the day before logging out and freeing the IP. I shortly logged in afterwards and received the same IP after it had been recycled back into the IP pool. It seems like there was an overlap in the firewall's DNS protocol of associating the `10.100.10.81` IP with the `jose-laptop.uhtasi.local` hostname vs my hostname. 
 
 This is my process of trying to solve this issue using the IT tools available to a sys-admin. I still would like to investigate this issue further. Though I offered some evidence and explanation for what may have happened, I still was unable to prove my hypothesis definitively (I wish there was a way to look at the DNS associating the IP with the hostname by `timestamp`).
+***************************************************************************************
+***************************************************************************************
 ***************************************************************************************
 ***************************************************************************************
