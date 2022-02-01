@@ -29,7 +29,7 @@ The first step to take is to check the audit logs on the VM. Audit logs provide 
 ## Check ELK-Stack
 <img class="ui image" src="../images/jose-elk.jpg">
 
-I decided to look in Kibana to see the login patterns of Jose and I. I found activity from Jose when he was assigned the `10.100.10.81` IP from the firewall's IP pool. Read more about firewall IP pool assignment [here
+I decided to look in Kibana to see the login patterns of Jose and I. I found activity from Jose when he was assigned the `10.100.10.81` IP from the firewall's IP pool. Read more about firewall IP pool assignment [here](https://docs.fortinet.com/document/fortigate/6.0.0/handbook/801437/ip-pools).
 
 <img class="ui image" src="../images/roman-elk.jpg">
 
