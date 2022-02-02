@@ -150,7 +150,7 @@
       "keywords": [
         "Windows Server Update Services (WSUS) configuration",
         "ELK Stack (Elasticsearch + Logstash + Kibana) installation & configuration",
-        "ElastAlert w/ Docker"
+        "ElastAlert2 w/ Docker"
       ]
     },
     {
