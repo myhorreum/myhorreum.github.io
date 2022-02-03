@@ -40,10 +40,10 @@ I will also include screenshots of things I have printed using this program to h
   *- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "toga" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
   
   <img class="ui image" src="../images/a few.png">
-  *- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "a few" - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
+  *- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "a few" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*
   
   <img class="ui image" src="../images/ooooo.png">
-  *- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "ooooo" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -* 
+  *- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - "ooooo" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -* 
   
   
 <img class="ui medium right floated rounded image" src="../images/godsearch.gif">
