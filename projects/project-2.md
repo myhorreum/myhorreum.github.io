@@ -51,7 +51,7 @@ I will also include screenshots of things I have printed using this program to h
 
 It is interesting to see the time it took for the computer to print these words. Keep in mind that a computer also "types" at a speed many many times faster than a monkey. These were some of the longest words I could generate. When I attempted to try a sentence, my computer ran for about an hour or so before I called it quits. 
 
-*Finding "god"* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~->
+*Finding "god"* -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~->
 
 Overall, this was an interesting little side project. It shows how mathematics can be applied to a particular situation, and how mathematics can be demonstrated through code.
 
