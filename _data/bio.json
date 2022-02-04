@@ -141,7 +141,8 @@
         "MongoDB",
         "Cloudinary",
         "Google G Suite",
-        "HTML/CSS"
+        "HTML/CSS",
+        "RSS feeds"
       ]
     },
     {
@@ -164,6 +165,7 @@
         "PowerShell",
         "VMware",
         "Wireshark",
+        "TeXworks",
         "Adobe Creative Suite"
       ]
     },
