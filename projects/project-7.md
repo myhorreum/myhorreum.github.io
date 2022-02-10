@@ -24,7 +24,7 @@ I saw a job opening for the position of Systems Support Assistant at Telecommuni
 ## Windows Server Update Services (WSUS) :
 
 <img class="ui image" src="../images/windirstat.jpg">
-*- - - - - - - - - - - - - - - - - - - - - Discovering the large SUSDB.mdf file with WinDirStat - - - - - - - - - - - - - - - - - -*
+*- - - - - - - - - - - - - - - - - - - - - Discovering the large SUSDB.mdf file with WinDirStat - - - - - - - - - - - - - -*
 
 * Detached SUSDB.mdf database file from C drive and attached it to E drive using SQL Server Management Studio.
 * Used PowerShell scripts to reduce bloated WSUS update count from 127,000 to 33,000 to 1600 (<2% of initial volume) and increased speed of WSUS software signficantly. Also eliminated random timeouts completely due to the mass of unneeded updates now being removed.
@@ -34,7 +34,7 @@ I saw a job opening for the position of Systems Support Assistant at Telecommuni
 ## ELK Stack (Elasticsearch + Logstash + Kibana) :
 
 <img class="ui image" src="../images/ELK.png">
-*- - - - - - - - - - - - - - - - - - - - - Viewing the running statuses of the ELK services - - - - - - - - - - - - - - - - - - - -*
+*- - - - - - - - - - - - - - - - - - - - - Viewing the running statuses of the ELK services - - - - - - - - - - - - - - - - - -*
 
 * Installed ELK Stack components on a CentOS VM and fit them in accordance to the organization's firewall.
 * Ran the Logstash pipeline with a syslog configuration in order to receive and interpret logs from a syslog instance. Specifically, we wanted to search for SSLVPN logins, SSLVPN logouts, and rejected authentication attempts that were hitting the firewall.
@@ -47,7 +47,7 @@ I saw a job opening for the position of Systems Support Assistant at Telecommuni
 ## ElastAlert2 :
 
 <img class="ui image" src="../images/elastalert.png">
-*- - - - - - - - - - - - - - - - - - - - - Checking ElastAlert2 docker container logs - - - - - - - - - - - - - - - - - - - -*
+*- - - - - - - - - - - - - - - - - - - - - Checking ElastAlert2 docker container logs - - - - - - - - - - - - - - - - - - - - - -*
 
 * Installed ELK Stack components on a CentOS VM and fit them in accordance to the organization's firewall.
 * Ran the Logstash pipeline with a syslog configuration in order to receive and interpret logs from a syslog instance. Specifically, we wanted to search for SSLVPN logins, SSLVPN logouts, and rejected authentication attempts that were hitting the firewall.
