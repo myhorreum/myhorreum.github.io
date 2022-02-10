@@ -34,7 +34,7 @@ I saw a job opening for the position of Systems Support Assistant at Telecommuni
 ## ELK Stack (Elasticsearch + Logstash + Kibana) :
 
 <img class="ui image" src="../images/ELK.png">
-*- - - - - - - - - - - - - - - - - Viewing the running statuses of the ELK services - - - - - - - - - - - - - - - -*
+*- - - - - - - - - - - - - - - - - - - - - Viewing the running statuses of the ELK services - - - - - - - - - - - - - - - - - - - -*
 
 * Installed ELK Stack components on a CentOS VM and fit them in accordance to the organization's firewall.
 * Ran the Logstash pipeline with a syslog configuration in order to receive and interpret logs from a syslog instance. Specifically, we wanted to search for SSLVPN logins, SSLVPN logouts, and rejected authentication attempts that were hitting the firewall.
@@ -47,7 +47,7 @@ I saw a job opening for the position of Systems Support Assistant at Telecommuni
 ## ElastAlert2 :
 
 <img class="ui image" src="../images/elastalert.png">
-*- - - - - - - - - - - - - - - - - Checking ElastAlert2 docker container logs - - - - - - - - - - - - - - - -*
+*- - - - - - - - - - - - - - - - - - - - - Checking ElastAlert2 docker container logs - - - - - - - - - - - - - - - - - - - -*
 
 * Installed ELK Stack components on a CentOS VM and fit them in accordance to the organization's firewall.
 * Ran the Logstash pipeline with a syslog configuration in order to receive and interpret logs from a syslog instance. Specifically, we wanted to search for SSLVPN logins, SSLVPN logouts, and rejected authentication attempts that were hitting the firewall.
