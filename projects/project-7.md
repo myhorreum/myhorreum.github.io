@@ -23,8 +23,8 @@ I saw a job opening for the position of Systems Support Assistant at Telecommuni
 
 ## Windows Server Update Services (WSUS) :
 
-<img class="ui image" src="../images/task-scheduler.png">
-*- - - - - - - - - - - - - - - - - - - - - - - - - - Automating scripts in Task Scheduler - - - - - - - - - - - - - - - - - - - - - -*
+<img class="ui image" src="../images/windirstat.jgep">
+*- - - - - - - - - - - - - - - - - - - - - - - - - - Discovering the large SUSDB.mdf file with WinDirStat - - - - - - - - - - - - - - - - - - - - - -*
 
 * Detached SUSDB.mdf database file from C drive and attached it to E drive using SQL Server Management Studio.
 * Used PowerShell scripts to reduce bloated WSUS update count from 127,000 to 33,000 to 1600 (<2% of initial volume) and increased speed of WSUS software signficantly. Also eliminated random timeouts completely due to the mass of unneeded updates now being removed.
@@ -33,8 +33,8 @@ I saw a job opening for the position of Systems Support Assistant at Telecommuni
 
 ## ELK Stack (Elasticsearch + Logstash + Kibana) :
 
-<img class="ui image" src="../images/elastic.jpg">
-*- - - - - - - - - - - - - - - - - Working with Elasticsearch logs to aid in troubleshooting - - - - - - - - - - - - - - - -*
+<img class="ui image" src="../images/elastalert.png">
+*- - - - - - - - - - - - - - - - - Viewing the running statuses of the ELK services - - - - - - - - - - - - - - - -*
 
 * Installed ELK Stack components on a CentOS VM and fit them in accordance to the organization's firewall.
 * Ran the Logstash pipeline with a syslog configuration in order to receive and interpret logs from a syslog instance. Specifically, we wanted to search for SSLVPN logins, SSLVPN logouts, and rejected authentication attempts that were hitting the firewall.
@@ -44,7 +44,18 @@ I saw a job opening for the position of Systems Support Assistant at Telecommuni
 * Integrated with nginx to secure Kibana and require credenthials to access Kibana.
 * Installed Winlogbeat on Windows domain controllers to send authentication logs from those agents.
 
-<img class="ui image" src="../images/too-many.jpg">
+## ElastAlert2 :
+
+<img class="ui image" src="../images/ELK.png">
+*- - - - - - - - - - - - - - - - - Checking ElastAlert2 docker container logs - - - - - - - - - - - - - - - -*
+
+* Installed ELK Stack components on a CentOS VM and fit them in accordance to the organization's firewall.
+* Ran the Logstash pipeline with a syslog configuration in order to receive and interpret logs from a syslog instance. Specifically, we wanted to search for SSLVPN logins, SSLVPN logouts, and rejected authentication attempts that were hitting the firewall.
+* ~~Took it a step further to see RDP and SSH connections from a SSLVPN source IP.~~
+* Created a custom grok filter to parse the syslog data for our specific use-case.
+* Automated reporting by writing a bash script that receives a .csv from Kibana via a generated POST URL, waits for the .csv to fully download, then emails the .csv out to designated recipients.
+* Integrated with nginx to secure Kibana and require credenthials to access Kibana.
+* Installed Winlogbeat on Windows domain controllers to send authentication logs from those agents.
 
 <img class="ui small left floated image" src="../images/wizard.gif">
 
