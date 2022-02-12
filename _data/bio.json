@@ -185,30 +185,19 @@
   "education": [
     {
       "institution": "University of Hawaii, Honolulu, HI",
-      "area": "Computer Science (GPA: n)",
+      "area": "Computer Science: Security Science Track",
       "studyType": "B.S.",
       "startDate": "2018-01-01",
       "endDate": "Present",
-      "gpa": "3.0",
       "courses": [
-        "ICS 111 - Introduction to Computer Science I (Java Programming) : RE/A",
-        "ICS 141 - Discrete Mathematics for Computer Science I : A",
-        "ICS 211 - Introduction to Computer Science II (Java Data Structures) : B",
-        "ICS 212 - Program Structure (C/C++ Programming) : W/B",
-        "ICS 222 - Basic Concepts of Computer Science (CS Theory) : B",
-        "ICS 235 - Machine Learning Methods : F/W",
-        "ICS 241 - Discrete Mathematics for Computer Science II : B",
-        "ICS 311 - Algorithms : W/W",
-        "ICS 314 - Software Engineering : A",
         "ICS 355 - Security & Trust I - Resource Protections : A",
+        "ICS 423 - Data Security & Cryptography : A-",
         "ICS 425 - Computer Security and Ethics : A",
         "ICS 426 - Computer System Security : A+",
         "ICS 428 - Digital Forensics : A+",
-        "MATH 241 - Calculus I",
-        "MATH 242 - Calculus II",
-        "ANTH 210 - Archaeology",
-        "HIST 392 - History of Warfare since 1850",
-        "PLAN 310 - Introduction to Planning"
+        "ICS 451 - Data Networks: B",
+        "ICS 495 - Special Topics in Security : ",
+        "EE 401 - Engineering Management (Hacking 4 Defense) :"
       ]
     }
   ],
