@@ -1,201 +1,233 @@
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Scanner;
-public class FiniteStates {
- EZImage yellowApple;
- EZImage yellowCherry;
- EZImage yellowGrape;
- EZImage yellowPineapple;
- EZImage yellowLemon;
- EZImage pinkApple;
- EZImage pinkCherry;
- EZImage pinkGrape;
- EZImage pinkPineapple;
- EZImage pinkLemon;
- EZImage greenApple;
- EZImage greenCherry;
- EZImage greenGrape;
- EZImage greenPineapple;
- EZImage greenLemon;
- EZText Start;
- EZText TEXT;
- EZText CoinValueText;
- public int CoinPurse = 50;
- //Scanner keyboard = new Scanner(System.in);
- //int Betcoin = keyboard.nextInt();
- int Betcoin = 5;
- int doub = Betcoin * 2;
- int triple = Betcoin * 3;
- int a=1;
- int b=1;
- int c=1;
- int YellowX = 240;
- int YellowY = 425;
- int PinkX = 419;
- int PinkY = 425;
- int GreenX = 599;
- int GreenY = 425;
- static final int START = 1;
- static final int SPIN = 2;
- static final int ALIGN = 3;
- static final int COIN = 4;
- static final int LOAD = 5;
- int slotState = START;
- FiniteStates(){
- EZImage yellow = EZ.addImage("yellow.jpg", 240,430);
- EZImage pink = EZ.addImage("pink.png", 419,460);
- EZImage green = EZ.addImage("limegreen.jpg", 599,450);
- yellowApple = EZ.addImage("yellowApple.jpg", 240,155);
- yellowCherry = EZ.addImage("yellowCherry.jpg", 240,290);
- yellowGrape = EZ.addImage("yellowGrape.jpg", 240,425);
- yellowPineapple = EZ.addImage("yellowPineapple.jpg", 240,560);
- yellowLemon = EZ.addImage("yellowLemon.jpg", 240,695);
- pinkApple = EZ.addImage("pinkApple.png", 419,155);
- pinkCherry = EZ.addImage("pinkCherry.png", 419,290);
- pinkGrape = EZ.addImage("pinkGrape.png", 419,425);
- pinkPineapple = EZ.addImage("pinkPineapple.png", 419,560);
- pinkLemon = EZ.addImage("pinkLemon.png", 419,695);
- greenApple = EZ.addImage("greenApple.jpg", 599,155);
- greenCherry = EZ.addImage("greenCherry.jpg", 599,290);
- greenGrape = EZ.addImage("greenGrape.jpg", 599,425);
- greenPineapple = EZ.addImage("greenPineapple.jpg", 599,560);
- greenLemon = EZ.addImage("greenLemon.jpg", 599,695);
- EZ.addImage("horizontal.png", 240,360);
- EZ.addImage("horizontal.png", 240,485);
- EZ.addImage("horizontal.png", 420,360);
- EZ.addImage("horizontal.png", 420,485);
- EZ.addImage("horizontal.png", 600,360);
- EZ.addImage("horizontal.png", 600,485);
- // Covers up overlapping images from translation
- EZ.addImage("white.jpg", 490,50);
- EZ.addImage("goldSlab.png", 420,140);
- EZ.addImage("white.jpg", 490,800);
- EZ.addImage("black.jpg", 420,750);
- Start = EZ.addText(420, 440, "", Color.WHITE, 60);
- TEXT = EZ.addText(420, 440, "", Color.BLACK, 60);
- CoinValueText = EZ.addText(240, 760, ""+CoinPurse, Color.YELLOW, 35);
- Color c = new Color(255, 215, 0);
- int fontsize = 25;
- int value = 50;
- EZText CoinTitle = EZ.addText(240, 720, "COINS", c, fontsize);
- CoinTitle.setFont("8-BIT WONDER.TTF");
- CoinValueText.setFont("8-BIT WONDER.TTF");
- EZ.refreshScreen();
- }
- void processStates(){
- ArrayList<EZImage> myTiles = new ArrayList<EZImage>(); 
- myTiles.add(yellowApple);
- myTiles.add(yellowCherry);
- myTiles.add(yellowGrape);
- myTiles.add(yellowPineapple);
- myTiles.add(yellowLemon);
- myTiles.add(pinkApple);
- myTiles.add(pinkCherry);
- myTiles.add(pinkGrape);
- myTiles.add(pinkPineapple);
- myTiles.add(pinkLemon);
- myTiles.add(greenApple);
- myTiles.add(greenCherry);
- myTiles.add(greenGrape);
- myTiles.add(greenPineapple);
- myTiles.add(greenLemon);
- switch(slotState){
- case START:
- Start.msg = "Press 'S' to SPIN";
- if (EZInteraction.wasKeyPressed('s')){
- slotState = SPIN;
- }
- break;
- case SPIN:
- Start.msg = "";
- TEXT.msg = "";
- myTiles.get(0).translateBy(0, +5);
- myTiles.get(1).translateBy(0, +5);
- myTiles.get(2).translateBy(0, +5);
- myTiles.get(3).translateBy(0, +5);
- myTiles.get(4).translateBy(0, +5);
- myTiles.get(5).translateBy(0, +10);
- myTiles.get(6).translateBy(0, +10);
- myTiles.get(7).translateBy(0, +10);
- myTiles.get(8.translateBy(0, +10);
- myTiles.get(9).translateBy(0, +10);
- myTiles.get(10).translateBy(0, +30);
- myTiles.get(11).translateBy(0, +30);
- myTiles.get(12).translateBy(0, +30);
- myTiles.get(13).translateBy(0, +30);
- myTiles.get(14).translateBy(0, +30);
- if (EZInteraction.wasKeyPressed('s')){
- slotState = ALIGN;
- }
- break;
- case ALIGN:
- if ((myTiles.get(0).getYCenter() % 136)!=0){
- myTiles.get(0).translateBy(0, 1);
- }
- if ((myTiles.get(1).getYCenter() % 136)!=0){
- myTiles.get(1).translateBy(0, 1);
- }
- if ((myTiles.get(2).getYCenter() % 136)!=0){
- myTiles.get(2).translateBy(0, 1);
- }
- if ((myTiles.get(3).getYCenter() % 136)!=0){
- myTiles.get(3).translateBy(0, 1);
- }
- if ((myTiles.get(4).getYCenter() % 136)!=0){
- myTiles.get(4).translateBy(0, 1);
- } //maybe change to 136 to fix bug, previously was 138
- if ((myTiles.get(5).getYCenter() % 136)!=0){
- myTiles.get(5).translateBy(0, 1);
- }
- if ((myTiles.get(6).getYCenter() % 136)!=0){
- myTiles.get(6).translateBy(0, 1);
- }
- if ((myTiles.get(7).getYCenter() % 136)!=0){
- myTiles.get(7).translateBy(0, 1);
- }
- if ((myTiles.get(8.getYCenter() % 136)!=0){
- myTiles.get(8.translateBy(0, 1);
- }
- if ((myTiles.get(9).getYCenter() % 136)!=0){
- myTiles.get(9).translateBy(0, 1);
- //end pink tiles
- }
- if ((myTiles.get(10).getYCenter() % 136)!=0){
- myTiles.get(10).translateBy(0, 1);
- }
- if ((myTiles.get(11).getYCenter() % 136)!=0){
- myTiles.get(11).translateBy(0, 1);
- }
- if ((myTiles.get(12).getYCenter() % 136)!=0){
- myTiles.get(12).translateBy(0, 1);
- }
- if ((myTiles.get(13).getYCenter() % 136)!=0){
- myTiles.get(13).translateBy(0, 1);
- }
- if ((myTiles.get(14).getYCenter() % 136)!=0){
- myTiles.get(14).translateBy(0, 1);
- }
- //Once all aligned
- if(myTiles.get(0).getYCenter() % 136==0 && myTiles.get(1).getYCenter() % 136==0 && 
- myTiles.get(2).getYCenter() % 136==0 && myTiles.get(3).getYCenter() % 136==0 && 
- myTiles.get(4).getYCenter() % 136==0 && myTiles.get(5).getYCenter() % 136==0 && 
- myTiles.get(6).getYCenter() % 136==0 && myTiles.get(7).getYCenter() % 136==0 && 
- myTiles.get(8.getYCenter() % 136==0 && myTiles.get(9).getYCenter() % 136==0 && 
- myTiles.get(10).getYCenter() % 136==0 && myTiles.get(11).getYCenter() % 136==0 && 
- myTiles.get(12).getYCenter() % 136==0 && myTiles.get(13).getYCenter() % 136==0 && 
- myTiles.get(14).getYCenter() % 136==0){
- //Add COIN state instead of STOP? and then COIN --> STOP?
- slotState = COIN;
- }
- break;
- case COIN:
- if (myTiles.get(0).isPointInElement(YellowX, YellowY)) {
- a = 1;
- }
- if (myTiles.get(1).isPointInElement(YellowX, YellowY)) {
- a = 2;
- }
- if (myTiles.get(2).isPointInElement(YellowX, YellowY)) {
+public class FiniteStates 
+{
+    EZImage yellowApple;
+    EZImage yellowCherry;
+    EZImage yellowGrape;
+    EZImage yellowPineapple;
+    EZImage yellowLemon;
+    EZImage pinkApple;
+    EZImage pinkCherry;
+    EZImage pinkGrape;
+    EZImage pinkPineapple;
+    EZImage pinkLemon;
+    EZImage greenApple;
+    EZImage greenCherry;
+    EZImage greenGrape;
+    EZImage greenPineapple;
+    EZImage greenLemon;
+    EZText Start;
+    EZText TEXT;
+    EZText CoinValueText;
+    public int CoinPurse = 50;
+    //Scanner keyboard = new Scanner(System.in);
+    //int Betcoin = keyboard.nextInt();
+    int Betcoin = 5;
+    int doub = Betcoin * 2;
+    int triple = Betcoin * 3;
+    int a=1;
+    int b=1;
+    int c=1;
+    int YellowX = 240;
+    int YellowY = 425;
+    int PinkX = 419;
+    int PinkY = 425;
+    int GreenX = 599;
+    int GreenY = 425;
+    static final int START = 1;
+    static final int SPIN = 2;
+    static final int ALIGN = 3;
+    static final int COIN = 4;
+    static final int LOAD = 5;
+    int slotState = START;
+
+    FiniteStates()
+    {
+        EZImage yellow = EZ.addImage("yellow.jpg", 240,430);
+        EZImage pink = EZ.addImage("pink.png", 419,460);
+        EZImage green = EZ.addImage("limegreen.jpg", 599,450);
+        yellowApple = EZ.addImage("yellowApple.jpg", 240,155);
+        yellowCherry = EZ.addImage("yellowCherry.jpg", 240,290);
+        yellowGrape = EZ.addImage("yellowGrape.jpg", 240,425);
+        yellowPineapple = EZ.addImage("yellowPineapple.jpg", 240,560);
+        yellowLemon = EZ.addImage("yellowLemon.jpg", 240,695);
+        pinkApple = EZ.addImage("pinkApple.png", 419,155);
+        pinkCherry = EZ.addImage("pinkCherry.png", 419,290);
+        pinkGrape = EZ.addImage("pinkGrape.png", 419,425);
+        pinkPineapple = EZ.addImage("pinkPineapple.png", 419,560);
+        pinkLemon = EZ.addImage("pinkLemon.png", 419,695);
+        greenApple = EZ.addImage("greenApple.jpg", 599,155);
+        greenCherry = EZ.addImage("greenCherry.jpg", 599,290);
+        greenGrape = EZ.addImage("greenGrape.jpg", 599,425);
+        greenPineapple = EZ.addImage("greenPineapple.jpg", 599,560);
+        greenLemon = EZ.addImage("greenLemon.jpg", 599,695);
+        EZ.addImage("horizontal.png", 240,360);
+        EZ.addImage("horizontal.png", 240,485);
+        EZ.addImage("horizontal.png", 420,360);
+        EZ.addImage("horizontal.png", 420,485);
+        EZ.addImage("horizontal.png", 600,360);
+        EZ.addImage("horizontal.png", 600,485);
+
+        // Covers up overlapping images from translation
+        EZ.addImage("white.jpg", 490,50);
+        EZ.addImage("goldSlab.png", 420,140);
+        EZ.addImage("white.jpg", 490,800);
+        EZ.addImage("black.jpg", 420,750);
+
+        Start = EZ.addText(420, 440, "", Color.WHITE, 60);
+        TEXT = EZ.addText(420, 440, "", Color.BLACK, 60);
+        CoinValueText = EZ.addText(240, 760, ""+CoinPurse, Color.YELLOW, 35);
+        Color c = new Color(255, 215, 0);
+        int fontsize = 25;
+        int value = 50;
+        EZText CoinTitle = EZ.addText(240, 720, "COINS", c, fontsize);
+        CoinTitle.setFont("8-BIT WONDER.TTF");
+        CoinValueText.setFont("8-BIT WONDER.TTF");
+        EZ.refreshScreen();
+    }
+
+    void processStates()
+    {
+        ArrayList<EZImage> myTiles = new ArrayList<EZImage>(); 
+        myTiles.add(yellowApple);
+        myTiles.add(yellowCherry);
+        myTiles.add(yellowGrape);
+        myTiles.add(yellowPineapple);
+        myTiles.add(yellowLemon);
+        myTiles.add(pinkApple);
+        myTiles.add(pinkCherry);
+        myTiles.add(pinkGrape);
+        myTiles.add(pinkPineapple);
+        myTiles.add(pinkLemon);
+        myTiles.add(greenApple);
+        myTiles.add(greenCherry);
+        myTiles.add(greenGrape);
+        myTiles.add(greenPineapple);
+        myTiles.add(greenLemon);
+
+        switch(slotState)
+        {
+            case START:
+                Start.msg = "Press 'S' to SPIN";
+                if (EZInteraction.wasKeyPressed('s'))
+                {
+                    slotState = SPIN;
+                }
+                break;
+
+            case SPIN:
+                Start.msg = "";
+                TEXT.msg = "";
+                myTiles.get(0).translateBy(0, +5);
+                myTiles.get(1).translateBy(0, +5);
+                myTiles.get(2).translateBy(0, +5);
+                myTiles.get(3).translateBy(0, +5);
+                myTiles.get(4).translateBy(0, +5);
+                myTiles.get(5).translateBy(0, +10);
+                myTiles.get(6).translateBy(0, +10);
+                myTiles.get(7).translateBy(0, +10);
+                myTiles.get(8.translateBy(0, +10);
+                myTiles.get(9).translateBy(0, +10);
+                myTiles.get(10).translateBy(0, +30);
+                myTiles.get(11).translateBy(0, +30);
+                myTiles.get(12).translateBy(0, +30);
+                myTiles.get(13).translateBy(0, +30);
+                myTiles.get(14).translateBy(0, +30);
+                if (EZInteraction.wasKeyPressed('s'))
+                {
+                    slotState = ALIGN;
+                }
+                break;
+
+            case ALIGN:
+                if ((myTiles.get(0).getYCenter() % 136)!=0)
+                {
+                    myTiles.get(0).translateBy(0, 1);
+                }
+                if ((myTiles.get(1).getYCenter() % 136)!=0)
+                {
+                    myTiles.get(1).translateBy(0, 1);
+                }
+                if ((myTiles.get(2).getYCenter() % 136)!=0)
+                {
+                    myTiles.get(2).translateBy(0, 1);
+                }
+                if ((myTiles.get(3).getYCenter() % 136)!=0)
+                {
+                    myTiles.get(3).translateBy(0, 1);
+                }
+                if ((myTiles.get(4).getYCenter() % 136)!=0)
+                {
+                    myTiles.get(4).translateBy(0, 1);
+                } //maybe change to 136 to fix bug, previously was 138
+                if ((myTiles.get(5).getYCenter() % 136)!=0)
+                {
+                    myTiles.get(5).translateBy(0, 1);
+                }
+                if ((myTiles.get(6).getYCenter() % 136)!=0)
+                {
+                    myTiles.get(6).translateBy(0, 1);
+                }
+                if ((myTiles.get(7).getYCenter() % 136)!=0)
+                {
+                    myTiles.get(7).translateBy(0, 1);
+                }
+                if ((myTiles.get(8.getYCenter() % 136)!=0)
+                {
+                    myTiles.get(8.translateBy(0, 1);
+                }
+                if ((myTiles.get(9).getYCenter() % 136)!=0)
+                {
+                    myTiles.get(9).translateBy(0, 1);
+                    //end pink tiles
+                }
+                if ((myTiles.get(10).getYCenter() % 136)!=0)
+                {
+                    myTiles.get(10).translateBy(0, 1);
+                }
+                if ((myTiles.get(11).getYCenter() % 136)!=0)
+                {
+                    myTiles.get(11).translateBy(0, 1);
+                }
+                if ((myTiles.get(12).getYCenter() % 136)!=0)
+                {
+                    myTiles.get(12).translateBy(0, 1);
+                }
+                if ((myTiles.get(13).getYCenter() % 136)!=0)
+                {
+                    myTiles.get(13).translateBy(0, 1);
+                }
+                if ((myTiles.get(14).getYCenter() % 136)!=0)
+                {
+                    myTiles.get(14).translateBy(0, 1);
+                }
+                //Once all aligned
+                if(myTiles.get(0).getYCenter() % 136==0 && myTiles.get(1).getYCenter() % 136==0 && 
+                myTiles.get(2).getYCenter() % 136==0 && myTiles.get(3).getYCenter() % 136==0 && 
+                myTiles.get(4).getYCenter() % 136==0 && myTiles.get(5).getYCenter() % 136==0 && 
+                myTiles.get(6).getYCenter() % 136==0 && myTiles.get(7).getYCenter() % 136==0 && 
+                myTiles.get(8.getYCenter() % 136==0 && myTiles.get(9).getYCenter() % 136==0 && 
+                myTiles.get(10).getYCenter() % 136==0 && myTiles.get(11).getYCenter() % 136==0 && 
+                myTiles.get(12).getYCenter() % 136==0 && myTiles.get(13).getYCenter() % 136==0 && 
+                myTiles.get(14).getYCenter() % 136==0)
+                {
+                    //Add COIN state instead of STOP? and then COIN --> STOP?
+                    slotState = COIN;
+                }
+                break;
+
+            case COIN:
+                if (myTiles.get(0).isPointInElement(YellowX, YellowY)) 
+                {
+                    a = 1;
+                }
+                if (myTiles.get(1).isPointInElement(YellowX, YellowY)) 
+                {
+                    a = 2;
+                }
+                if (myTiles.get(2).isPointInElement(YellowX, YellowY)) {
  a = 3;
  }
  if (myTiles.get(3).isPointInElement(YellowX, YellowY)) {
