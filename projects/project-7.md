@@ -49,13 +49,10 @@ I saw a job opening for the position of Systems Support Assistant at Telecommuni
 <img class="ui image" src="../images/elastalert.png">
 *- - - - - - - - - - - - - - - - - - - - - Checking ElastAlert2 docker container logs - - - - - - - - - - - - - - - - - - - - - -*
 
-* Installed ELK Stack components on a CentOS VM and fit them in accordance to the organization's firewall.
-* Ran the Logstash pipeline with a syslog configuration in order to receive and interpret logs from a syslog instance. Specifically, we wanted to search for SSLVPN logins, SSLVPN logouts, and rejected authentication attempts that were hitting the firewall.
-* ~~Took it a step further to see RDP and SSH connections from a SSLVPN source IP.~~
-* Created a custom grok filter to parse the syslog data for our specific use-case.
-* Automated reporting by writing a bash script that receives a .csv from Kibana via a generated POST URL, waits for the .csv to fully download, then emails the .csv out to designated recipients.
-* Integrated with nginx to secure Kibana and require credenthials to access Kibana.
-* Installed Winlogbeat on Windows domain controllers to send authentication logs from those agents.
+* Installed ElastAlert2 through a Docker container to monitor the Elasticsearch data service installed previously
+* Created query rules for Windows lockout events (winlogbeat stream) and malicious Nmap scans (logstash stream)
+* Debugged the Elasticsearch queries with the --debug flag
+* Emailed the debug results via a script I made (let me know if you have a better idea)
 
 <img class="ui small left floated image" src="../images/wizard.gif">
 
