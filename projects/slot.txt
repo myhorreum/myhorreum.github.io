@@ -204,7 +204,7 @@ public class FiniteStates
                     myTiles.get(14).translateBy(0, 1);
                 }
                 //Once all aligned
-                if(myTiles.get(0).getYCenter() % 136==0 && myTiles.get(1).getYCenter() % 136==0 && 
+                if (myTiles.get(0).getYCenter() % 136==0 && myTiles.get(1).getYCenter() % 136==0 && 
                 myTiles.get(2).getYCenter() % 136==0 && myTiles.get(3).getYCenter() % 136==0 && 
                 myTiles.get(4).getYCenter() % 136==0 && myTiles.get(5).getYCenter() % 136==0 && 
                 myTiles.get(6).getYCenter() % 136==0 && myTiles.get(7).getYCenter() % 136==0 && 

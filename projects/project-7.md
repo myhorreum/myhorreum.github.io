@@ -50,7 +50,7 @@ I saw a job opening for the position of Systems Support Assistant at Telecommuni
 *- - - - - - - - - - - - - - - - - - - - - Checking ElastAlert2 docker container logs - - - - - - - - - - - - - - - - - - - - - -*
 
 * Installed ElastAlert2 through a Docker container to monitor the Elasticsearch data service installed previously
-* Created query rules for Windows lockout events (winlogbeat stream) and malicious Nmap scans (logstash stream)
+* Created query rules for VPN lockout events (winlogbeat stream) and malicious Nmap scans (logstash stream)
 * Debugged the Elasticsearch queries with the --debug flag
 * Emailed the debug results via a script I made (let me know if you have a better idea)
 
