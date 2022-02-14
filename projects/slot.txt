@@ -161,7 +161,7 @@ public class FiniteStates
                 if ((myTiles.get(4).getYCenter() % 136)!=0)
                 {
                     myTiles.get(4).translateBy(0, 1);
-                } //maybe change to 136 to fix bug, previously was 138
+                } 
                 if ((myTiles.get(5).getYCenter() % 136)!=0)
                 {
                     myTiles.get(5).translateBy(0, 1);
@@ -181,7 +181,7 @@ public class FiniteStates
                 if ((myTiles.get(9).getYCenter() % 136)!=0)
                 {
                     myTiles.get(9).translateBy(0, 1);
-                    //end pink tiles
+                    
                 }
                 if ((myTiles.get(10).getYCenter() % 136)!=0)
                 {
