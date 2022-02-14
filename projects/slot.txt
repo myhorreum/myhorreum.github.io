@@ -227,146 +227,180 @@ public class FiniteStates
                 {
                     a = 2;
                 }
-                if (myTiles.get(2).isPointInElement(YellowX, YellowY)) {
- a = 3;
- }
- if (myTiles.get(3).isPointInElement(YellowX, YellowY)) {
- a = 4;
- }
- if (myTiles.get(4).isPointInElement(YellowX, YellowY)) {
- a = 5; 
- }
- if (myTiles.get(5).isPointInElement(PinkX, PinkY)) {
- b = 1;
- }
- if (myTiles.get(6).isPointInElement(PinkX, PinkY)) {
- b = 2;
- }
- if (myTiles.get(7).isPointInElement(PinkX, PinkY)) {
- b = 3;
- }
- if (myTiles.get(8.isPointInElement(PinkX, PinkY)) {
- b = 4;
- }
- if (myTiles.get(9).isPointInElement(PinkX, PinkY)) {
- b = 5;
- }
- if (myTiles.get(10).isPointInElement(GreenX, GreenY)) {
- c = 1;
- }
- if (myTiles.get(11).isPointInElement(GreenX, GreenY)) {
- c = 2;
- }
- if (myTiles.get(12).isPointInElement(GreenX, GreenY)) {
- c = 3;
- }
- if (myTiles.get(13).isPointInElement(GreenX, GreenY)) {
- c = 4;
- }
- if (myTiles.get(14).isPointInElement(GreenX, GreenY)) {
- c = 5;
- }
- while(true) {
- if (a == b && a == c)
- {
- System.out.println("TRIPLE, you have won $" + triple);
- Color c = new Color(255, 215, 0);
- Color b = new Color(0, 0, 0);
- CoinPurse += triple;
- CoinValueText.msg = ""+CoinPurse;
- //woohoo.play();
- TEXT.msg = "TRIPLE";
- slotState = LOAD;
- }
- else if (a == b || a == c || b == c)
- {
- System.out.println("DOUBLE, you have won $" + doub);
- CoinPurse += doub;
- CoinValueText.msg = ""+CoinPurse;
- //woohoo.play();
- TEXT.msg = "DOUBLE";
- slotState = LOAD;
- }
- else if (a != b && a != c && b != c)
- {
- System.out.println("You have won $0");
- CoinPurse -= Betcoin;
- CoinValueText.msg = ""+CoinPurse;
- //damn.play();
- TEXT.msg = "NO MATCH";
- slotState = LOAD;
- }
- break;
- }
- case LOAD:
- if (a == b && a == c)
- {
- TEXT.msg = "TRIPLE";
- if (EZInteraction.wasKeyPressed('s')){
- slotState = SPIN;
- }
- }
- else if (a == b || a == c || b == c)
- {
- TEXT.msg = "DOUBLE";
- if (EZInteraction.wasKeyPressed('s')){
- slotState = SPIN;
- }
- }
- else if (a != b && a != c && b != c)
- {
- TEXT.msg = "NO MATCH";
- if (EZInteraction.wasKeyPressed('s')){
- slotState = SPIN;
- }
- }
-     }
- // Once tile reaches certain coordinate at bottom of screen, translate image to the top of screen
- // This gives an infinite rotation
- if (yellowApple.getYCenter() > 750) {
- yellowApple.translateBy(0, -690);
- }
- if (yellowCherry.getYCenter() > 750) {
- yellowCherry.translateBy(0, -690);
- }
- if (yellowGrape.getYCenter() > 750) {
- yellowGrape.translateBy(0, -690);
- }
- if (yellowPineapple.getYCenter() > 750) {
- yellowPineapple.translateBy(0, -690);
- }
- if (yellowLemon.getYCenter() > 750) {
- yellowLemon.translateBy(0, -690);
- }
- if (pinkApple.getYCenter() > 750) {
- pinkApple.translateBy(0, -690);
- }
- if (pinkCherry.getYCenter() > 750) {
- pinkCherry.translateBy(0, -690);
- }
- if (pinkGrape.getYCenter() > 750) {
- pinkGrape.translateBy(0, -690);
- }
- if (pinkPineapple.getYCenter() > 750) {
- pinkPineapple.translateBy(0, -690);
- }
- if (pinkLemon.getYCenter() > 750) {
- pinkLemon.translateBy(0, -690);
- }
- if (greenApple.getYCenter() > 750) {
- greenApple.translateBy(0, -690);
- }
- if (greenCherry.getYCenter() > 750) {
- greenCherry.translateBy(0, -690);
- }
- if (greenGrape.getYCenter() > 750) {
- greenGrape.translateBy(0, -690);
- }
- if (greenPineapple.getYCenter() > 750) {
- greenPineapple.translateBy(0, -690);
- }
- if (greenLemon.getYCenter() > 750) {
- greenLemon.translateBy(0, -690);
- }
- }
+                if (myTiles.get(2).isPointInElement(YellowX, YellowY)) 
+                {
+                    a = 3;
+                }
+                if (myTiles.get(3).isPointInElement(YellowX, YellowY)) 
+                {
+                    a = 4;
+                }
+                if (myTiles.get(4).isPointInElement(YellowX, YellowY)) 
+                {
+                    a = 5; 
+                }
+                if (myTiles.get(5).isPointInElement(PinkX, PinkY)) 
+                {
+                    b = 1;
+                }  
+                if (myTiles.get(6).isPointInElement(PinkX, PinkY)) 
+                {
+                    b = 2;
+                }
+                if (myTiles.get(7).isPointInElement(PinkX, PinkY)) 
+                {
+                    b = 3;
+                }
+                if (myTiles.get(8.isPointInElement(PinkX, PinkY)) 
+                {
+                    b = 4;
+                }
+                if (myTiles.get(9).isPointInElement(PinkX, PinkY)) 
+                {
+                    b = 5;
+                }
+                if (myTiles.get(10).isPointInElement(GreenX, GreenY)) 
+                {
+                    c = 1;
+                }
+                if (myTiles.get(11).isPointInElement(GreenX, GreenY)) 
+                {
+                    c = 2;
+                }
+                if (myTiles.get(12).isPointInElement(GreenX, GreenY)) 
+                {
+                    c = 3;
+                }
+                if (myTiles.get(13).isPointInElement(GreenX, GreenY)) 
+                {
+                    c = 4;
+                }
+                if (myTiles.get(14).isPointInElement(GreenX, GreenY)) 
+                {
+                    c = 5;
+                }
+                while(true) 
+                {
+                    if (a == b && a == c)
+                    {
+                        System.out.println("TRIPLE, you have won $" + triple);
+                        Color c = new Color(255, 215, 0);
+                        Color b = new Color(0, 0, 0);
+                        CoinPurse += triple;
+                        CoinValueText.msg = ""+CoinPurse;
+                        //woohoo.play();
+                        TEXT.msg = "TRIPLE";
+                        slotState = LOAD;
+                    }
+                    else if (a == b || a == c || b == c)
+                    {
+                        System.out.println("DOUBLE, you have won $" + doub);
+                        CoinPurse += doub;
+                        CoinValueText.msg = ""+CoinPurse;
+                        //woohoo.play();
+                        TEXT.msg = "DOUBLE";
+                        slotState = LOAD;
+                    }
+                    else if (a != b && a != c && b != c)
+                    {
+                        System.out.println("You have won $0");
+                        CoinPurse -= Betcoin;
+                        CoinValueText.msg = ""+CoinPurse;
+                        //damn.play();
+                        TEXT.msg = "NO MATCH";
+                        slotState = LOAD;
+                    }
+            break;
+                }
+ 
+            case LOAD:
+                if (a == b && a == c)
+                {
+                    TEXT.msg = "TRIPLE";
+                    if (EZInteraction.wasKeyPressed('s'))
+                    {
+                        slotState = SPIN;
+                    }
+                }
+                else if (a == b || a == c || b == c)
+                {
+                    TEXT.msg = "DOUBLE";
+                    if (EZInteraction.wasKeyPressed('s'))
+                    {
+                        slotState = SPIN;
+                    }
+                }
+                else if (a != b && a != c && b != c)
+                {
+                    TEXT.msg = "NO MATCH";
+                    if (EZInteraction.wasKeyPressed('s'))
+                    {
+                        slotState = SPIN;
+                    }
+                }
+    }
+ 
+    // Once tile reaches certain coordinate at bottom of screen, translate image to the top of screen
+    // This gives an infinite rotation
+    if (yellowApple.getYCenter() > 750) 
+    {
+        yellowApple.translateBy(0, -690);
+    }
+    if (yellowCherry.getYCenter() > 750) 
+    {
+        yellowCherry.translateBy(0, -690);
+    }
+    if (yellowGrape.getYCenter() > 750) 
+    {
+        yellowGrape.translateBy(0, -690);
+    }
+    if (yellowPineapple.getYCenter() > 750) 
+    {
+        yellowPineapple.translateBy(0, -690);
+    }
+    if (yellowLemon.getYCenter() > 750) 
+    {
+        yellowLemon.translateBy(0, -690);
+    }
+    if (pinkApple.getYCenter() > 750) 
+    {
+        pinkApple.translateBy(0, -690);
+    }
+    if (pinkCherry.getYCenter() > 750) 
+    {
+        pinkCherry.translateBy(0, -690);
+    }
+    if (pinkGrape.getYCenter() > 750) 
+    {
+        pinkGrape.translateBy(0, -690);
+    }
+    if (pinkPineapple.getYCenter() > 750) 
+    {
+        pinkPineapple.translateBy(0, -690);
+    }
+    if (pinkLemon.getYCenter() > 750) 
+    {
+        pinkLemon.translateBy(0, -690);
+    }
+    if (greenApple.getYCenter() > 750) 
+    {
+        greenApple.translateBy(0, -690);
+    }
+    if (greenCherry.getYCenter() > 750) 
+    {
+        greenCherry.translateBy(0, -690);
+    }
+    if (greenGrape.getYCenter() > 750) 
+    {
+        greenGrape.translateBy(0, -690);
+    }
+    if (greenPineapple.getYCenter() > 750) 
+    {
+        greenPineapple.translateBy(0, -690);
+    }
+    if (greenLemon.getYCenter() > 750) 
+    {
+        greenLemon.translateBy(0, -690);
+    }
+  }
 }
