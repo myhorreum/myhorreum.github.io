@@ -181,7 +181,6 @@ public class FiniteStates
                 if ((myTiles.get(9).getYCenter() % 136)!=0)
                 {
                     myTiles.get(9).translateBy(0, 1);
-                    
                 }
                 if ((myTiles.get(10).getYCenter() % 136)!=0)
                 {
