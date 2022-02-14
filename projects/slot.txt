@@ -338,7 +338,7 @@ public class FiniteStates
                         slotState = SPIN;
                     }
                 }
-        }
+            }
  
         // Once tile reaches certain coordinate at bottom of screen, translate image to the top of screen
         // This gives an infinite rotation
