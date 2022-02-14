@@ -212,7 +212,6 @@ public class FiniteStates
                 myTiles.get(12).getYCenter() % 136==0 && myTiles.get(13).getYCenter() % 136==0 && 
                 myTiles.get(14).getYCenter() % 136==0)
                 {
-                    //Add COIN state instead of STOP? and then COIN --> STOP?
                     slotState = COIN;
                 }
                 break;
