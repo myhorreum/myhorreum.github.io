@@ -128,7 +128,7 @@ public class FiniteStates
                 myTiles.get(5).translateBy(0, +10);
                 myTiles.get(6).translateBy(0, +10);
                 myTiles.get(7).translateBy(0, +10);
-                myTiles.get(8.translateBy(0, +10);
+                myTiles.get(8).translateBy(0, +10);
                 myTiles.get(9).translateBy(0, +10);
                 myTiles.get(10).translateBy(0, +30);
                 myTiles.get(11).translateBy(0, +30);
@@ -174,9 +174,9 @@ public class FiniteStates
                 {
                     myTiles.get(7).translateBy(0, 1);
                 }
-                if ((myTiles.get(8.getYCenter() % 136)!=0)
+                if ((myTiles.get(8).getYCenter() % 136)!=0)
                 {
-                    myTiles.get(8.translateBy(0, 1);
+                    myTiles.get(8).translateBy(0, 1);
                 }
                 if ((myTiles.get(9).getYCenter() % 136)!=0)
                 {
@@ -251,7 +251,7 @@ public class FiniteStates
                 {
                     b = 3;
                 }
-                if (myTiles.get(8.isPointInElement(PinkX, PinkY)) 
+                if (myTiles.get(8).isPointInElement(PinkX, PinkY)) 
                 {
                     b = 4;
                 }
