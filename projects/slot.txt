@@ -310,7 +310,7 @@ public class FiniteStates
                         TEXT.msg = "NO MATCH";
                         slotState = LOAD;
                     }
-            break;
+                    break;
                 }
  
             case LOAD:
@@ -338,69 +338,69 @@ public class FiniteStates
                         slotState = SPIN;
                     }
                 }
-    }
+        }
  
-    // Once tile reaches certain coordinate at bottom of screen, translate image to the top of screen
-    // This gives an infinite rotation
-    if (yellowApple.getYCenter() > 750) 
-    {
-        yellowApple.translateBy(0, -690);
+        // Once tile reaches certain coordinate at bottom of screen, translate image to the top of screen
+        // This gives an infinite rotation
+        if (yellowApple.getYCenter() > 750) 
+        {
+            yellowApple.translateBy(0, -690);
+        }
+        if (yellowCherry.getYCenter() > 750) 
+        {
+            yellowCherry.translateBy(0, -690);
+        }
+        if (yellowGrape.getYCenter() > 750) 
+        {
+            yellowGrape.translateBy(0, -690);
+        }
+        if (yellowPineapple.getYCenter() > 750) 
+        {
+            yellowPineapple.translateBy(0, -690);
+        }
+        if (yellowLemon.getYCenter() > 750) 
+        {
+            yellowLemon.translateBy(0, -690);
+        }   
+        if (pinkApple.getYCenter() > 750) 
+        {
+            pinkApple.translateBy(0, -690);
+        }
+        if (pinkCherry.getYCenter() > 750) 
+        {
+            pinkCherry.translateBy(0, -690);
+        }
+        if (pinkGrape.getYCenter() > 750) 
+        {
+            pinkGrape.translateBy(0, -690);
+        }
+        if (pinkPineapple.getYCenter() > 750) 
+        {
+            pinkPineapple.translateBy(0, -690);
+        }
+        if (pinkLemon.getYCenter() > 750) 
+        {
+            pinkLemon.translateBy(0, -690);
+        }
+        if (greenApple.getYCenter() > 750) 
+        {
+            greenApple.translateBy(0, -690);
+        }
+        if (greenCherry.getYCenter() > 750) 
+        {
+            greenCherry.translateBy(0, -690);
+        }
+        if (greenGrape.getYCenter() > 750) 
+        {
+            greenGrape.translateBy(0, -690);
+        }
+        if (greenPineapple.getYCenter() > 750) 
+        {
+            greenPineapple.translateBy(0, -690);
+        }
+        if (greenLemon.getYCenter() > 750) 
+        {
+            greenLemon.translateBy(0, -690);
+        }
     }
-    if (yellowCherry.getYCenter() > 750) 
-    {
-        yellowCherry.translateBy(0, -690);
-    }
-    if (yellowGrape.getYCenter() > 750) 
-    {
-        yellowGrape.translateBy(0, -690);
-    }
-    if (yellowPineapple.getYCenter() > 750) 
-    {
-        yellowPineapple.translateBy(0, -690);
-    }
-    if (yellowLemon.getYCenter() > 750) 
-    {
-        yellowLemon.translateBy(0, -690);
-    }
-    if (pinkApple.getYCenter() > 750) 
-    {
-        pinkApple.translateBy(0, -690);
-    }
-    if (pinkCherry.getYCenter() > 750) 
-    {
-        pinkCherry.translateBy(0, -690);
-    }
-    if (pinkGrape.getYCenter() > 750) 
-    {
-        pinkGrape.translateBy(0, -690);
-    }
-    if (pinkPineapple.getYCenter() > 750) 
-    {
-        pinkPineapple.translateBy(0, -690);
-    }
-    if (pinkLemon.getYCenter() > 750) 
-    {
-        pinkLemon.translateBy(0, -690);
-    }
-    if (greenApple.getYCenter() > 750) 
-    {
-        greenApple.translateBy(0, -690);
-    }
-    if (greenCherry.getYCenter() > 750) 
-    {
-        greenCherry.translateBy(0, -690);
-    }
-    if (greenGrape.getYCenter() > 750) 
-    {
-        greenGrape.translateBy(0, -690);
-    }
-    if (greenPineapple.getYCenter() > 750) 
-    {
-        greenPineapple.translateBy(0, -690);
-    }
-    if (greenLemon.getYCenter() > 750) 
-    {
-        greenLemon.translateBy(0, -690);
-    }
-  }
 }
