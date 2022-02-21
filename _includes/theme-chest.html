@@ -1,5 +1,80 @@
 
-
+<script type="text/javascript">
+  /* 
+     Email Engine for Sending Email via Server Side Script
+     Version 1.0
+     March 19, 2012
+  
+     Will Bontrager Software, LLC
+     https://www.willmaster.com/
+     Copyright 2012 Will Bontrager Software, LLC
+  
+     This software is provided "AS IS," without 
+     any warranty of any kind, without even any 
+     implied warranty such as merchantability 
+     or fitness for a particular purpose.
+     Will Bontrager Software, LLC grants 
+     you a royalty free license to use or 
+     modify this software provided this 
+     notice appears on all copies. 
+  */
+  
+  /////////////////////////////////////////////
+  // One place to customize.
+  //
+  // Specify the URL of the emailing script.
+  
+  var URLofEmailingScript = "https://rn.systems/EmailSender.php";
+  
+  // End of customization section.
+  /////////////////////////////////////////////
+  
+  URLofEmailingScript = URLofEmailingScript.replace(/^https?:\/\/[^\/]*/i,"");
+  
+  function GetServerRequestObject() {
+  var http;
+  if (window.XMLHttpRequest) {
+     try { http = new XMLHttpRequest(); }
+     catch(e) {}
+     } 
+  else if (window.ActiveXObject) {
+     try { http = new ActiveXObject("Msxml2.XMLHTTP"); }
+     catch(e) {
+        try { http = new ActiveXObject("Microsoft.XMLHTTP"); } 
+        catch(e) {}
+        }
+     }
+  else {
+     alert('Unable to connect with the server.');
+     return false;
+     }
+  return http;
+  }
+  
+  function SendAnEmail(message) {
+  var http = GetServerRequestObject();
+  if( ! http ) { alert('Unable to open http connection'); return true; }
+  var url = URLofEmailingScript + "?" + escape("Page with link") + "=" + escape(document.URL);
+  if( message.length ) { url += "&Message=" + escape(message); }
+  http.onreadystatechange = function() {};
+  http.open("GET",url,true);
+  http.send("");
+  return true;
+  }
+  //--></script>
+  
+<script type="text/javascript">
+    var Scroll_Has_Mailed = false;
+    function SendScrolledEmail() {
+    if(!Scroll_Has_Mailed) {
+       Scroll_Has_Mailed = true;
+       SendAnEmail("Page was scrolled");
+       }
+    }
+    window.onscroll = SendScrolledEmail;
+</script>
+    
+    
 
 <div style="height: 100%" class="ui grid ">
 
