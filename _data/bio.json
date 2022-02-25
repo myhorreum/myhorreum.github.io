@@ -17,7 +17,7 @@
     "profiles": [
       {
         "network": "goodreads",
-        "icon": "book icon ",
+        "icon": "book icon",
         "username": "rn-books",
         "url": "https://www.goodreads.com/rn-books"
       },{
