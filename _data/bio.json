@@ -20,6 +20,11 @@
         "icon": "book icon ",
         "username": "rn-books",
         "url": "https://www.goodreads.com/rn-books"
+      },{
+        "network": "letterboxd",
+        "icon": "book icon ",
+        "username": "rn-movies",
+        "url": "https://letterboxd.com/romannicolai/"
       },
       {
         "icon": "file alternate outline icon",
