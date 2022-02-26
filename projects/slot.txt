@@ -368,12 +368,11 @@ void processStatesAUTOPILOT()
     {
         int spinGIFState;
         spinGIFState = 1;
-        int slotState = SPIN;
         int max = 5;
         int min = 1;
         int spinFlag;
         int spinTime;
-
+        int slotState = SPIN;
         switch(slotState)
         {
             case SPIN:
