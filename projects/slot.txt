@@ -87,14 +87,6 @@ public class FiniteStates
         EZText CoinTitle = EZ.addText(240, 720, "COINS", c, fontsize);
         CoinTitle.setFont("8-BIT WONDER.TTF");
         CoinValueText.setFont("8-BIT WONDER.TTF");
-
-        int spinGIFState;
-        spinGIFState = 1;
-        EZ.refreshScreen();
-    }
-
-    void processStates()
-    {
         ArrayList<EZImage> myTiles = new ArrayList<EZImage>(); 
         myTiles.add(yellowApple);
         myTiles.add(yellowCherry);
@@ -112,6 +104,12 @@ public class FiniteStates
         myTiles.add(greenPineapple);
         myTiles.add(greenLemon);
 
+        EZ.refreshScreen();
+    }
+
+    void processStates()
+    {
+
         int slotState = START;
 
         switch(slotState)
@@ -127,17 +125,6 @@ public class FiniteStates
             case SPIN:
                 Start.msg = "";
                 TEXT.msg = "";
-
-                spinGIFState * (-1);  //ACTUALLY ONLY ADD THE SPIN GIFS TO THE AUTOPILOT VERSION
-                if (spinGIFState > 0)
-                {
-                    //load GIF1
-                }
-
-                if (spinGIFState < 0)
-                {
-                    //load GIF2
-                }
 
                 myTiles.get(0).translateBy(0, +5);
                 myTiles.get(1).translateBy(0, +5);
@@ -161,8 +148,6 @@ public class FiniteStates
                 break;
 
             case ALIGN:
-
-                //remove spin GIF
 
                 if ((myTiles.get(0).getYCenter() % 136)!=0)
                 {
@@ -381,23 +366,8 @@ public class FiniteStates
 
 void processStatesAUTOPILOT()
     {
-        ArrayList<EZImage> myTiles = new ArrayList<EZImage>(); 
-        myTiles.add(yellowApple);
-        myTiles.add(yellowCherry);
-        myTiles.add(yellowGrape);
-        myTiles.add(yellowPineapple);
-        myTiles.add(yellowLemon);
-        myTiles.add(pinkApple);
-        myTiles.add(pinkCherry);
-        myTiles.add(pinkGrape);
-        myTiles.add(pinkPineapple);
-        myTiles.add(pinkLemon);
-        myTiles.add(greenApple);
-        myTiles.add(greenCherry);
-        myTiles.add(greenGrape);
-        myTiles.add(greenPineapple);
-        myTiles.add(greenLemon);
-
+        int spinGIFState;
+        spinGIFState = 1;
         int slotState = SPIN;
         int max = 5;
         int min = 1;
@@ -409,7 +379,16 @@ void processStatesAUTOPILOT()
             case SPIN:
                 Start.msg = "";
                 TEXT.msg = "";
+                spinGIFState * (-1); 
+                if (spinGIFState > 0)
+                {
+                    //load GIF1
+                }
 
+                if (spinGIFState < 0)
+                {
+                    //load GIF2
+                }
                 spinFlag = random.nextInt(max - min + 1) + min;
 
                 if (spinFlag == 1)
@@ -451,7 +430,7 @@ void processStatesAUTOPILOT()
                 }
                 break;
 
-            case ALIGN:
+            case ALIGN:                 //remove spin GIF
                 if ((myTiles.get(0).getYCenter() % 136)!=0)
                 {
                     myTiles.get(0).translateBy(0, 1);
