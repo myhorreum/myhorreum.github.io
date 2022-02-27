@@ -53,6 +53,7 @@ I saw a job opening for the position of Systems Support Assistant at Telecommuni
 * Created query rules for VPN lockout events (winlogbeat stream) and malicious Nmap scans (logstash stream)
 * Debugged the Elasticsearch queries with the --debug flag
 * Emailed the debug results via a script I made (let me know if you have a better idea)
+* Created an [Alerting Guide]({{ site.baseurl }}/projects/Alerting-Guide.pdf).
 
 <img class="ui small left floated image" src="../images/wizard.gif">
 
