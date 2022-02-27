@@ -107,7 +107,7 @@ public class FiniteStates
         EZ.refreshScreen();
     }
 
-    void processStates()
+    void processStatesMANUAL()
     {
 
         int slotState = START;
@@ -364,7 +364,7 @@ public class FiniteStates
         }
  
 
-void processStatesAUTOPILOT()
+void processStatesAUTO()
     {
         int spinGIFState;
         spinGIFState = 1;
