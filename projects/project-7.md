@@ -40,7 +40,7 @@ I saw a job opening for the position of Systems Support Assistant at Telecommuni
 * Ran the Logstash pipeline with a syslog configuration in order to receive and interpret logs from a syslog instance. Specifically, we wanted to search for SSLVPN logins, SSLVPN logouts, and rejected authentication attempts that were hitting the firewall.
 * ~~Took it a step further to see RDP and SSH connections from a SSLVPN source IP.~~
 * Created a custom grok filter to parse the syslog data for our specific use-case.
-* Automated reporting by writing a bash script that receives a .csv from Kibana via a generated POST URL, waits for the .csv to fully download, then emails the .csv out to designated recipients. I create a [guide]({{ site.baseurl }}/projects/Reporting-Guide.pdf) outlining this process.
+* Automated reporting by writing a bash script that receives a .csv from Kibana via a generated POST URL, waits for the .csv to fully download, then emails the .csv out to designated recipients. I created a [guide]({{ site.baseurl }}/projects/Reporting-Guide.pdf) outlining this process.
 * Integrated with nginx to secure Kibana and require credenthials to access Kibana.
 * Installed Winlogbeat on Windows domain controllers to send authentication logs from those agents.
 
