@@ -26,6 +26,6 @@ Here are the results:
 
 <img class="ui image" src="../images/sleep-2.JPG">
 
-The sleep itself was a lighter one then usual. I had trouble falling asleep which may have skewed the data a bit. Overall I was surprised to learn that I may have sleep apnea. Addressing sleep apnea can have benefits associated with mood and energy. I was also surprised to see that I sleep significantly in supine (back) position. This is because I always fall asleep and wake up on my side or prone (stomach). Unfortunately the study did not include the brain wave spectrum shown in the top image of this page.
+The sleep itself was a lighter one then usual. I had trouble falling asleep which may have skewed the data a bit. Overall I was surprised to learn that I may have sleep apnea. Addressing sleep apnea can have benefits associated with mood and energy. I was also surprised to see that I sleep significantly in supine (back) position. This is because I always fall asleep and wake up on my side or prone (stomach). Unfortunately the study did not include the brain wave spectrum shown in the image at the top of this page.
 ***************************************************************************************
 ***************************************************************************************
