@@ -1,0 +1,5 @@
+---
+layout: x
+type: x
+---
+

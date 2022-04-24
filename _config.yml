@@ -25,6 +25,7 @@ theme-fire: theme-fire.html
 theme-religion: theme-religion.html
 theme-news: theme-news.html
 theme-surf: theme-surf.html
+theme-x: theme-x.html
 # Specify the rouge syntax highlighter theme. Pick one from css/rouge.
 rouge-theme: igorpro
 
