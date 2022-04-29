@@ -41,7 +41,7 @@ div.content{color:white;background: black} //main card content above tags
   background: lighten(silver, 10%) !important;
   scrollbar-highlight-color: yellow;
 }
-div.description{color:white;background: black} //main card description above tags
+
 .ui.basic.button:hover {
   background-color: yellow !important;
 }
@@ -49,7 +49,9 @@ div.description{color:white;background: black} //main card description above tag
 .ui.menu {
   background: #000000;
 }
-
+.ui.card {
+  background: #000000;
+}
 pre {
     background-color: #29292f;
 }
