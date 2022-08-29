@@ -19,7 +19,7 @@ summary: I experienced mass malicious authentication attempts to TASI-PHIDC's ma
 
 ## The Attack
 
-I was using the ELK Stack to help see and track failed authentication attempts to TASI-PHIDC's servers. I noticed that we had many failed attempts from users to 128.171.103.6 and I was initially confused. I then realized that that IP corresponded to TASI-PHIDC's mail server. The mail server is the company's only public facing server due to the need for employees to access email outside of TASI's private networks. This does leave the server to be targetted by hackers however.
+I was using the ELK Stack to help see and track failed authentication attempts to TASI-PHIDC's servers. I noticed that we had many [4625-events]({{ site.baseurl }}/projects/4625.txt) from users to 128.171.103.6 and I was initially confused. I then realized that that IP corresponded to TASI-PHIDC's mail server. The mail server is the company's only public facing server due to the need for employees to access email outside of TASI's private networks. This does leave the server to be targetted by hackers however.
 
 <img class="ui image" src="../images/sleep-1.JPG">
 
