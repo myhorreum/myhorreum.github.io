@@ -307,10 +307,10 @@ public class FiniteStates
                         CoinValueText.msg = ""+CoinPurse;
                         //damn.play();
                         TEXT.msg = "NO MATCH";
-				if (CoinPurse == 0 || CoinPurse < 0)
-				{
-			          slotState = GAMEOVER;
-				}
+				        if (CoinPurse == 0 || CoinPurse < 0)
+				        {
+			                slotState = GAMEOVER;
+				        }
                         slotState = LOAD;
                     }
                     break;
