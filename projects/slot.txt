@@ -288,7 +288,7 @@ public class FiniteStates
                         CoinPurse += triple;
                         CoinValueText.msg = ""+CoinPurse;
                         //woohoo.play();
-                        TEXT.msg = "TRIPLE";
+                        TEXT.msg = "!TRIPLE!";
                         slotState = LOAD;
                     }
                     else if (a == b || a == c || b == c)
