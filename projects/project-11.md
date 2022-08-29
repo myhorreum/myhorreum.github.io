@@ -25,9 +25,9 @@ I then installed filebeat on the Zimbra linux server in order to send logs from 
 
 Here are examples of authentication attempts formatted in our ELK implementation:
 
-[08.20.2022-IPs]({{ site.baseurl }}/projects/08.20.2022-IPs.txt)
+[08.22.2022-IPs]({{ site.baseurl }}/projects/08.22.2022-IPs.txt)
 
-[08.20.2022-CorrespondingUsers]({{ site.baseurl }}/projects/08.20.2022-users.txt)
+[08.22.2022-CorrespondingUsers]({{ site.baseurl }}/projects/08.22.2022-users.txt)
 
 [08.28.2022-IPs]({{ site.baseurl }}/projects/08.28.2022-IPs.txt)
 
