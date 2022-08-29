@@ -25,5 +25,16 @@ I then installed filebeat on the Zimbra linux server in order to send logs from 
 
 Here are examples of authentication attempts formatted in our ELK implementation:
 
+[08.20.2022-IPs]({{ site.baseurl }}/projects/08.20.2022-IPs.txt)
+[08.20.2022-CorrespondingUsers]({{ site.baseurl }}/projects/08.20.2022-users.txt)
+[08.28.2022-IPs]({{ site.baseurl }}/projects/08.28.2022-IPs.txt)
+[08.28.2022-CorrespondingUsers]({{ site.baseurl }}/projects/08.28.2022-users.txt)
+
+Because the SASL authentication failures split the user and IP into consecutive logs, it requires two separate reports. Also I wanted to map the IPs to their geolocation (if they are outside of Hawaii they are most likely malicious), however my dissect statement could only cover one type of SASL format. This is a report where some of the geolocations were successfully mapped however:
+
+[08.17.2022-IPs]({{ site.baseurl }}/projects/08.17.2022-IPs.txt)
+
+If you still want to map the IP, you can use sites like [these](https://www.iplocation.net/).
+
 ***************************************************************************************
 ***************************************************************************************

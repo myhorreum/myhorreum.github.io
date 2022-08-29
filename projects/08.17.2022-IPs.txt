@@ -1,0 +1,31 @@
+"@timestamp",message,"geoip.ip","geoip.city_name","geoip.country_name"
+"Aug 18, 2022 @ 09:09:47.809","Aug 18 09:09:45 mail postfix/smtps/smtpd[13697]: warning: unknown[117.10.211.211]: SASL LOGIN authentication failed: authentication failure","117.10.211.211",Tianjin,China
+"Aug 18, 2022 @ 09:09:26.790","Aug 18 09:09:26 mail postfix/smtps/smtpd[13697]: warning: unknown[221.130.179.164]: SASL LOGIN authentication failed: authentication failure","221.130.179.164","-",China
+"Aug 18, 2022 @ 08:56:04.435","Aug 18 08:56:00 mail postfix/smtps/smtpd[6955]: warning: unknown[122.160.116.129]: SASL LOGIN authentication failed: authentication failure","122.160.116.129",Delhi,India
+"Aug 18, 2022 @ 08:55:57.432","Aug 18 08:55:51 mail postfix/smtps/smtpd[6955]: warning: unknown[20.124.134.167]: SASL LOGIN authentication failed: authentication failure","20.124.134.167",Tappahannock,"United States"
+"Aug 18, 2022 @ 08:06:49.131","Aug 18 08:06:45 mail postfix/smtps/smtpd[15834]: warning: 111-70-17-111.emome-ip.hinet.net[111.70.17.111]: SASL LOGIN authentication failed: authentication failure","-","-","-"
+"Aug 18, 2022 @ 08:06:11.118","Aug 18 08:06:10 mail postfix/smtps/smtpd[15457]: warning: unknown[2.57.219.2]: SASL LOGIN authentication failed: authentication failure","2.57.219.2","-",Georgia
+"Aug 18, 2022 @ 07:16:16.440","Aug 18 07:16:16 mail postfix/smtps/smtpd[24123]: warning: unknown[24.51.226.170]: SASL LOGIN authentication failed: authentication failure","24.51.226.170",Kingsville,Canada
+"Aug 18, 2022 @ 07:15:56.435","Aug 18 07:15:55 mail postfix/smtps/smtpd[24123]: warning: unknown[219.149.185.197]: SASL LOGIN authentication failed: authentication failure","219.149.185.197","-",China
+"Aug 18, 2022 @ 06:30:40.878","Aug 18 06:30:37 mail postfix/smtps/smtpd[32747]: warning: unknown[60.174.231.114]: SASL LOGIN authentication failed: authentication failure","60.174.231.114","-",China
+"Aug 18, 2022 @ 06:30:20.862","Aug 18 06:30:17 mail postfix/smtps/smtpd[2918]: warning: unknown[111.26.196.121]: SASL LOGIN authentication failed: authentication failure","111.26.196.121","-",China
+"Aug 18, 2022 @ 06:28:27.807","Aug 18 06:28:26 mail postfix/smtps/smtpd[32747]: warning: unknown[42.236.75.216]: SASL LOGIN authentication failed: authentication failure","42.236.75.216","-",China
+"Aug 18, 2022 @ 06:28:17.802","Aug 18 06:28:15 mail postfix/smtps/smtpd[32747]: warning: unknown[183.239.137.146]: SASL LOGIN authentication failed: authentication failure","183.239.137.146",Shenzhen,China
+"Aug 18, 2022 @ 01:34:20.647","Aug 18 01:34:20 mail postfix/smtpd[24197]: warning: vps-zap962035-1.zap-srv.com[185.223.29.248]: SASL LOGIN authentication failed: authentication failure","-","-","-"
+"Aug 18, 2022 @ 01:34:17.642","Aug 18 01:34:17 mail postfix/smtpd[24191]: warning: vps-zap962035-1.zap-srv.com[185.223.29.248]: SASL LOGIN authentication failed: authentication failure","-","-","-"
+"Aug 18, 2022 @ 01:34:09.635","Aug 18 01:34:09 mail postfix/smtps/smtpd[21552]: warning: unknown[122.170.116.164]: SASL LOGIN authentication failed: authentication failure","122.170.116.164",Ahmedabad,India
+"Aug 18, 2022 @ 01:34:03.628","Aug 18 01:34:00 mail postfix/smtps/smtpd[23840]: warning: unknown[122.165.192.216]: SASL LOGIN authentication failed: authentication failure","122.165.192.216",Coimbatore,India
+"Aug 18, 2022 @ 01:34:03.627","Aug 18 01:33:59 mail postfix/smtps/smtpd[21552]: warning: unknown[58.222.191.170]: SASL LOGIN authentication failed: authentication failure","58.222.191.170","-",China
+"Aug 18, 2022 @ 01:33:18.607","Aug 18 01:33:14 mail postfix/smtps/smtpd[21552]: warning: unknown[87.244.8.4]: SASL LOGIN authentication failed: authentication failure","87.244.8.4",Moscow,Russia
+"Aug 18, 2022 @ 00:40:16.505","Aug 18 00:40:15 mail postfix/smtps/smtpd[30170]: warning: unknown[60.12.84.190]: SASL LOGIN authentication failed: authentication failure","60.12.84.190",Ningbo,China
+"Aug 17, 2022 @ 23:58:27.545","Aug 17 23:58:26 mail postfix/smtps/smtpd[8199]: warning: unknown[41.60.209.69]: SASL LOGIN authentication failed: authentication failure","41.60.209.69","-",Zambia
+"Aug 17, 2022 @ 23:34:42.876","Aug 17 23:34:42 mail postfix/smtps/smtpd[22988]: warning: 220.89.92.62.static.cust.telenor.com[62.92.89.220]: SASL LOGIN authentication failed: authentication failure","-","-","-"
+"Aug 17, 2022 @ 22:58:13.817","Aug 17 22:58:10 mail postfix/smtps/smtpd[29659]: warning: unknown[58.56.153.214]: SASL LOGIN authentication failed: authentication failure","58.56.153.214",Dezhou,China
+"Aug 17, 2022 @ 22:57:42.812","Aug 17 22:57:41 mail postfix/smtps/smtpd[29659]: warning: unknown[182.70.255.196]: SASL LOGIN authentication failed: authentication failure","182.70.255.196",Indore,India
+"Aug 17, 2022 @ 22:52:23.727","Aug 17 22:52:21 mail postfix/smtps/smtpd[29659]: warning: unknown[59.5.166.145]: SASL LOGIN authentication failed: authentication failure","59.5.166.145","Dobong-gu","South Korea"
+"Aug 17, 2022 @ 21:18:11.078","Aug 17 21:18:07 mail postfix/smtps/smtpd[22659]: warning: unknown[122.166.246.102]: SASL LOGIN authentication failed: authentication failure","122.166.246.102",Bengaluru,India
+"Aug 17, 2022 @ 21:17:44.066","Aug 17 21:17:43 mail postfix/smtps/smtpd[22112]: warning: unknown[36.94.221.171]: SASL LOGIN authentication failed: authentication failure","36.94.221.171",Tangerang,Indonesia
+"Aug 17, 2022 @ 21:11:15.950","Aug 17 21:11:15 mail postfix/smtps/smtpd[19628]: warning: unknown[106.9.24.77]: SASL LOGIN authentication failed: authentication failure","106.9.24.77","-",China
+"Aug 17, 2022 @ 21:10:57.939","Aug 17 21:10:56 mail postfix/smtps/smtpd[19628]: warning: unknown[186.96.121.87]: SASL LOGIN authentication failed: authentication failure","186.96.121.87","Bogotá",Colombia
+"Aug 17, 2022 @ 20:18:00.976","Aug 17 20:18:00 mail postfix/smtpd[26886]: warning: vps-zap962031-1.zap-srv.com[134.255.217.179]: SASL LOGIN authentication failed: authentication failure","-","-","-"
+"Aug 17, 2022 @ 20:17:58.975","Aug 17 20:17:58 mail postfix/smtpd[26887]: warning: vps-zap962031-1.zap-srv.com[134.255.217.179]: SASL LOGIN authentication failed: authentication failure","-","-","-"
