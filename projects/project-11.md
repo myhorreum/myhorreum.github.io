@@ -23,7 +23,7 @@ I was using the ELK Stack to help see and track failed authentication attempts t
 
 I then installed filebeat on the Zimbra linux server in order to send logs from that server. This is so that I could see the IPs associated with the login attempts in order to block them. I also also used ELK's GeoIP feature in order to track some of the IPs. This required me to dissect the logs in the Logstash configuration file, but ran into some issues with that. What was shocking to me was how many attempts the mail server would receive. I also had questions like 'How did hackers obtain TASI employee usernames'? I realized they could have obtained a newsletter or something similar that contained employee usernames.
 
-Here are examples of authentication attempts formatted in our ELK implementation:
+Here are examples of authentication attempts formatted in our ELK implementation (I also recommend zooming the reports out a little):
 
 [08.22.2022-IPs]({{ site.baseurl }}/projects/08.22.2022-IPs.txt)
 
