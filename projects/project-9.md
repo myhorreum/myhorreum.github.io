@@ -12,6 +12,7 @@ labels:
   - Audit logs
   - ELK Stack
   - Firewall IP Pools
+  - TASI-PHIDC
 summary: A compromised password turned out to most likely be a DNS issue resulting from recycled VPN IPs. 
 ---
 <img class="ui image" src="../images/pool.gif">
