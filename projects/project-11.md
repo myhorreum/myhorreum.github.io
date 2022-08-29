@@ -15,7 +15,7 @@ labels:
 summary: I experienced mass malicious authentication attempts to TASI-PHIDC's mail server.
 ---
 
-<img class="ui image" src="../images/waves.JPG">
+<img class="ui image" src="../images/hack.jpg">
 
 ## The Attack
 
