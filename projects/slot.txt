@@ -343,7 +343,7 @@ public class FiniteStates
                 }
 
             case GAMEOVER:
-                TEXT.msg = "GAMEOVER";
+                TEXT.msg = "GAMEOVER :(";
 
         }
 
