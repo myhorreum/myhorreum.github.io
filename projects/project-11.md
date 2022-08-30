@@ -25,9 +25,9 @@ I then installed filebeat on the Zimbra linux server in order to send logs from 
 
 Here are examples of authentication attempts formatted in our ELK implementation (I also recommend zooming the reports out a little):
 
-[08.22.2022-IPs]({{ site.baseurl }}/projects/08.22.2022-IPs.txt)
+[08.20.2022-IPs]({{ site.baseurl }}/projects/08.20.2022-IPs.txt)
 
-[08.22.2022-CorrespondingUsers]({{ site.baseurl }}/projects/08.22.2022-users.txt)
+[08.20.2022-CorrespondingUsers]({{ site.baseurl }}/projects/08.20.2022-users.txt)
 
 [08.28.2022-IPs]({{ site.baseurl }}/projects/08.28.2022-IPs.txt)
 
@@ -38,6 +38,8 @@ Because the SASL authentication failures split the user and IP into consecutive 
 [08.17.2022-IPs]({{ site.baseurl }}/projects/08.17.2022-IPs.txt)
 
 If you still want to map the IP, you can use sites like [these](https://www.iplocation.net/).
+
+This situation illustrates why 2-factor authentication isn't such a bad idea.
 
 ***************************************************************************************
 ***************************************************************************************
