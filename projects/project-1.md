@@ -25,6 +25,9 @@ An "aha-moment" that I had when working on this project occured after the semest
 
 After the semester had concluded, I revisted this project on my free time, and cconverted it to the finite state machine. It was beautiful how the code was now working in the same way, but also so smoothly and logically (and with much fewer lines of code). It was a breakthrough moment that made me appreciate the elegancy that code has the potential to achieve.
 
+## Time Complexity of the Slot Machine:
+I thought it would be interesting to comment on the [time-complexity](https://www.happycoders.eu/algorithms/big-o-notation-time-complexity/) of this slot machine implementation. This slot machine is evaluated as having a time complexity (in Big O Notation) of *O(1)*.
+
 ## CONCLUDING:
 This fun project taught me the power of certain coding techniques. The idea that there is a lot more to a project underneath the graphics code-wise was also enforced. It also gave me more experience with working through the different stages of development of a project: going from a simple idea to an actual working device/software/etc. I look forward to programming something similar in the future!
 
