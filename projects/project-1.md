@@ -25,7 +25,7 @@ An "aha-moment" that I had when working on this project occured after the semest
 
 After the semester had concluded, I revisted this project on my free time, and cconverted it to the finite state machine. It was beautiful how the code was now working in the same way, but also so smoothly and logically (and with much fewer lines of code). It was a breakthrough moment that made me appreciate the elegancy that code has the potential to achieve.
 
-## Time Complexity of the Slot Machine:
+## Time Complexity of the Slot Machine?
 I thought it would be interesting to comment on the [time-complexity](https://www.happycoders.eu/algorithms/big-o-notation-time-complexity/) of this slot machine implementation. This slot machine is evaluated as having a time complexity (in Big O Notation) of *O(1)*.
 
 ## CONCLUDING:
