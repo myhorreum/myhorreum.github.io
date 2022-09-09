@@ -35,6 +35,11 @@
   },
   "interests": [
     {
+      "name": "Cybersecurity",
+      "keywords": [
+      ]
+    },
+    {
       "name": "Network Design",
       "keywords": [
       ]
@@ -88,18 +93,7 @@
       "name": "Geospatial Information Science",
       "keywords": [
       ]
-    },
-    {
-      "name": "Depth Psychology",
-      "keywords": [
-      ]
-    },
-    {
-      "name": "Biosphere Restoration & Preservation",
-      "keywords": [
-      ]
     }
-
   ],
   "skills": [
     {
