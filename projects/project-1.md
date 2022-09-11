@@ -3,7 +3,7 @@ layout: project
 type: project
 image: images/start.png
 title: Slot Machine
-permalink: projects/slotmachine
+permalink: projects/slot-machine
 # All dates must be YYYY-MM-DD format!
 date: 2018-11-01
 labels:
