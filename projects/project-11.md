@@ -41,7 +41,7 @@ I also created a Kibana map based on the data points given from the GeoIPs (fyi 
 
 <img class="ui image" src="../images/geoip.PNG">
 
-If you still want to map the IP, you can use sites like [these](https://www.iplocation.net/).
+If the dissect statement failed but you still want to map the IP, you can use sites like [these](https://www.iplocation.net/).
 
 This situation illustrates why 2-factor authentication isn't such a bad idea.
 
