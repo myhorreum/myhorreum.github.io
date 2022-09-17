@@ -37,6 +37,10 @@ Because the SASL authentication failures split the user and IP into consecutive 
 
 [08.17.2022-IPs]({{ site.baseurl }}/projects/08.17.2022-IPs.txt)
 
+I also created a Kibana map based on the data points given from the GeoIPs (fyi this map isn't based on the above report):
+
+<img class="ui image" src="../images/geoip.PNG">
+
 If you still want to map the IP, you can use sites like [these](https://www.iplocation.net/).
 
 This situation illustrates why 2-factor authentication isn't such a bad idea.
