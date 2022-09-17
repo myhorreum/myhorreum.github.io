@@ -144,7 +144,7 @@
         "ELK Stack (Elasticsearch + Logstash + Kibana) installation & configuration",
         "ElastAlert2 w/ Docker",
         "Tenable Nessus",
-        "NextCloud"
+        "NextCloud w/ Docker Compose"
       ]
     },
     {
