@@ -37,7 +37,7 @@ Because the SASL authentication failures split the user and IP into consecutive 
 
 [08.17.2022-IPs]({{ site.baseurl }}/projects/08.17.2022-IPs.txt)
 
-I also created a Kibana map based on the data points given from the GeoIPs (fyi this map isn't based on the above report):
+I also created a Kibana map based on the data points given from the GeoIPs (fyi this map isn't based on the above report, its based on this [one]({{ site.baseurl }}/projects/09.16.2022-IPs.txt)):
 
 <img class="ui image" src="../images/geoip.PNG">
 

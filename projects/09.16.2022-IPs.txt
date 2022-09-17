@@ -1,0 +1,22 @@
+"@timestamp",message,"geoip.ip","geoip.city_name","geoip.country_name"
+"Sep 16, 2022 @ 20:26:04.037","Sep 16 20:26:02 mail postfix/smtps/smtpd[29914]: warning: unknown[122.165.203.21]: SASL LOGIN authentication failed: authentication failure","122.165.203.21",Coimbatore,India
+"Sep 16, 2022 @ 20:25:20.977","Sep 16 20:25:14 mail postfix/smtps/smtpd[29914]: warning: unknown[123.51.245.128]: SASL LOGIN authentication failed: authentication failure","123.51.245.128",Taipei,Taiwan
+"Sep 16, 2022 @ 19:27:16.491","Sep 16 19:27:16 mail postfix/smtps/smtpd[14174]: warning: aho21.internetdsl.tpnet.pl[83.16.196.21]: SASL LOGIN authentication failed: authentication failure","-","-","-"
+"Sep 16, 2022 @ 19:27:10.488","Sep 16 19:27:07 mail postfix/smtps/smtpd[14174]: warning: unknown[180.232.132.66]: SASL LOGIN authentication failed: authentication failure","180.232.132.66",Binondo,Philippines
+"Sep 16, 2022 @ 19:25:23.061","Sep 16 19:25:22 mail postfix/smtpd[15090]: warning: vps-zap992222-1.zap-srv.com[147.189.170.209]: SASL LOGIN authentication failed: authentication failure","-","-","-"
+"Sep 16, 2022 @ 19:25:16.057","Sep 16 19:25:13 mail postfix/smtpd[15090]: warning: vps-zap992222-1.zap-srv.com[147.189.170.209]: SASL LOGIN authentication failed: authentication failure","-","-","-"
+"Sep 16, 2022 @ 18:04:45.625","Sep 16 18:04:40 mail postfix/smtpd[10247]: warning: vps-zap991920-1.zap-srv.com[147.189.169.126]: SASL LOGIN authentication failed: authentication failure","-","-","-"
+"Sep 16, 2022 @ 18:04:30.621","Sep 16 18:04:30 mail postfix/smtpd[10247]: warning: vps-zap991920-1.zap-srv.com[147.189.169.126]: SASL LOGIN authentication failed: authentication failure","-","-","-"
+"Sep 16, 2022 @ 17:45:56.485","Sep 16 17:45:54 mail postfix/smtps/smtpd[32020]: warning: unknown[122.165.203.21]: SASL LOGIN authentication failed: authentication failure","122.165.203.21",Coimbatore,India
+"Sep 16, 2022 @ 17:45:28.350","Sep 16 17:45:20 mail postfix/smtps/smtpd[32020]: warning: unknown[197.211.96.232]: SASL LOGIN authentication failed: authentication failure","197.211.96.232",Blantyre,Malawi
+"Sep 16, 2022 @ 16:58:00.351","Sep 16 16:57:58 mail postfix/smtpd[8817]: warning: vps-zap991920-1.zap-srv.com[147.189.169.126]: SASL LOGIN authentication failed: authentication failure","-","-","-"
+"Sep 16, 2022 @ 16:57:38.346","Sep 16 16:57:37 mail postfix/smtpd[8817]: warning: vps-zap991920-1.zap-srv.com[147.189.169.126]: SASL LOGIN authentication failed: authentication failure","-","-","-"
+"Sep 16, 2022 @ 14:12:02.282","Sep 16 14:12:01 mail postfix/smtps/smtpd[28308]: warning: unknown[89.45.228.210]: SASL LOGIN authentication failed: authentication failure","89.45.228.210","-",Romania
+"Sep 16, 2022 @ 14:11:56.251","Sep 16 14:11:55 mail postfix/smtps/smtpd[28308]: warning: unknown[171.232.69.187]: SASL LOGIN authentication failed: authentication failure","171.232.69.187","Ho Chi Minh City",Vietnam
+"Sep 16, 2022 @ 14:06:53.073","Sep 16 14:06:51 mail postfix/smtps/smtpd[23815]: warning: unknown[45.221.11.21]: SASL LOGIN authentication failed: authentication failure","45.221.11.21",Kampala,Uganda
+"Sep 16, 2022 @ 14:06:28.796","Sep 16 14:06:28 mail postfix/smtps/smtpd[23815]: warning: 128-116-190-233.static.eolo.it[128.116.190.233]: SASL LOGIN authentication failed: authentication failure","-","-","-"
+"Sep 16, 2022 @ 10:04:38.905","Sep 16 10:04:38 mail postfix/smtps/smtpd[7416]: warning: unknown[213.230.90.96]: SASL LOGIN authentication failed: authentication failure","213.230.90.96",Tashkent,Uzbekistan
+"Sep 16, 2022 @ 09:59:42.507","Sep 16 09:59:40 mail postfix/smtps/smtpd[2655]: warning: unknown[61.180.34.120]: SASL LOGIN authentication failed: authentication failure","61.180.34.120",Jiujiang,China
+"Sep 16, 2022 @ 09:59:42.507","Sep 16 09:59:40 mail postfix/smtps/smtpd[2655]: warning: unknown[61.180.34.120]: SASL LOGIN authentication failed: authentication failure","61.180.34.120",Jiujiang,China
+"Sep 16, 2022 @ 09:59:42.507","Sep 16 09:59:40 mail postfix/smtps/smtpd[2655]: warning: unknown[61.180.34.120]: SASL LOGIN authentication failed: authentication failure","61.180.34.120",Jiujiang,China
+"Sep 16, 2022 @ 09:59:30.501","Sep 16 09:59:29 mail postfix/smtps/smtpd[2655]: warning: unknown[58.56.178.170]: SASL LOGIN authentication failed: authentication failure","58.56.178.170",Dezhou,China
