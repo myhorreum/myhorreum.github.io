@@ -23,9 +23,8 @@ summary: A compromised password turned out to most likely be a DNS issue resulti
 The above image is a screeshot from what I saw after logging into my work VM at TASI (check more on my experience with TASI [here]({{ site.baseurl }}/projects/tasi)). I was initially worried that my password was known and used to sign in from Jose's workstation. Obviously, no one would ever want their password to be known by others so I asked my supervisor about this and he told me that it most likely was TASI's firewall DNS associating old IPs with hostnames. Thomas told me to dig a little deeper to confirm this. This post is my experience doing so.
 
 ## Check Audit Logs
-<img class="ui image" src="../images/audit-log.png">
 
-The first step to take is to check the audit logs on the VM. Audit logs provide granular details in regards to what is going on on the system. In this case I did a simple `grep` command to isolate logs containing `jose`. The login event was displayed on the screen and gave me further information. Most importantly it displayed that the login from `jose-laptop.uhtasi.local` had an IP address of `10.100.10.81`.
+The first step to take is to check the audit logs on the VM. Audit logs provide granular details in regards to what is going on on the system. In this case I did a simple `grep` command to isolate logs containing `jose` in the `/var/log/audit/audit.log` file. The login event was displayed on the screen and gave me further information. Most importantly it displayed that the login from `jose-laptop.uhtasi.local` had an IP address of `10.100.10.81`.
 
 ## Check ELK-Stack
 <img class="ui image" src="../images/jose-elk.jpg">
