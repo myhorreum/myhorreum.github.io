@@ -51,7 +51,9 @@ Here is another recent spate of attacks that was interesting to me because of th
 
 <img class="ui image" src="../images/geoip1.png">
 
-This situation illustrates why 2-factor authentication isn't such a bad idea, despite being seen as an annoyance for most employees/students.
+It also makes me wonder if the attacks are actually coming from those exact locations, or if the hacker is using a tool that generates IPs that instead somehow correspond to those locations, while the hacker is likely located in a single location.
+
+Overall this situation illustrates why 2-factor authentication isn't such a bad idea, despite being seen as an annoyance for most employees/students.
 
 ***************************************************************************************
 ***************************************************************************************
