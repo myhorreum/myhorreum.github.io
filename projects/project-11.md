@@ -43,6 +43,14 @@ I also created a Kibana map based on the data points given from the GeoIPs (fyi 
 
 If the dissect statement failed but you still want to map the IP, you can use sites like [these](https://www.iplocation.net/).
 
+Here is another recent spate of attacks that was interesting to me because of the widespread geolocation of the auth failures:
+
+[09.23.2022-IPs]({{ site.baseurl }}/projects/09.23.2022-IPs.txt)
+
+[09.23.2022-CorrespondingUsers]({{ site.baseurl }}/projects/09.23.2022-users.txt)
+
+<img class="ui image" src="../images/geoip1.png">
+
 This situation illustrates why 2-factor authentication isn't such a bad idea, despite being seen as an annoyance for most employees/students.
 
 ***************************************************************************************
