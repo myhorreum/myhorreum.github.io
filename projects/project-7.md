@@ -13,6 +13,7 @@ labels:
   - WSUS
   - ELK Stack
   - ElastAlert2
+  - Nextcloud
 summary: My experience working as a Systems Support Assistant for the Telecommunications and Social Informatics Program (TASI) / Pacific Health Informatics Data Center (PHIDC) at the University of Hawaii.
 ---
 <img class="ui image" src="../images/TASI-PHIDC.jpg">
