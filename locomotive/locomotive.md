@@ -1,5 +1,5 @@
 ---
-layout: locomotive
-type: locomotive
+layout: rush
+type: rush
 ---
 
