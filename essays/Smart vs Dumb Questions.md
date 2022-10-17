@@ -21,7 +21,7 @@ how to communicate over the Internet in a smart and proper way. I have encounter
 <img class="ui image" src="{{ site.baseurl }}/images/ScryingOrb.jpg">
 </div>
 
-## AN UNINTELLIGENT QUESTION:
+## A NOT-SMART QUESTION:
 
 On StackOverflow, users ask questions in the context of tech or computer science. The use of voting is implemented on the site to reward questions
 that are thought-provoking and penalize questions that are deemed worthless.
@@ -32,7 +32,7 @@ The title of the question is simply: "Gives an infinite loop". First of all, thi
 of the site supposed to answer with when they see this question? Are they supposed to confirm that it is an infinite loop? This question is way too vague.
 Also there is no context in the title onto what language this code will be referencing. All in all, this is an absolutely terrible question.
 
-## AN INTELLIGENT QUESTION:
+## AN SMART QUESTION:
 
 A good example can be found [here.](https://stackoverflow.com/questions/1143262/what-is-the-difference-between-const-int-const-int-const-and-int-const)
 
