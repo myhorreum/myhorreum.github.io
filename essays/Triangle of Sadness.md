@@ -1,11 +1,12 @@
 ---
 layout: essay
 type: essay
-title: Brief Thoughts on Triangle of Sadness
+title: Theories on Triangle of Sadness
 # All dates must be YYYY-MM-DD format!
 date: 2022-12-05
 labels:
   - Fan Theories
+  - Film
   - Spoiler Alert
 ---
 
@@ -15,7 +16,6 @@ labels:
 <img class="ui image" src="{{ site.baseurl }}/images/tos.jpg">
 </div>
 
-This film started off a bit slow but I gradually became more absorbed into the film and story as it went on. I ended up enjoying this film more than I thought I would and I was left with some theories that I had developed after the film concluded. If you watch the film let me know if you agree with these theories:
 
 ## Theory 1 - "Triangle of Sadness" is referring to the love triangle involving Carl, Yaya, & Abigail
 
