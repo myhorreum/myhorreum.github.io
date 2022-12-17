@@ -165,7 +165,8 @@
         "ELK Stack (Elasticsearch + Logstash + Kibana) installation & configuration",
         "ElastAlert2 w/ Docker",
         "Tenable Nessus",
-        "Nextcloud w/ Docker Compose"
+        "Nextcloud w/ Docker Compose",
+        "Webmin"
       ]
     },
     {
@@ -223,7 +224,7 @@
       "startDate": "2022",
       "endDate": "Present",
       "summary": "My position as Systems Support Assistant at TASI was shifted to Student Assistant at RCUH.",
-      "highlights": ["Conducted software testing in VMware ESXi generated environments", "Installed ElastAlert2 for the ELK Stack implementation", "Installed Nextcloud and Linux on a physical server", "Installed Tenable agents on workstations and ran Nessus scans", "Organized 'Meet and Greets' for potential new hires", "Gained some experience with Sony Vegas Pro video editing software", "Participated in monthly security meetings"
+      "highlights": ["Conducted software testing in VMware ESXi generated environments", "Installed ElastAlert2 for the ELK Stack implementation", "Installed Linux, Nextcloud, and Webmin on a physical server", "Installed Tenable agents on workstations and ran Nessus scans", "Organized 'Meet and Greets' for potential new hires", "Gained some experience with Sony Vegas Pro video editing software", "Participated in monthly security meetings"
       ]
     },
     {
