@@ -33,6 +33,8 @@ I saw a job opening for the position of Systems Support Assistant at [Telecommun
 <img class="ui image" src="../images/ELK.png">
 *- - - - - - - - - - - - - - - - - - - - - Viewing the running statuses of the ELK services - - - - - - - - - - - - - - - - - -*
 
+Also here is the Logstash [config]({{ site.baseurl }}/projects/logstash-config.conf) file that I slowly built up over the time working here.
+
 
 ## ElastAlert2 :
 

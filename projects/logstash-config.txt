@@ -1,0 +1,125 @@
+input {
+  tcp {
+    port => 5055
+    type => syslog
+  }
+  udp {
+    port => 5055
+    type => syslog
+  }
+  beats {
+    port => 5044
+    type => beats
+  }
+}
+
+filter {
+    if [type]=="beats" {
+        if [host][name]=="mail.uhtasi.org"{
+              dissect {
+                  mapping => {
+                      "message" => "%{+date} %{+date} %{+date} mail postfix/smtps/smtpd[%{pid}]: warning: unknown[%{ip}]: %{error}"
+                  }    
+              }
+              geoip {
+                  source => "[ip]"
+              }   
+        }
+        if [log][file][path]=="/var/log/zendto/zendto.log"{
+              dissect {
+                  mapping => {
+                      "message" => "%{date} %{time} %{ip} %{?junk} file %{file} %{?junk} %{email} %{?junk}"
+                  }
+              }
+              geoip {
+                  source => "[ip]"
+              }
+        }
+    }      
+    if [type]=="syslog" {
+        grok {
+    	    match => {
+      	        "message" => "^<%{NUMBER:[syslog][priority]}>%{SPACE}++%{GREEDYDATA:[syslog][message]}$"
+    		}	
+    		add_field => [ "received_at", "%{@timestamp}" ]
+    		add_field => [ "received_from", "%{host}" ]
+   	 	remove_field => "message"
+  	}
+  	kv {
+    		source => "[syslog][message]"
+                remove_field => "[syslog][message]"
+  	}
+  	date {
+    		match => [ "[time]", "yyyy-MM-dd HH:mm:ss" ]
+                target => "@timestamp"
+  	}
+
+        
+    if [m]=="1080" {
+        dissect {
+            mapping => {
+                "src" => "%{ip}::%{extra}"
+            }
+        } 
+        geoip {
+            source => "[ip]"
+        }
+      }
+  }
+
+  if ![ecs] {
+      mutate {
+          rename => ["host", "[host][name]" ]
+      	  update => { "[ecs][version]" => "1.5.0" }
+          add_tag => [ "ecs_converted" ]
+          }
+  }
+}
+
+output {
+        if [type]=="syslog" {
+                if [m] in [ "1080", "745", "263", "1079" ] {
+                elasticsearch {
+                hosts => ["localhost:9200"]
+                index => "account-access-%{+yyyy.MM}"
+                }
+                } else {
+                elasticsearch {
+                hosts => ["localhost:9200"]
+                index => "syslog-%{+yyyy.MM.dd}"
+                }
+                }
+        stdout { codec => rubydebug }
+        } 
+
+        if [type]=="beats" {
+                if [host][os][type]=="linux" {
+                    if [host][name]=="mail.uhtasi.org" {
+                        elasticsearch {
+                        hosts => ["localhost:9200"]
+                        index => "zimbra-%{+yyyy.MM.dd}"
+                        }
+                    } else {
+                        elasticsearch {
+                        hosts => ["localhost:9200"]
+                        index => "linux-%{+yyyy.MM.dd}"
+                        }
+                    }
+                }
+                if [host][os][type]=="windows" or [agent][name]=="DCON2" or [agent][name]=="Dcon3" { 
+                    if [event][code] in [ "4624", "4625", "4634", "4723", "4740", "4767" ] {
+                        elasticsearch {
+                        hosts => ["localhost:9200"]
+                        index => "account-access-%{+yyyy.MM}"
+                        }
+                    } else {
+                        elasticsearch {
+                        hosts => ["localhost:9200"]
+                        index => "winlogbeat-%{+yyyy.MM.dd}"
+                        }
+                    }  
+                }
+        stdout { codec => rubydebug }
+        }
+}
+
