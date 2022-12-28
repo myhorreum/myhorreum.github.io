@@ -23,7 +23,7 @@ I know "triangle of sadness" was mentioned at the beginning of the film. However
 
 ## Theory 2 - Jarmo was based on Notch from Minecraft
 
-I was thinking this throughout the film but when I googled this theory afterwards nothing popped up so I am assuming I am one of the rare people who thought this. The reasoning behind this is that both are rich Swedish programmers. Over dinner with the captain Jarmo also mentions gaming and selling code to gaming companies. He also kills a donkey which is a passive mob in Minecraft. Notch and Jarmo also look very similar. It could be a coincidence but I believe it isn't too farfetched for Jarmo to be based off of Notch.
+I was thinking this throughout the film but when I googled this theory afterwards nothing popped up so I am assuming I am one of the rare people who thought this. The reasoning behind this is that both are rich Swedish programmers. Over dinner with the captain Jarmo also mentions gaming and selling code to gaming companies. He also kills a donkey which is a passive mob in Minecraft. Also, interestingly, the donkey mob is the only passive mob that can regenerate health, which is similar to the donkey in the movie where it doesn't die immediately, but recovers some health and requires Jarmo to cause more damage to it to finally kill it. Notch and Jarmo also look very similar. It could be a coincidence but I believe it isn't too farfetched for Jarmo to be based off of Notch.
 
 ## Theory 3 - The pirate that washed ashore on the island was in fact a pirate (or not)
 
