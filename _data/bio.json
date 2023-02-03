@@ -132,10 +132,8 @@
       "level": "",
       "keywords": [
         "C",
-        "C++",
         "Java",
         "Javascript",
-        "Typescript",
         "LaTeX",
         "R"
       ]
@@ -160,11 +158,11 @@
       "name": "IT Experience",
       "level": "Systems Support Assistant",
       "keywords": [
-        "Windows Server Update Services (WSUS) configuration",
-        "ELK Stack (Elasticsearch + Logstash + Kibana) installation & configuration",
+        "WSUS database",
+        "ELK Stack on Linux",
         "ElastAlert2 w/ Docker",
-        "Tenable Nessus",
         "Nextcloud w/ Docker Compose",
+        "Tenable Vulnerability Scanning",
         "Webmin"
       ]
     },
@@ -188,9 +186,8 @@
       "name": "OS",
       "level": "",
       "keywords": [
-        "Windows 10",
+        "Windows",
         "MacOS",
-        "Unix",
         "Linux (CentOS)"
       ]
     }
