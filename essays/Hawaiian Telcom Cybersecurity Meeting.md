@@ -18,7 +18,7 @@ I decided to sit in for this meeting since I had nothing else to do. These are b
 Has your environment changed recently?
 Security challenges of going hybrid (log data is now not in one place)
 A hybrid infrastructure, or hybrid cloud is an IT infrastructure design and environment made up of a mix of on-premises data centers, private clouds and/or public clouds
-Make sure your policies are up to date (things written for old password polices for example)
+Make sure your policies are up to date (protocols written for old password polices for example)
 Domain Controllers - tracks login/outs to your Enterprise Windows servers should be sent to a SIEM/log management tool
 
 Went over SIEM and Domain Controllers which I am already familiar with from TASI
