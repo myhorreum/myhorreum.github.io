@@ -160,11 +160,12 @@
       "level": "Systems Support Assistant",
       "keywords": [
         "WSUS database",
-        "ELK Stack on Linux",
+        "ELK Stack on Linux (CentOS 7) VM",
         "ElastAlert2 w/ Docker",
         "Nextcloud w/ Docker Compose",
-        "Tenable Vulnerability Scanning",
-        "Webmin"
+        "Tenable vulnerability scanning",
+        "Webmin",
+        "Ansible"
       ]
     },
     {
